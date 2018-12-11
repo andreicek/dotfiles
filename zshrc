@@ -1,4 +1,4 @@
-export ZSH="/Users/andrei/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="evan"
 plugins=(
   git
@@ -13,7 +13,6 @@ export EDITOR=nvim
 alias m="multipass"
 alias loc="git ls-files | xargs cat | wc -l"
 alias reload="source ~/.zshrc"
-alias git="hub"
 alias gco="git checkout"
 alias gst="git status -sb"
 alias gc="git commit"
