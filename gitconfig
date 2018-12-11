@@ -1,0 +1,17 @@
+[user]
+	email = andrei@infinum.co
+	name = Andrei Zvonimir Crnkovic
+[core]
+	editor = vim
+	ignorecase = false
+[push]
+	default = simple
+[color]
+	ui = true
+[alias]
+	track = branch master --set-upstream-to origin/master
+	credit = "!f() { commit --amend --author \"$1 <$2>\" -C HEAD } f"
+  log = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	please = push --force-with-lease
+[branch "master"]
+	mergeoptions = --no-ff
