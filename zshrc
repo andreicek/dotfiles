@@ -33,3 +33,21 @@ alias vnc="open vnc://$AMK_KIOSK_IP"
 alias vim="nvim"
 alias map="xargs -n1"
 alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+tab-color() {
+  echo -ne "\033]6;1;bg;red;brightness;$1\a"
+  echo -ne "\033]6;1;bg;green;brightness;$2\a"
+  echo -ne "\033]6;1;bg;blue;brightness;$3\a"
+}
+
+tab-reset() {
+  echo -ne "\033]6;1;bg;*;default\a"
+}
+
+vpn() {
+  tab-color 255 0 0
+
+  sudo /usr/local/opt/openvpn/sbin/openvpn --config ~/macbookpro.ovpn
+
+  tab-reset
+}
