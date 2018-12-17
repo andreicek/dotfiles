@@ -45,9 +45,12 @@ tab-reset() {
 }
 
 vpn() {
-  tab-color 255 0 0
-
-  sudo /usr/local/opt/openvpn/sbin/openvpn --config ~/macbookpro.ovpn
-
-  tab-reset
+  state=$1
+  
+  sudo wg-quick $state wg0-client
 }
+
+anybar() { 
+  echo -n $1 | nc -4u -w0 localhost ${2:-1738}
+}
+
