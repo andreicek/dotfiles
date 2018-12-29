@@ -1,15 +1,3 @@
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="evan"
-plugins=(
-  git
-)
-
-source $ZSH/oh-my-zsh.sh
-source ~/Projects/dotfiles/secrets.sh
-
-export LANG=en_US.UTF-8
-export EDITOR=nvim
-
 alias m="multipass"
 alias loc="git ls-files | xargs cat | wc -l"
 alias reload="source ~/.zshrc"
@@ -22,9 +10,7 @@ alias gaa="git add -A"
 alias gap="git add --patch"
 alias gpl="git pull"
 alias gps="git push"
-alias mux="tmuxinator start"
 alias ugh="del node_modules/ && yarn install"
-alias awk="gawk"
 alias ..="cd .."
 alias crontab="VIM_CRONTAB=true crontab"
 alias aws_creds="cat ~/.aws/credentials | grep '\[' | awk -F'[][]' '{print $2}'"
@@ -34,23 +20,4 @@ alias vim="nvim"
 alias map="xargs -n1"
 alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
 
-tab-color() {
-  echo -ne "\033]6;1;bg;red;brightness;$1\a"
-  echo -ne "\033]6;1;bg;green;brightness;$2\a"
-  echo -ne "\033]6;1;bg;blue;brightness;$3\a"
-}
-
-tab-reset() {
-  echo -ne "\033]6;1;bg;*;default\a"
-}
-
-vpn() {
-  state=$1
-  
-  sudo wg-quick $state wg0-client
-}
-
-anybar() { 
-  echo -n $1 | nc -4u -w0 localhost ${2:-1738}
-}
-
+set --global EDITOR "nvim"
