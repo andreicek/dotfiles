@@ -18,3 +18,4 @@ alias map="xargs -n1"
 alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 set --global EDITOR "nvim"
+set -gx PATH ~/.dotfiles/bin $PATH
