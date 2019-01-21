@@ -2,7 +2,7 @@
 	email = andrei@infinum.co
 	name = Andrei Zvonimir Crnkovic
 [core]
-	editor = nvim
+	editor = vim
 	ignorecase = false
 [push]
 	default = simple
