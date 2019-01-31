@@ -15,7 +15,6 @@ alias gps="git push"
 alias ugh="del node_modules/ && yarn install"
 
 alias ..="cd .."
-alias crontab="VIM_CRONTAB=true crontab"
 alias aws_creds="cat ~/.aws/credentials | grep '\[' | awk -F'[][]' '{print $2}'"
 
 alias map="xargs -n1"
