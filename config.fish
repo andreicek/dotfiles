@@ -23,6 +23,5 @@ alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 set -gx EDITOR "vim"
 set -gx PATH ~/.dotfiles/bin $PATH
-set -gx SSH_AUTH_SOCK /Users/andrei/.gnupg/S.gpg-agent.ssh
 
 source ~/.config/fish/secret.fish
