@@ -25,3 +25,7 @@ set -gx EDITOR "vim"
 set -gx PATH ~/.dotfiles/bin $PATH
 
 source ~/.config/fish/secret.fish
+
+function fish_prompt
+  echo (hostname)'% '
+end
