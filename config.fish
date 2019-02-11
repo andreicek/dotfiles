@@ -29,3 +29,8 @@ alias gps="git push"
 function fish_prompt
   echo (hostname)'% '
 end
+
+#wather
+function weather
+  curl "wttr.in/$1"
+end
