@@ -13,6 +13,7 @@ alias loc="git ls-files | xargs cat | wc -l"
 alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ugh="del node_modules/ && yarn install"
 alias map="xargs -n1"
+alias ls="exa --long --git"
 
 # Git alias
 alias gco="git checkout"
