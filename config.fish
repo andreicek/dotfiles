@@ -1,6 +1,8 @@
 # ENVs
 set -gx EDITOR "vim"
-set -gx PATH ~/.dotfiles/bin $PATH
+set -gx OPENSC_LIBS "/usr/local/lib/opensc-pkcs11.so"
+set -gx PATH ~/.dotfiles/bin /Users/andrei/go $PATH
+set -Ux TERM screen-256color-bce
 
 # Source secrets file if there is one
 if test -f $HOME/.config/fish/secret.fish

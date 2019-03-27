@@ -3,7 +3,8 @@
   name = Andrei Zvonimir Crnkovic
 [core]
   editor = vim
-  ignorecase = false
+  excludesfile = ~/.gitignore
+	ignorecase = false
 [push]
   default = current
 [color]
