@@ -1,6 +1,5 @@
 # ENVs
 set -gx EDITOR "vim"
-set -gx OPENSC_LIBS "/usr/local/lib/opensc-pkcs11.so"
 set -gx PATH ~/.dotfiles/bin /Users/andrei/go $PATH
 set -Ux TERM screen-256color-bce
 
@@ -10,12 +9,10 @@ if test -f $HOME/.config/fish/secret.fish
 end
 
 # Misc
-alias m="multipass"
 alias loc="git ls-files | xargs cat | wc -l"
-alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias ugh="del node_modules/ && yarn install"
 alias map="xargs -n1"
 alias ls="exa --long --git"
+alias rm="trash"
 
 # Git alias
 alias gco="git checkout"
@@ -30,10 +27,11 @@ alias gps="git push"
 
 # My prompt
 function fish_prompt
-  echo (hostname)'% '
+  set_color "#a31a1f" && echo -n (hostname) && set_color "white" && echo -n '% '
 end
 
 #wather
 function weather
   curl "wttr.in/$1"
 end
+status --is-interactive; and source (rbenv init -|psub)
