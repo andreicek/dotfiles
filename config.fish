@@ -1,37 +1,26 @@
-# ENVs
-set -gx EDITOR "vim"
-set -gx PATH ~/.dotfiles/bin /Users/andrei/go $PATH
-set -Ux TERM screen-256color-bce
-
-# Source secrets file if there is one
-if test -f $HOME/.config/fish/secret.fish
-  source ~/.config/fish/secret.fish
-end
-
-# Misc
-alias loc="git ls-files | xargs cat | wc -l"
-alias map="xargs -n1"
-alias ls="exa --long --git"
-alias rm="trash"
-
-# Git alias
-alias gco="git checkout"
-alias gst="git status -sb"
-alias gc="git commit"
-alias gcm="git commit -m"
-alias ga="git add"
-alias gaa="git add -A"
-alias gap="git add --patch"
-alias gpl="git pull"
-alias gps="git push"
+alias ls "exa --long --git"
+alias rm "trash"
+abbr title "it2setkeylabel set status"
+abbr map "xargs -n1"
+abbr gco "git checkout"
+abbr gst "git status -sb"
+abbr gc "git commit"
+abbr gcm "git commit -m"
+abbr ga "git add"
+abbr gaa "git add -A"
+abbr gap "git add --patch"
+abbr gpl "git pull"
+abbr gps "git push"
 
 # My prompt
 function fish_prompt
-  set_color "#a31a1f" && echo -n (hostname) && set_color "white" && echo -n '% '
+	set_color $fish_color_cwd
+  echo -n (basename $PWD)
+  set_color normal
+  echo -n ' ) '
 end
 
-#wather
-function weather
-  curl "wttr.in/$1"
-end
-status --is-interactive; and source (rbenv init -|psub)
+# ENVs
+set -gx EDITOR "vim"
+test -e {$HOME}/.config/fish/secret.fish; and source {$HOME}/.config/fish/secret.fish
+set -Ua fish_user_paths {$HOME}/.dotfiles/bin
