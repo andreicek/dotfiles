@@ -14,6 +14,11 @@ abbr gps "git push"
 
 # My prompt
 function fish_prompt
+
+  if type -q it2setkeylabel
+    it2setkeylabel set status (prompt_pwd)
+  end
+
   set_color $fish_color_cwd
   echo -n (basename $PWD)
   set_color normal
