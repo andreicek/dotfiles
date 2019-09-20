@@ -11,6 +11,7 @@ abbr gaa "git add -A"
 abbr gap "git add --patch"
 abbr gpl "git pull"
 abbr gps "git push"
+abbr scrapvm "docker run -ti --rm ubuntu"
 
 function touchbar_prompt
   if type -q it2setkeylabel
