@@ -1,5 +1,6 @@
 alias ls "exa --long --git"
 alias rm "trash"
+alias cat "bat"
 abbr map "xargs -n1"
 abbr gco "git checkout"
 abbr gst "git status -sb"
