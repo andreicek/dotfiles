@@ -14,20 +14,8 @@ if grep -q "Darwin" <<< $(uname -a); then
   if ! grep -q "auth sufficient pam_tid.so" /etc/pam.d/sudo; then
     awk 'NR==2{print "auth sufficient pam_tid.so"}1' /etc/pam.d/sudo | sudo tee /etc/pam.d/sudo
   fi
-fi
 
-if grep -q "Linux" <<< $(uname -a); then
-  sudo apt update
-  sudo apt install -y \ git vim fish node
-    npm httpie software-properties-common jq
-
-  sudo add-apt-repository ppa:x4121/ripgrep
-  sudo apt update
-  sudo apt install -y ripgrep
-
-  # sudo dpkg -i bat_0.12.1_amd64.deb
-  
-  sudo npm install -g n
+  sudo chown -R $(whoami):staff /usr/local/n
 fi
 
 if ! grep -q "$(which fish)" /etc/shells; then
