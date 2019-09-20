@@ -17,3 +17,6 @@ echo " done."
 echo -n "Vim"
 ln -s $HOME/.dotfiles/vimrc $HOME/.vimrc
 echo " done."
+
+cd $HOME/.dotfiles
+git remote set-url origin git@github.com:andreicek/dotfiles.git
