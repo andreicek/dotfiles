@@ -15,6 +15,7 @@ if grep -q "Darwin" <<< $(uname -a); then
     awk 'NR==2{print "auth sufficient pam_tid.so"}1' /etc/pam.d/sudo | sudo tee /etc/pam.d/sudo
   fi
 
+  sudo mkdir -p /usr/local/n
   sudo chown -R $(whoami):staff /usr/local/n
 fi
 
