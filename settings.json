@@ -1,0 +1,14 @@
+{
+  "prettier.arrowParens": "always",
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 100,
+  "prettier.trailingComma": "all",
+  "editor.fontSize": 13,
+  "editor.tabSize": 2,
+  "terminal.integrated.fontSize": 13,
+  "editor.formatOnSave": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#a31a1f"
+  },
+  "window.zoomLevel": 0
+}
