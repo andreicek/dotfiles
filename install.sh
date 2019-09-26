@@ -25,6 +25,8 @@ if grep -q "Darwin" <<< $(uname -a); then
   code --install-extension sianglim.slim
   code --install-extension skyapps.fish-vscode
   code --install-extension tootone.org-mode
+  
+  ln -s $HOME/.dotfiles/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
 fi
 
 if ! grep -q "$(which fish)" /etc/shells; then
@@ -43,8 +45,6 @@ ln -s $HOME/.dotfiles/config.fish $HOME/.config/fish/config.fish
 ln -s $HOME/.dotfiles/gitconfig $HOME/.gitconfig
 
 ln -s $HOME/.dotfiles/vimrc $HOME/.vimrc
-
-ln -s $HOME/.dotfiles/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
 
 cd $HOME/.dotfiles
 git remote set-url origin git@github.com:andreicek/dotfiles.git

@@ -17,7 +17,7 @@ abbr scrapvm "docker run -ti --rm ubuntu"
 function touchbar_prompt
   if type -q it2setkeylabel
     set -l pwd (prompt_pwd)
-    set -l git_branch (git branch ^/dev/null | grep \* | sed 's/* //')
+    # set -l git_branch (git branch ^/dev/null | grep \* | sed 's/* //')
     if test "$git_branch" = ""
       it2setkeylabel set status "$pwd"
     else
