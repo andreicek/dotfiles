@@ -9,7 +9,7 @@ if grep -q "Darwin" <<< $(uname -a); then
 
   brew cask install visual-studio-code google-chrome \
     firefox slack 1password docker iterm2 imageoptim \
-    resilio-sync spotify tableplus zoomus whatsapp
+    resilio-sync spotify tableplus zoomus whatsapp starship
 
   if ! grep -q "auth sufficient pam_tid.so" /etc/pam.d/sudo; then
     awk 'NR==2{print "auth sufficient pam_tid.so"}1' /etc/pam.d/sudo | sudo tee /etc/pam.d/sudo
