@@ -2,6 +2,7 @@ alias ls "exa --long --git"
 alias rm "trash"
 alias cat "bat"
 alias grep "rg"
+
 abbr map "xargs -n1"
 abbr gco "git checkout"
 abbr gst "git status -sb"
@@ -18,12 +19,5 @@ abbr upload "rsync -avzu --progress"
 set -gx EDITOR "vim"
 test -e {$HOME}/.config/fish/secret.fish; and source {$HOME}/.config/fish/secret.fish
 set -Ua fish_user_paths {$HOME}/.dotfiles/bin
-
-if type -q it2setkeylabel
-  function ssh
-    it2setkeylabel set status "ssh $argv"
-    /usr/bin/ssh $argv
-  end
-end
 
 starship init fish | source

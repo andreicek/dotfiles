@@ -4,7 +4,6 @@ set clipboard=unnamed
 set laststatus=0
 
 " Colors {{{
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   syntax enable
   set background=dark
 " }}} Colors
