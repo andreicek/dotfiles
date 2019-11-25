@@ -9,7 +9,7 @@
   "workbench.colorCustomizations": {
     "statusBar.background": "#a31a1f"
   },
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "editor.formatOnSave": true,
   "editor.fontFamily": "'Go Mono'",
   "workbench.colorTheme": "Default Light+",
@@ -71,6 +71,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.activityBar.visible": false,
+  "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
