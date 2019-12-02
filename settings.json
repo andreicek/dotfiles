@@ -27,5 +27,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.editor.tabCloseButton": "off",
-  "breadcrumbs.icons": false
+  "breadcrumbs.icons": false,
+  "window.zoomLevel": 0
 }

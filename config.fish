@@ -15,6 +15,7 @@ abbr gpl "git pull"
 abbr gps "git push"
 abbr scrapvm "docker run -ti --rm ubuntu"
 abbr upload "rsync -avzu --progress"
+abbr http "curlie"
 
 set -gx EDITOR "vim"
 test -e {$HOME}/.config/fish/secret.fish; and source {$HOME}/.config/fish/secret.fish
