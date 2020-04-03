@@ -39,6 +39,7 @@ ln -s $HOME/.dotfiles/gitconfig $HOME/.gitconfig
 ln -s $HOME/.dotfiles/vimrc $HOME/.vimrc
 
 ln -s $HOME/.dotfiles/bashrc $HOME/.bashrc
+ln -s $HOME/.dotfiles/bashrc $HOME/.bash_profile
 
 cd $HOME/.dotfiles
 git remote set-url origin git@github.com:andreicek/dotfiles.git
