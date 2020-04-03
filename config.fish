@@ -21,4 +21,6 @@ set -gx EDITOR "vim"
 test -e {$HOME}/.config/fish/secret.fish; and source {$HOME}/.config/fish/secret.fish
 set -Ua fish_user_paths {$HOME}/.dotfiles/bin
 
-starship init fish | source
+function fish_prompt
+  echo "\$ "
+end

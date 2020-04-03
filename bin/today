@@ -1,0 +1,9 @@
+#!/bin/bash
+
+now=$(date +"%d-%m-%Y")
+
+if ! test -f "$NOTES_DIR/$now.md"; then
+  touch $NOTES_DIR/$now.md
+fi
+
+code $NOTES_DIR/$now.md

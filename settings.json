@@ -10,7 +10,6 @@
   "workbench.colorCustomizations": {
     "statusBar.background": "#a31a1f"
   },
-  "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "workbench.editor.showIcons": false,
   "editor.fontFamily": "'Go Mono'",
@@ -28,5 +27,19 @@
   },
   "workbench.editor.tabCloseButton": "off",
   "breadcrumbs.icons": false,
-  "window.zoomLevel": 0
+  "window.zoomLevel": 0,
+  "[ocaml]": {
+    "editor.defaultFormatter": "hackwaly.ocaml"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "colorize.include": [
+    "*.tsx",
+    "*.ts"
+  ],
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.explorerKind": "external"
 }
