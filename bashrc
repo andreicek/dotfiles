@@ -1,4 +1,4 @@
-PS1="\$ "
+PS1="\$ \[\e]0;\W\a\]"
 
 if command -v exa 2>/dev/null >/dev/null; then
   alias ls="exa --long --git"
@@ -26,6 +26,8 @@ alias gaa="git add -A"
 alias gap="git add --patch"
 alias gpl="git pull"
 alias gps="git push"
+
+alias ..="cd .."
 
 alias scrapvm="docker run -ti --rm ubuntu"
 alias upload="rsync -avzu --progress"
