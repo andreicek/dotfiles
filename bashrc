@@ -1,4 +1,4 @@
-PS1="\$ \[\e]0;\W\a\]"
+PS1="\[\033[37m\]\$PWD% \[\033[90m\]\[\e]0;\W\a\]"
 
 if command -v exa 2>/dev/null >/dev/null; then
   alias ls="exa --long --git"
