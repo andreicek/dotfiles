@@ -41,5 +41,9 @@
     "*.ts"
   ],
   "terminal.external.osxExec": "iTerm.app",
-  "terminal.explorerKind": "external"
+  "terminal.explorerKind": "external",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "svg.preview.mode": "svg"
 }

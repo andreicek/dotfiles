@@ -26,6 +26,10 @@ alias gaa="git add -A"
 alias gap="git add --patch"
 alias gpl="git pull"
 alias gps="git push"
+alias food="productive-cli clock --service food"
+
+alias wb="productive-cli clock --service 0 --note development --time"
+alias deploy="yarn hydra:deploy --env ACrnkovic"
 
 alias ..="cd .."
 
