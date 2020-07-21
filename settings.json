@@ -2,7 +2,6 @@
   "prettier.arrowParens": "always",
   "prettier.singleQuote": true,
   "prettier.printWidth": 100,
-  "prettier.trailingComma": "all",
   "editor.fontSize": 13,
   "editor.tabSize": 2,
   "terminal.integrated.fontSize": 13,
@@ -13,7 +12,6 @@
   "editor.minimap.enabled": false,
   "workbench.editor.showIcons": false,
   "editor.fontFamily": "'Go Mono'",
-  "workbench.colorTheme": "Default Light+",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -21,7 +19,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.activityBar.visible": false,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -36,14 +33,56 @@
   },
   "editor.formatOnSave": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "colorize.include": [
-    "*.tsx",
-    "*.ts"
-  ],
+  "colorize.include": ["*.tsx", "*.ts"],
   "terminal.external.osxExec": "iTerm.app",
   "terminal.explorerKind": "external",
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "svg.preview.mode": "svg"
+  "svg.preview.mode": "svg",
+  "editor.rulers": [0, 80, 99, 101],
+  "todohighlight.keywords": [
+    {
+      "text": "QUESTION:",
+      "color": "white",
+      "backgroundColor": "red",
+      "overviewRulerColor": "red"
+    }
+  ],
+  "editor.find.loop": false,
+  "workbench.activityBar.visible": false,
+  "workbench.iconTheme": null,
+  "workbench.tips.enabled": false,
+  "workbench.editor.tabSizing": "shrink",
+  "window.title": "${rootName}",
+  "explorer.decorations.colors": false,
+  "git.decorations.enabled": false,
+  "cSpell.enabledLanguageIds": [
+    "asciidoc",
+    "c",
+    "cpp",
+    "csharp",
+    "css",
+    "git-commit",
+    "go",
+    "handlebars",
+    "haskell",
+    "jade",
+    "java",
+    "jsonc",
+    "latex",
+    "less",
+    "markdown",
+    "php",
+    "plaintext",
+    "python",
+    "pug",
+    "restructuredtext",
+    "rust",
+    "scala",
+    "scss",
+    "text",
+    "yaml",
+    "yml"
+  ]
 }

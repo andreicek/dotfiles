@@ -1,4 +1,8 @@
-PS1="\[\033[37m\]\$PWD% \[\033[90m\]\[\e]0;\W\a\]"
+PS1="\[\033[37m\]\w% \[\033[90m\]\[\e]0;\W\a\]"
+
+if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+  source /usr/local/share/bash-completion/bash_completion
+fi
 
 if command -v exa 2>/dev/null >/dev/null; then
   alias ls="exa --long --git"
@@ -36,6 +40,14 @@ alias ..="cd .."
 alias scrapvm="docker run -ti --rm ubuntu"
 alias upload="rsync -avzu --progress"
 alias http="curlie"
+
+function git_remote_init() {
+  repo=$1
+  if [ ! "$repo" = "" ]; then
+    ssh git@git.crnkovic.family "mkdir $repo.git; cd $repo.git; git init --bare"
+    echo "git remote add local git@git.crnkovic.family:$repo.git"
+  fi
+}
 
 export EDITOR="vim"
 export PATH="$PATH:$HOME/.dotfiles/bin"

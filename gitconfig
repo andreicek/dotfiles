@@ -12,10 +12,5 @@
   track = branch master --set-upstream-to origin/master
   credit = "!f() { commit --amend --author \"$1 <$2>\" -C HEAD } f"
   please = push --force-with-lease
-	sync = !/usr/local/bin/legit sync
-	publish = !/usr/local/bin/legit publish
-	unpublish = !/usr/local/bin/legit unpublish
-	undo = !/usr/local/bin/legit undo
-	branches = !/usr/local/bin/legit branches
 [branch "master"]
   mergeoptions = --no-ff
