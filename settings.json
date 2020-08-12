@@ -12,7 +12,7 @@
   "workbench.activityBar.visible": false,
   "workbench.iconTheme": null,
   "workbench.tips.enabled": false,
-  "window.title": "${rootName}",
+  "window.title": "${activeEditorMedium}${separator}${rootName}",
   "explorer.decorations.colors": false,
   "git.decorations.enabled": false,
   "editor.minimap.enabled": false,
@@ -20,5 +20,11 @@
   "update.showReleaseNotes": false,
   "json.schemaDownload.enable": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
-  "npm.fetchOnlinePackageInfo": false
+  "npm.fetchOnlinePackageInfo": false,
+  "customizeUI.stylesheet": {
+    ".composite.title": "display: none !important",
+    ".editor-actions": "display: none !important"
+  },
+  "breadcrumbs.enabled": false,
+  "workbench.settings.editor": "json"
 }
