@@ -31,6 +31,7 @@ alias gap="git add --patch"
 alias gpl="git pull"
 alias gps="git push"
 alias food="productive-cli clock --service food"
+alias bin="pastebinit -b https://pastebinit.crnkovic.family"
 
 alias wb="productive-cli clock --service 0 --note development --time"
 alias deploy="yarn hydra:deploy --env ACrnkovic"

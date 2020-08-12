@@ -4,85 +4,21 @@
   "prettier.printWidth": 100,
   "editor.fontSize": 13,
   "editor.tabSize": 2,
-  "terminal.integrated.fontSize": 13,
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorCustomizations": {
-    "statusBar.background": "#a31a1f"
-  },
-  "editor.minimap.enabled": false,
   "workbench.editor.showIcons": false,
-  "editor.fontFamily": "'Go Mono'",
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "workbench.editor.tabCloseButton": "off",
   "breadcrumbs.icons": false,
-  "window.zoomLevel": 0,
-  "[ocaml]": {
-    "editor.defaultFormatter": "hackwaly.ocaml"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "editor.formatOnSave": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "colorize.include": ["*.tsx", "*.ts"],
-  "terminal.external.osxExec": "iTerm.app",
-  "terminal.explorerKind": "external",
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "svg.preview.mode": "svg",
   "editor.rulers": [0, 80, 99, 101],
-  "todohighlight.keywords": [
-    {
-      "text": "QUESTION:",
-      "color": "white",
-      "backgroundColor": "red",
-      "overviewRulerColor": "red"
-    }
-  ],
-  "editor.find.loop": false,
   "workbench.activityBar.visible": false,
   "workbench.iconTheme": null,
   "workbench.tips.enabled": false,
-  "workbench.editor.tabSizing": "shrink",
   "window.title": "${rootName}",
   "explorer.decorations.colors": false,
   "git.decorations.enabled": false,
-  "cSpell.enabledLanguageIds": [
-    "asciidoc",
-    "c",
-    "cpp",
-    "csharp",
-    "css",
-    "git-commit",
-    "go",
-    "handlebars",
-    "haskell",
-    "jade",
-    "java",
-    "jsonc",
-    "latex",
-    "less",
-    "markdown",
-    "php",
-    "plaintext",
-    "python",
-    "pug",
-    "restructuredtext",
-    "rust",
-    "scala",
-    "scss",
-    "text",
-    "yaml",
-    "yml"
-  ]
+  "editor.minimap.enabled": false,
+  "workbench.enableExperiments": false,
+  "update.showReleaseNotes": false,
+  "json.schemaDownload.enable": false,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "npm.fetchOnlinePackageInfo": false
 }
