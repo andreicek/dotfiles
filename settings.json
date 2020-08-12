@@ -8,7 +8,7 @@
   "workbench.editor.tabCloseButton": "off",
   "breadcrumbs.icons": false,
   "editor.formatOnSave": true,
-  "editor.rulers": [0, 80, 99, 101],
+  "editor.rulers": [0, 80, 100],
   "workbench.activityBar.visible": false,
   "workbench.iconTheme": null,
   "workbench.tips.enabled": false,
