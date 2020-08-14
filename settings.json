@@ -5,6 +5,7 @@
   "editor.fontSize": 13,
   "editor.tabSize": 2,
   "workbench.editor.showIcons": false,
+  "breadcrumbs.enabled": false,
   "workbench.editor.tabCloseButton": "off",
   "breadcrumbs.icons": false,
   "editor.formatOnSave": true,
@@ -12,11 +13,12 @@
   "workbench.activityBar.visible": false,
   "workbench.iconTheme": null,
   "workbench.tips.enabled": false,
+  "workbench.settings.editor": "json",
+  "workbench.enableExperiments": false,
   "window.title": "${activeEditorMedium}${separator}${rootName}",
   "explorer.decorations.colors": false,
   "git.decorations.enabled": false,
   "editor.minimap.enabled": false,
-  "workbench.enableExperiments": false,
   "update.showReleaseNotes": false,
   "json.schemaDownload.enable": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
@@ -25,6 +27,7 @@
     ".composite.title": "display: none !important",
     ".editor-actions": "display: none !important"
   },
-  "breadcrumbs.enabled": false,
-  "workbench.settings.editor": "json"
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
