@@ -13,9 +13,8 @@
   "workbench.activityBar.visible": false,
   "workbench.iconTheme": null,
   "workbench.tips.enabled": false,
-  "workbench.settings.editor": "json",
   "workbench.enableExperiments": false,
-  "window.title": "${activeEditorMedium}${separator}${rootName}",
+  "workbench.settings.editor": "json",
   "explorer.decorations.colors": false,
   "git.decorations.enabled": false,
   "editor.minimap.enabled": false,
@@ -29,5 +28,9 @@
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.glyphMargin": false
 }

@@ -1,3 +1,0 @@
-#!/bin/sh
-AAA=$1
-exec awk "{print \$$AAA}"

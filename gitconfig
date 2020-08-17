@@ -1,5 +1,5 @@
 [user]
-  email = andrei@infinum.com
+  email = andreicek@hey.com
   name = Andrei Zvonimir Crnkovic
 [core]
   editor = vim
@@ -10,7 +10,4 @@
   ui = true
 [alias]
   track = branch master --set-upstream-to origin/master
-  credit = "!f() { commit --amend --author \"$1 <$2>\" -C HEAD } f"
-  please = push --force-with-lease
-[branch "master"]
-  mergeoptions = --no-ff
+  pls = push --force-with-lease

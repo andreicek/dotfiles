@@ -1,6 +1,8 @@
-# ~/.bashrc: executed by bash for non-login shells.
+# ~/.bashrc
 
+shopt -s promptvars
 PS1="\[\033[37m\]\w% \[\e]0;\W\a\]"
+PS1='$(printf "%$((COLUMNS-1))s\r")'$PS1
 
 shopt -s histappend
 export PROMPT_COMMAND='history -a; history -n'
@@ -9,6 +11,8 @@ export HISTIGNORE='pwd:exit:clear'
 export HISTSIZE='-1'
 export HISTFILESIZE='-1'
 export HISTTIMEFORMAT='[%d/%m/%y %T] '
+
+export EDITOR="vim"
 
 if command -v exa 2>/dev/null >/dev/null; then
   alias ls="exa --long --git"
@@ -39,12 +43,9 @@ alias gps="git push"
 alias food="productive-cli clock --service food"
 alias bin="pastebinit -b https://pastebinit.crnkovic.family"
 
-alias d="yarn hydra:deploy --env ACrnkovic"
-alias t="yarn test"
-alias tw="yarn test --watch"
-
-export EDITOR="vim"
-export PATH="$PATH:$HOME/.dotfiles/bin"
+alias okdeploy="yarn hydra:deploy --env ACrnkovic"
+alias oktest="yarn test"
+alias oktestw="yarn test --watch"
 
 if test -e $HOME/.dotfiles/secret.sh; then
   source $HOME/.dotfiles/secret.sh
