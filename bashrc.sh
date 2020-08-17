@@ -5,12 +5,12 @@ PS1="\[\033[37m\]\w% \[\e]0;\W\a\]"
 PS1='$(printf "%$((COLUMNS-1))s\r")'$PS1
 
 shopt -s histappend
-export PROMPT_COMMAND='history -a; history -n'
-export HISTCONTROL='ignoreboth'
-export HISTIGNORE='pwd:exit:clear'
-export HISTSIZE='-1'
-export HISTFILESIZE='-1'
-export HISTTIMEFORMAT='[%d/%m/%y %T] '
+export PROMPT_COMMAND="history -a; history -n"
+export HISTCONTROL="ignoreboth"
+export HISTIGNORE="pwd:exit:clear"
+export HISTSIZE="-1"
+export HISTFILESIZE="-1"
+export HISTTIMEFORMAT="[%d/%m/%y %T] "
 
 export EDITOR="vim"
 
