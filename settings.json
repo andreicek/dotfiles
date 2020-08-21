@@ -14,8 +14,8 @@
   "workbench.iconTheme": null,
   "workbench.tips.enabled": false,
   "workbench.enableExperiments": false,
-  "workbench.settings.editor": "json",
   "explorer.decorations.colors": false,
+  "workbench.settings.editor": "json",
   "git.decorations.enabled": false,
   "editor.minimap.enabled": false,
   "update.showReleaseNotes": false,
@@ -28,5 +28,6 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.glyphMargin": false
+  "editor.glyphMargin": false,
+  "workbench.startupEditor": "none"
 }
