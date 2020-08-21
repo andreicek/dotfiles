@@ -40,12 +40,26 @@ alias gaa="git add -A"
 alias gap="git add --patch"
 alias gpl="git pull"
 alias gps="git push"
+
 alias food="productive-cli clock --service food"
 alias bin="pastebinit -b https://pastebinit.crnkovic.family"
 
 alias okdeploy="yarn hydra:deploy --env ACrnkovic"
 alias oktest="yarn test"
 alias oktestw="yarn test --watch"
+
+if test -r "/usr/local/etc/profile.d/bash_completion.sh"; then
+  source /usr/local/etc/profile.d/bash_completion.sh
+  __git_complete gco _git_checkout
+  __git_complete gst _git_status
+  __git_complete gc _git_commit
+  __git_complete gcm _git_commit
+  __git_complete ga _git_add
+  __git_complete gaa _git_add
+  __git_complete gap _git_add
+  __git_complete gpl _git_pull
+  __git_complete gps _git_push
+fi
 
 if test -e $HOME/.dotfiles/secret.sh; then
   source $HOME/.dotfiles/secret.sh

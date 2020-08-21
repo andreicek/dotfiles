@@ -22,10 +22,6 @@
   "json.schemaDownload.enable": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
   "npm.fetchOnlinePackageInfo": false,
-  "customizeUI.stylesheet": {
-    ".composite.title": "display: none !important",
-    ".editor-actions": "display: none !important"
-  },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
