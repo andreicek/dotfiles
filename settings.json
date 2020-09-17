@@ -1,14 +1,15 @@
 {
+  "editor.fontFamily": "Go Mono",
   "prettier.arrowParens": "always",
   "prettier.singleQuote": true,
   "prettier.printWidth": 100,
   "editor.fontSize": 13,
   "editor.tabSize": 2,
   "workbench.editor.showIcons": false,
-  "breadcrumbs.enabled": false,
+  "breadcrumbs.enabled": true,
   "workbench.editor.tabCloseButton": "off",
   "breadcrumbs.icons": false,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.rulers": [0, 80, 100],
   "workbench.activityBar.visible": false,
   "workbench.iconTheme": null,
@@ -19,7 +20,6 @@
   "git.decorations.enabled": false,
   "editor.minimap.enabled": false,
   "update.showReleaseNotes": false,
-  "json.schemaDownload.enable": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
   "npm.fetchOnlinePackageInfo": false,
   "[jsonc]": {
@@ -29,5 +29,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.glyphMargin": false,
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
