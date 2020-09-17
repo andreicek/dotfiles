@@ -26,6 +26,9 @@ if command -v rg 2>/dev/null >/dev/null; then
   alias grep="rg"
 fi
 
+eval $(ssh-agent) > /dev/null
+ssh-add 2>/dev/null
+
 alias map="xargs -n1"
 alias ..="cd .."
 
@@ -41,6 +44,7 @@ alias gap="git add --patch"
 alias gpl="git pull"
 alias gps="git push"
 
+alias pubkey="cat ~/.ssh/*.pub"
 alias food="productive-cli clock --service food"
 alias bin="pastebinit -b https://pastebinit.crnkovic.family"
 
