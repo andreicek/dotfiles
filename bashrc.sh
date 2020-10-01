@@ -12,7 +12,9 @@ export HISTSIZE="-1"
 export HISTFILESIZE="-1"
 export HISTTIMEFORMAT="[%d/%m/%y %T] "
 
-export EDITOR="vim"
+export EDITOR="emacs"
+
+alias vim="emacs"
 
 if command -v exa 2>/dev/null >/dev/null; then
   alias ls="exa --long --git"
@@ -45,7 +47,6 @@ alias gpl="git pull"
 alias gps="git push"
 
 alias pubkey="cat ~/.ssh/*.pub"
-alias food="productive-cli clock --service food"
 alias bin="pastebinit -b https://pastebinit.crnkovic.family"
 
 alias okdeploy="yarn hydra:deploy --env ACrnkovic"

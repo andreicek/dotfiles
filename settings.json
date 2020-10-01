@@ -9,7 +9,7 @@
   "breadcrumbs.enabled": true,
   "workbench.editor.tabCloseButton": "off",
   "breadcrumbs.icons": false,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.rulers": [0, 80, 100],
   "workbench.activityBar.visible": false,
   "workbench.iconTheme": null,
@@ -32,6 +32,9 @@
   "workbench.startupEditor": "none",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
