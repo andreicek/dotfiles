@@ -49,7 +49,7 @@ alias gps="git push"
 alias pubkey="cat ~/.ssh/*.pub"
 alias bin="pastebinit -b https://pastebinit.crnkovic.family"
 
-alias okdeploy="yarn hydra:deploy --env ACrnkovic"
+alias okdeploy="yarn hydra:ingest --env ACrnkovic --debug && yarn hydra:deploy --env ACrnkovic"
 alias oktest="yarn test"
 alias oktestw="yarn test --watch"
 

@@ -9,7 +9,7 @@
   "breadcrumbs.enabled": true,
   "workbench.editor.tabCloseButton": "off",
   "breadcrumbs.icons": false,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.rulers": [0, 80, 100],
   "workbench.activityBar.visible": false,
   "workbench.iconTheme": null,
@@ -36,5 +36,6 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "go.formatTool": "goimports"
 }

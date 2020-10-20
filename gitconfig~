@@ -4,7 +4,6 @@
 [core]
   editor = emacs
   ignorecase = false
-  excludesFile = ~/.gitignore
 [push]
   default = current
 [color]
