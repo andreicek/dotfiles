@@ -28,6 +28,10 @@ if command -v rg 2>/dev/null >/dev/null; then
   alias grep="rg"
 fi
 
+if command -v clip.exe 2>/dev/null >/dev/null; then
+  alias pbcopy="clip.exe"
+fi
+
 eval $(ssh-agent) > /dev/null
 ssh-add 2>/dev/null
 
@@ -48,6 +52,7 @@ alias gps="git push"
 
 alias pubkey="cat ~/.ssh/*.pub"
 alias bin="pastebinit -b https://pastebinit.crnkovic.family"
+alias backup="borgmatic --config ~/.dotfiles/borgmatic.yaml -v 1"
 
 alias okdeploy="yarn hydra:ingest --env ACrnkovic --debug && yarn hydra:deploy --env ACrnkovic"
 alias oktest="yarn test"
