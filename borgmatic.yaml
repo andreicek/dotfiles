@@ -1,0 +1,29 @@
+location:
+    source_directories:
+        - ~/Workspace/src
+        - ~/.dotfiles
+
+    one_file_system: true
+    repositories:
+        - oxttc715@oxttc715.repo.borgbase.com:repo
+
+    exclude_patterns:
+        - 'mode_modules/'
+
+    exclude_caches: true
+    exclude_if_present: .nobackup
+
+storage:
+    compression: auto,zstd
+    archive_name_format: 'dell-{now}'
+
+retention:
+    keep_daily: 3
+    keep_weekly: 4
+    keep_monthly: 12
+    keep_yearly: 2
+    prefix: 'dell-'
+
+consistency:
+    checks:
+        - disabled
