@@ -1,4 +1,4 @@
-source ~/.dotfiles/zinit/bin/zinit.zsh
+source ~/.dotfiles/zinit/zinit.zsh
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -74,3 +74,4 @@ bindkey '^[[B'  down-line-or-beginning-search  # Arrow down
 bindkey '^[OB'  down-line-or-beginning-search
 
 zinit light trystan2k/zsh-tab-title
+zinit light zsh-users/zsh-syntax-highlighting
