@@ -59,6 +59,10 @@ if test -e $HOME/.dotfiles/secret.sh; then
   source $HOME/.dotfiles/secret.sh
 fi
 
+if test -e $HOME/.dotfiles/functions.sh; then
+  source $HOME/.dotfiles/functions.sh
+fi
+
 if test -e $HOME/.dotfiles/z.sh; then
   source $HOME/.dotfiles/z.sh
 fi
