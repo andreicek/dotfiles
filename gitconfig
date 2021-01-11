@@ -2,7 +2,7 @@
   email = andreicek@hey.com
   name = Andrei Zvonimir Crnkovic
 [core]
-  editor = emacs
+  editor = vim
   ignorecase = false
   excludesFile = ~/.gitignore
 [push]
