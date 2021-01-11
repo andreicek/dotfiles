@@ -1,36 +1,33 @@
 source ~/.dotfiles/zinit/zinit.zsh
 
-# Lines configured by zsh-newuser-install
+setopt append_history
+setopt inc_append_history
+setopt extended_history 
+setopt hist_no_store
+setopt no_bang_hist
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=11000
+SAVEHIST=10000
+HISTORY_IGNORE='([bf]g *|[bf]g|disown|cd ..|cd -)'
+
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
+
 zstyle :compinstall filename '/home/andreicek/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
+
+_exists() { (( $+commands[$1] )) }
 
 export PROMPT="%~$ "
 export EDITOR="vim"
 
-if command -v exa 2>/dev/null >/dev/null; then
-  alias ls="exa --long --git"
-fi
-
-if command -v bat 2>/dev/null >/dev/null; then
-  alias cat="bat"
-fi
-
-if command -v rg 2>/dev/null >/dev/null; then
-  alias grep="rg"
-fi
-
-if command -v clip.exe 2>/dev/null >/dev/null; then
-  alias pbcopy="clip.exe"
-fi
+_exists exa && alias ls="exa --long --git"
+_exists bat && alias cat="bat"
+_exists rg && alias grep="rg"
+_exists clip.exe && alias pbcopy="clip.exe"
 
 alias map="xargs -n1"
 alias ..="cd .."  
@@ -52,6 +49,12 @@ alias okdeploy="yarn hydra:ingest --env ACrnkovic --debug && yarn hydra:deploy -
 alias oktest="yarn test"
 alias oktestw="yarn test --watch"
 
+function cdtemp() {
+  local temp=$(mktemp -d)
+  echo "pushd $temp"
+  pushd $temp
+}
+
 if test -e $HOME/.dotfiles/secret.sh; then
   source $HOME/.dotfiles/secret.sh
 fi
@@ -68,10 +71,21 @@ autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-bindkey '^[[A'  up-line-or-beginning-search    # Arrow up
+bindkey '^[[A'  up-line-or-beginning-search
 bindkey '^[OA'  up-line-or-beginning-search
-bindkey '^[[B'  down-line-or-beginning-search  # Arrow down
+bindkey '^[[B'  down-line-or-beginning-search
 bindkey '^[OB'  down-line-or-beginning-search
 
+autoload -U zcalc
+alias zc >/dev/null && unalias zc
+zc() { [[ -n "$@" ]] && zcalc -e $@ || zcalc }
+alias zc='noglob zc'
+
+zinit light zsh-users/zsh-completions
 zinit light trystan2k/zsh-tab-title
 zinit light zsh-users/zsh-syntax-highlighting
+
+zinit ice as"completion"
+zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
+
+echo "$(whoami)@$HOST on $TTY; $(date)"
