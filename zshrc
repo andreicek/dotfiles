@@ -1,5 +1,17 @@
+# My ZSH config
 source ~/.dotfiles/zinit/zinit.zsh
+bindkey -e
 
+zstyle :compinstall filename '/home/andreicek/.zshrc'
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+unsetopt BEEP
+
+autoload -Uz compinit
+compinit
+
+# History
 setopt append_history
 setopt inc_append_history
 setopt extended_history 
@@ -10,18 +22,23 @@ setopt hist_ignore_all_dups
 HISTFILE=~/.histfile
 HISTSIZE=11000
 SAVEHIST=10000
-HISTORY_IGNORE='([bf]g *|[bf]g|clear|cd ..|cd -)'
+HISTORY_IGNORE='(clear|cd ..|cd -)'
 
-bindkey -e
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 
-zstyle :compinstall filename '/home/andreicek/.zshrc'
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
 
-autoload -Uz compinit
-compinit
+bindkey '^[[A'  up-line-or-beginning-search
+bindkey '^[OA'  up-line-or-beginning-search
+bindkey '^[[B'  down-line-or-beginning-search
+bindkey '^[OB'  down-line-or-beginning-search
 
+# Prompt and editor
 export PROMPT="%~$ "
 export EDITOR="vim"
 
+# Aliases
 _exists() { (( $+commands[$1] )) }
 
 _exists exa && alias ls="exa --long --git"
@@ -54,6 +71,26 @@ function cdtemp() {
   pushd $temp
 }
 
+# Z command
+if test -e $HOME/.dotfiles/z.sh; then
+  source $HOME/.dotfiles/z.sh
+fi
+
+# Calculator
+autoload -U zcalc
+alias zc >/dev/null && unalias zc
+zc() { [[ -n "$@" ]] && zcalc -e $@ || zcalc }
+alias zc='noglob zc'
+
+# Plugins
+zinit light zsh-users/zsh-completions
+zinit light trystan2k/zsh-tab-title
+zinit light zsh-users/zsh-syntax-highlighting
+
+zinit ice as"completion"
+zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
+
+# Extending
 if test -e $HOME/.dotfiles/secret.sh; then
   source $HOME/.dotfiles/secret.sh
 fi
@@ -62,33 +99,5 @@ if test -e $HOME/.dotfiles/functions.sh; then
   source $HOME/.dotfiles/functions.sh
 fi
 
-if test -e $HOME/.dotfiles/z.sh; then
-  source $HOME/.dotfiles/z.sh
-fi
-
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-
-autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-
-bindkey '^[[A'  up-line-or-beginning-search
-bindkey '^[OA'  up-line-or-beginning-search
-bindkey '^[[B'  down-line-or-beginning-search
-bindkey '^[OB'  down-line-or-beginning-search
-
-autoload -U zcalc
-alias zc >/dev/null && unalias zc
-zc() { [[ -n "$@" ]] && zcalc -e $@ || zcalc }
-alias zc='noglob zc'
-
-zinit light zsh-users/zsh-completions
-zinit light trystan2k/zsh-tab-title
-zinit light zsh-users/zsh-syntax-highlighting
-
-zinit ice as"completion"
-zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
-
+# MOTD
 echo "$(whoami)@$HOST on $TTY; $(date)"
