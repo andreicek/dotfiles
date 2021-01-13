@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-export BORG_PASSPHRASE=$1
-
 echo "Starting backup..."
 
 borgmatic \

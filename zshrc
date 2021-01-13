@@ -10,7 +10,7 @@ setopt hist_ignore_all_dups
 HISTFILE=~/.histfile
 HISTSIZE=11000
 SAVEHIST=10000
-HISTORY_IGNORE='([bf]g *|[bf]g|disown|cd ..|cd -)'
+HISTORY_IGNORE='([bf]g *|[bf]g|clear|cd ..|cd -)'
 
 bindkey -e
 
@@ -19,19 +19,19 @@ zstyle :compinstall filename '/home/andreicek/.zshrc'
 autoload -Uz compinit
 compinit
 
-_exists() { (( $+commands[$1] )) }
-
 export PROMPT="%~$ "
 export EDITOR="vim"
+
+_exists() { (( $+commands[$1] )) }
 
 _exists exa && alias ls="exa --long --git"
 _exists bat && alias cat="bat"
 _exists rg && alias grep="rg"
 _exists clip.exe && alias pbcopy="clip.exe"
+alias cal="cal -m"
 
 alias map="xargs -n1"
 alias ..="cd .."  
-
 alias gco="git checkout"
 alias gst="git status -sb"
 alias gc="git commit"
@@ -41,7 +41,6 @@ alias gaa="git add -A"
 alias gap="git add --patch"
 alias gpl="git pull"
 alias gps="git push"
-
 alias pubkey="cat ~/.ssh/*.pub"
 alias backup="borgmatic --config ~/.dotfiles/borgmatic.yaml -v 1"
 

@@ -1,5 +1,6 @@
 location:
     source_directories:
+        - ~/.ssh
         - ~/Workspace/src
         - ~/.dotfiles
 
