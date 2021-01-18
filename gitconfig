@@ -1,14 +1,17 @@
 [user]
-  email = andreicek@hey.com
-  name = Andrei Zvonimir Crnkovic
+	email = andreicek@hey.com
+	name = Andrei Zvonimir Crnkovic
+	signingkey = 95842DDB8603EBD879CB90C5D0EA677FD93A75BC
 [core]
-  editor = vim
-  ignorecase = false
-  excludesFile = ~/.gitignore
+	editor = vim
+	ignorecase = false
+	excludesFile = ~/.gitignore
 [push]
-  default = current
+	default = current
 [color]
-  ui = true
+	ui = true
 [alias]
-  track = branch master --set-upstream-to origin/master
-  pls = push --force-with-lease
+	track = branch master --set-upstream-to origin/master
+	pls = push --force-with-lease
+[commit]
+	gpgsign = true
