@@ -19,6 +19,7 @@ setopt hist_no_store
 setopt no_bang_hist
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups
+setopt hist_ignore_space
 HISTFILE=~/.histfile
 HISTSIZE=11000
 SAVEHIST=10000
