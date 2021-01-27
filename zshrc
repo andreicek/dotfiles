@@ -36,7 +36,7 @@ bindkey '^[[B'  down-line-or-beginning-search
 bindkey '^[OB'  down-line-or-beginning-search
 
 # Prompt and editor
-export PROMPT="%~$ "
+export PROMPT="%F{104}%m%F{reset}: %~ $ "
 export EDITOR="vim"
 
 # Aliases

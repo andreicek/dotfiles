@@ -7,6 +7,7 @@ location:
     one_file_system: true
     repositories:
         - oxttc715@oxttc715.repo.borgbase.com:repo
+        - borg@0x7f.dev:dell
 
     exclude_patterns:
         - 'mode_modules/'
