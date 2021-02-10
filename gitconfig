@@ -13,5 +13,6 @@
 [alias]
 	track = branch master --set-upstream-to origin/master
 	pls = push --force-with-lease
+	wc = "!f() { git diff \"$1^\" \"$1\"; }; f"
 [commit]
 	gpgsign = true
