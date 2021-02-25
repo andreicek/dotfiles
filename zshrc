@@ -102,4 +102,4 @@ fi
 
 # MOTD
 echo "$(whoami)@$HOST on $TTY; $(date)"
-cowsay -f tux $(fortune grateful-dead)
+# cowsay -f tux $(fortune grateful-dead)
