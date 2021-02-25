@@ -1,7 +1,5 @@
 function notify() {
-	powershell.exe -command New-BurntToastNotification \
-		-AppLogo "\"C:\\Users\\andre\\Pictures\\suse.png\"" \
-		-Text "\"$@\""
+	osascript -e "display notification \"$1\" with title \"Notify\""
 }
 
 function push() {

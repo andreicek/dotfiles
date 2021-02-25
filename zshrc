@@ -36,7 +36,7 @@ bindkey '^[[B'  down-line-or-beginning-search
 bindkey '^[OB'  down-line-or-beginning-search
 
 # Prompt and editor
-export PROMPT="%F{104}%m%F{reset}: %~ $ "
+export PROMPT="%~ $ "
 export EDITOR="vim"
 
 # Aliases
@@ -45,7 +45,6 @@ _exists() { (( $+commands[$1] )) }
 _exists exa && alias ls="exa --long --git"
 _exists bat && alias cat="bat"
 _exists rg && alias grep="rg"
-_exists clip.exe && alias pbcopy="clip.exe"
 alias cal="cal -m"
 
 alias map="xargs -n1"
@@ -73,8 +72,8 @@ function cdtemp() {
 }
 
 # Z command
-if test -e $HOME/.dotfiles/z.sh; then
-  source $HOME/.dotfiles/z.sh
+if test -e $HOME/.dotfiles/z/z.sh; then
+  source $HOME/.dotfiles/z/z.sh
 fi
 
 # Calculator
@@ -102,4 +101,4 @@ fi
 
 # MOTD
 echo "$(whoami)@$HOST on $TTY; $(date)"
-# cowsay -f tux $(fortune grateful-dead)
+cowsay -f tux $(fortune grateful-dead)
