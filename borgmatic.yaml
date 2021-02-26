@@ -16,14 +16,14 @@ location:
 
 storage:
     compression: auto,zstd
-    archive_name_format: 'dell-{now}'
+    archive_name_format: 'mac-{now}'
 
 retention:
     keep_daily: 3
     keep_weekly: 4
     keep_monthly: 12
     keep_yearly: 2
-    prefix: 'dell-'
+    prefix: 'mac-'
 
 consistency:
     checks:
