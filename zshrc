@@ -38,6 +38,7 @@ bindkey '^[OB'  down-line-or-beginning-search
 # Prompt and editor
 export PROMPT="%~ $ "
 export EDITOR="vim"
+export GPG_TTY=$(tty)
 
 # Aliases
 _exists() { (( $+commands[$1] )) }
