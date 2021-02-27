@@ -1,0 +1,60 @@
+{
+	"editor.fontFamily": "'Go Mono'",
+	"editor.fontSize": 14,
+	"go.useLanguageServer": true,
+	"workbench.activityBar.visible": false,
+	"workbench.iconTheme": null,
+	"breadcrumbs.enabled": false,
+	"editor.insertSpaces": false,
+	"editor.wordWrapColumn": 80,
+	"[markdown]": {
+		"editor.wordWrap":"bounded",
+		"editor.wrappingStrategy": "advanced"
+	},
+	"[gemini]": {
+		"editor.wordWrap":"bounded",
+		"editor.wrappingStrategy": "advanced"
+	},
+	"editor.rulers": [
+		80, 100, 120
+	],
+	"cSpell.userWords": [
+		"Unmarshal",
+		"Unsets",
+		"adnano",
+		"amqp",
+		"auths",
+		"crnkovic",
+		"gobuffalo",
+		"gommon",
+		"gorm",
+		"leveldb",
+		"middlewares",
+		"packr",
+		"queryparams",
+		"spotify",
+		"sqlite",
+		"streadway",
+		"upsert"
+	],
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"prettier.useTabs": true,
+	"prettier.tabWidth": 4,
+	"javascript.preferences.quoteStyle": "single",
+	"typescript.preferences.quoteStyle": "single",
+	"prettier.packageManager": "yarn",
+	"prettier.printWidth": 100,
+	"prettier.singleQuote": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"files.insertFinalNewline": true
+}
