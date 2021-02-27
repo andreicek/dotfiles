@@ -2,7 +2,7 @@
 source ~/.dotfiles/zinit/zinit.zsh
 bindkey -e
 
-zstyle :compinstall filename '/home/andreicek/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
@@ -60,22 +60,9 @@ alias gap="git add --patch"
 alias gpl="git pull"
 alias gps="git push"
 alias pubkey="cat ~/.ssh/*.pub"
-alias backup="borgmatic --config ~/.dotfiles/borgmatic.yaml -v 1"
 
-alias okdeploy="yarn hydra:ingest --env ACrnkovic --debug && yarn hydra:deploy --env ACrnkovic"
 alias oktest="yarn test"
 alias oktestw="yarn test --watch"
-
-function cdtemp() {
-  local temp=$(mktemp -d)
-  echo "pushd $temp"
-  pushd $temp
-}
-
-# Z command
-if test -e $HOME/.dotfiles/z/z.sh; then
-  source $HOME/.dotfiles/z/z.sh
-fi
 
 # Calculator
 autoload -U zcalc
@@ -93,13 +80,18 @@ zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_
 
 # Extending
 if test -e $HOME/.dotfiles/secret.sh; then
-  source $HOME/.dotfiles/secret.sh
+	source $HOME/.dotfiles/secret.sh
 fi
 
 if test -e $HOME/.dotfiles/functions.sh; then
-  source $HOME/.dotfiles/functions.sh
+	source $HOME/.dotfiles/functions.sh
+fi
+
+# Z command
+if test -e $HOME/.dotfiles/z/z.sh; then
+	source $HOME/.dotfiles/z/z.sh
 fi
 
 # MOTD
-echo "$(whoami)@$HOST on $TTY; $(date)"
 cowsay -f tux $(fortune grateful-dead)
+echo "$(whoami)@$HOST on $TTY; $(date)"
