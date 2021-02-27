@@ -3,4 +3,4 @@
 	url = https://github.com/zdharma/zinit.git
 [submodule "z"]
 	path = z
-	url = git@github.com:rupa/z.git
+	url = https://github.com/rupa/z.git
