@@ -56,5 +56,6 @@
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"files.insertFinalNewline": true
+	"files.insertFinalNewline": true,
+	"angular.experimental-ivy": true
 }

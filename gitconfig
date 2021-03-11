@@ -5,7 +5,7 @@
 [core]
 	editor = vim
 	ignorecase = false
-	excludesFile = ~/.gitignore
+	excludesfile = /Users/andreicek/.gitignore
 [push]
 	default = current
 [color]
@@ -16,3 +16,10 @@
 	wc = "!f() { git diff \"$1^\" \"$1\"; }; f"
 [commit]
 	gpgsign = true
+	template = /Users/andreicek/.stCommitMsg
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
