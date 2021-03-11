@@ -91,7 +91,3 @@ fi
 if test -e $HOME/.dotfiles/z/z.sh; then
 	source $HOME/.dotfiles/z/z.sh
 fi
-
-# MOTD
-cowsay -f tux $(fortune grateful-dead)
-echo "$(whoami)@$HOST on $TTY; $(date)"
