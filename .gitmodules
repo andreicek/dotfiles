@@ -6,4 +6,4 @@
 	url = https://github.com/rupa/z.git
 [submodule "tmux-resurrect"]
 	path = tmux-resurrect
-	url = git@github.com:tmux-plugins/tmux-resurrect.git
+	url = https://github.com/tmux-plugins/tmux-resurrect.git
