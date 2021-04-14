@@ -20,6 +20,7 @@
 	],
 	"cSpell.userWords": [
 		"Lovro",
+		"OPENID",
 		"Unmarshal",
 		"Unsets",
 		"adnano",
@@ -33,6 +34,7 @@
 		"gommon",
 		"gorm",
 		"isdismissed",
+		"jwks",
 		"leveldb",
 		"middlewares",
 		"mixins",
@@ -66,5 +68,10 @@
 	},
 	"files.insertFinalNewline": true,
 	"angular.experimental-ivy": true,
-	"typescript.preferences.importModuleSpecifier": "relative"
+	"typescript.preferences.importModuleSpecifier": "relative",
+	"workbench.startupEditor": "newUntitledFile",
+	"editor.minimap.enabled": false,
+	"terminal.external.osxExec": "iTerm.app",
+	"terminal.integrated.fontSize": 14,
+	"workbench.colorTheme": "Dracula Soft"
 }
