@@ -1,5 +1,5 @@
 {
-	"editor.fontFamily": "'Go Mono'",
+	"editor.fontFamily": "'GoMono Nerd Font'",
 	"editor.fontSize": 14,
 	"go.useLanguageServer": true,
 	"workbench.activityBar.visible": false,
@@ -73,5 +73,11 @@
 	"editor.minimap.enabled": false,
 	"terminal.external.osxExec": "iTerm.app",
 	"terminal.integrated.fontSize": 14,
-	"workbench.colorTheme": "Dracula Soft"
+	"workbench.colorTheme": "GitHub Dark Dimmed",
+	"workbench.editorAssociations": [
+		{
+			"viewType": "jupyter.notebook.ipynb",
+			"filenamePattern": "*.ipynb"
+		}
+	]
 }

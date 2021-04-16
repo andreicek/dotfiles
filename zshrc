@@ -1,4 +1,5 @@
 # My ZSH config
+eval "$(/opt/homebrew/bin/brew shellenv)"
 source ~/.dotfiles/zinit/zinit.zsh
 bindkey -e
 
@@ -8,6 +9,7 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 unsetopt BEEP
 
+FPATH=$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:$FPATH
 autoload -Uz compinit
 compinit
 
@@ -35,18 +37,12 @@ bindkey '^[OA'  up-line-or-beginning-search
 bindkey '^[[B'  down-line-or-beginning-search
 bindkey '^[OB'  down-line-or-beginning-search
 
-# Prompt and editor
-export PROMPT="%~ $ "
-export EDITOR="vim"
-export GPG_TTY=$(tty)
-
 # Aliases
 _exists() { (( $+commands[$1] )) }
 
 _exists exa && alias ls="exa --long --git"
 _exists bat && alias cat="bat"
 _exists rg && alias grep="rg"
-alias cal="cal -m"
 
 alias map="xargs -n1"
 alias ..="cd .."  
@@ -63,6 +59,12 @@ alias pubkey="cat ~/.ssh/*.pub"
 
 alias oktest="yarn test"
 alias oktestw="yarn test --watch"
+
+# Prompt and editor
+export PROMPT="%~ $ "
+export EDITOR="vim"
+export GPG_TTY=$(tty)
+_exists starship && eval "$(starship init zsh)"
 
 # Calculator
 autoload -U zcalc
