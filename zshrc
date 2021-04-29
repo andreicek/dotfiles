@@ -93,3 +93,8 @@ fi
 if test -e $HOME/.dotfiles/z/z.sh; then
 	source $HOME/.dotfiles/z/z.sh
 fi
+
+eval "$(rbenv init -)"
+eval "$(nodenv init -)"
+
+
