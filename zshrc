@@ -59,6 +59,7 @@ alias pubkey="cat ~/.ssh/*.pub"
 
 alias oktest="yarn test"
 alias oktestw="yarn test --watch"
+alias okdeploy="yarn hydra:ingest --env ACrnkovic --debug && yarn hydra:deploy --env ACrnkovic"
 
 # Prompt and editor
 export PROMPT="%~ $ "
@@ -95,6 +96,3 @@ if test -e $HOME/.dotfiles/z/z.sh; then
 fi
 
 eval "$(rbenv init -)"
-eval "$(nodenv init -)"
-
-
