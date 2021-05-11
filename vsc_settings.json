@@ -69,11 +69,11 @@
 	"files.insertFinalNewline": true,
 	"angular.experimental-ivy": true,
 	"typescript.preferences.importModuleSpecifier": "relative",
-	"workbench.startupEditor": "newUntitledFile",
+	"workbench.startupEditor": "none",
 	"editor.minimap.enabled": false,
 	"terminal.external.osxExec": "iTerm.app",
 	"terminal.integrated.fontSize": 14,
-	"workbench.colorTheme": "GitHub Dark Dimmed",
+	"workbench.colorTheme": "Default Light+",
 	"workbench.editorAssociations": [
 		{
 			"viewType": "jupyter.notebook.ipynb",
