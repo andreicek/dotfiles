@@ -1,5 +1,11 @@
 # My ZSH config
-eval "$(/opt/homebrew/bin/brew shellenv)"
+_exists() { (( $+commands[$1] )) }
+
+if _exists brew; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+	FPATH=$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 source ~/.dotfiles/zinit/zinit.zsh
 bindkey -e
 
@@ -9,7 +15,6 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 unsetopt BEEP
 
-FPATH=$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:$FPATH
 autoload -Uz compinit
 compinit
 
@@ -38,8 +43,6 @@ bindkey '^[[B'  down-line-or-beginning-search
 bindkey '^[OB'  down-line-or-beginning-search
 
 # Aliases
-_exists() { (( $+commands[$1] )) }
-
 _exists exa && alias ls="exa --long --git"
 _exists bat && alias cat="bat"
 _exists rg && alias grep="rg"
@@ -95,4 +98,6 @@ if test -e $HOME/.dotfiles/z/z.sh; then
 	source $HOME/.dotfiles/z/z.sh
 fi
 
-eval "$(rbenv init -)"
+if _exists rbenv; then
+	eval "$(rbenv init -)"
+fi
