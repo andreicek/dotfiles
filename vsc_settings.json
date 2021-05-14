@@ -80,5 +80,10 @@
 			"filenamePattern": "*.ipynb"
 		}
 	],
-	"editor.formatOnSave": true
+	"editor.formatOnSave": true,
+	"editor.cursorStyle": "block",
+	"editor.cursorSmoothCaretAnimation": true,
+	"[vue]": {
+		"editor.defaultFormatter": "octref.vetur"
+	}
 }

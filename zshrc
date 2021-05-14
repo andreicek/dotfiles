@@ -1,10 +1,8 @@
 # My ZSH config
 _exists() { (( $+commands[$1] )) }
 
-if _exists brew; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 	FPATH=$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
 
 source ~/.dotfiles/zinit/zinit.zsh
 bindkey -e
