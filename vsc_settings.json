@@ -45,7 +45,8 @@
 		"sqlite",
 		"streadway",
 		"transloco",
-		"upsert"
+		"upsert",
+		"webridge"
 	],
 	"[html]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -73,7 +74,7 @@
 	"editor.minimap.enabled": false,
 	"terminal.external.osxExec": "iTerm.app",
 	"terminal.integrated.fontSize": 14,
-	"workbench.colorTheme": "Default Light+",
+	"workbench.colorTheme": "Dracula Soft",
 	"workbench.editorAssociations": [
 		{
 			"viewType": "jupyter.notebook.ipynb",
@@ -85,5 +86,6 @@
 	"editor.cursorSmoothCaretAnimation": true,
 	"[vue]": {
 		"editor.defaultFormatter": "octref.vetur"
-	}
+	},
+	"redhat.telemetry.enabled": false
 }
