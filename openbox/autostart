@@ -1,0 +1,4 @@
+#/bin/sh
+
+tint2 &
+xwallpaper --zoom ~/wallpaper_waves.jpg &
