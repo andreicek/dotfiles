@@ -43,6 +43,11 @@
 				</startupnotify>
 			</action>
 		</item>
+		<item label="ChessX">
+			<action name="Execute">
+				<execute>chessx</execute>
+			</action>
+		</item>
 		<separator label="System"/>
 		<menu id="openbox-menu"/>
 		<item label="Lock">
