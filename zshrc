@@ -44,8 +44,6 @@ bindkey '^[OB'  down-line-or-beginning-search
 
 # Aliases
 _exists exa && alias ls="exa --long --git"
-_exists bat && alias cat="bat"
-_exists rg && alias grep="rg"
 
 alias map="xargs -n1"
 alias ..="cd .."  
