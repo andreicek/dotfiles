@@ -1,8 +1,10 @@
 # My ZSH config
 _exists() { (( $+commands[$1] )) }
 
-#	eval "$(/opt/homebrew/bin/brew shellenv)"
-#	FPATH=$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:$FPATH
+if test -e "/opt/homebrew/bin/brew"; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+	FPATH=$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
 
 source ~/.dotfiles/zinit/zinit.zsh
 bindkey -e
@@ -66,7 +68,6 @@ alias okdeploy="yarn hydra:ingest --env ACrnkovic --debug && yarn hydra:deploy -
 export PROMPT="%~ $ "
 export EDITOR="vim"
 export GPG_TTY=$(tty)
-_exists starship && eval "$(starship init zsh)"
 
 # Calculator
 autoload -U zcalc
