@@ -40,7 +40,7 @@ bindkey '^[OA'  up-line-or-beginning-search
 bindkey '^[[B'  down-line-or-beginning-search
 bindkey '^[OB'  down-line-or-beginning-search
 
-alias ls="ls -lhG"
+alias ls="ls -lh"
 
 alias map="xargs -n1"
 alias ..="cd .."  
