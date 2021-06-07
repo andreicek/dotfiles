@@ -1,6 +1,4 @@
 # My ZSH config
-_exists() { (( $+commands[$1] )) }
-
 if test -e "/opt/homebrew/bin/brew"; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 	FPATH=$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -80,7 +78,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit ice as"completion"
 zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
 
-# Extending
 if test -e $HOME/.dotfiles/secret.sh; then
 	source $HOME/.dotfiles/secret.sh
 fi
@@ -89,11 +86,6 @@ if test -e $HOME/.dotfiles/functions.sh; then
 	source $HOME/.dotfiles/functions.sh
 fi
 
-# Z command
 if test -e $HOME/.dotfiles/z/z.sh; then
 	source $HOME/.dotfiles/z/z.sh
-fi
-
-if _exists rbenv; then
-	eval "$(rbenv init -)"
 fi
