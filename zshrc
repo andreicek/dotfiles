@@ -42,8 +42,7 @@ bindkey '^[OA'  up-line-or-beginning-search
 bindkey '^[[B'  down-line-or-beginning-search
 bindkey '^[OB'  down-line-or-beginning-search
 
-# Aliases
-_exists exa && alias ls="exa --long --git"
+alias ls="ls -lhG"
 
 alias map="xargs -n1"
 alias ..="cd .."  
