@@ -40,7 +40,11 @@ bindkey '^[OA'  up-line-or-beginning-search
 bindkey '^[[B'  down-line-or-beginning-search
 bindkey '^[OB'  down-line-or-beginning-search
 
-alias ls="ls -lh"
+if type "colorls" > /dev/null; then
+	alias ls="colorls -lhG"
+else
+	alias ls="ls -lhG"
+fi
 
 alias map="xargs -n1"
 alias ..="cd .."  
