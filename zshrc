@@ -64,7 +64,11 @@ alias oktestw="yarn test --watch"
 alias okdeploy="yarn hydra:ingest --env ACrnkovic --debug && yarn hydra:deploy --env ACrnkovic"
 
 # Prompt and editor
-export PROMPT="%~ $ "
+if [ -n "$SSH_TTY" ]; then
+	export PROMPT="[$HOST] "
+fi
+
+export PROMPT=$PROMPT"%~ $ "
 export EDITOR="vim"
 export GPG_TTY=$(tty)
 
