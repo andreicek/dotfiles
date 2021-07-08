@@ -40,6 +40,7 @@
 		"mixins",
 		"ngneat",
 		"packr",
+		"permabanned",
 		"queryparams",
 		"spotify",
 		"sqlite",
@@ -75,16 +76,14 @@
 	"terminal.external.osxExec": "iTerm.app",
 	"terminal.integrated.fontSize": 14,
 	"workbench.colorTheme": "Dracula Soft",
-	"workbench.editorAssociations": [
-		{
-			"viewType": "jupyter.notebook.ipynb",
-			"filenamePattern": "*.ipynb"
-		}
-	],
+	"workbench.editorAssociations": {
+		"*.ipynb": "jupyter.notebook.ipynb"
+	},
 	"editor.formatOnSave": true,
 	"editor.cursorStyle": "block",
 	"[vue]": {
 		"editor.defaultFormatter": "octref.vetur"
 	},
-	"redhat.telemetry.enabled": false
+	"redhat.telemetry.enabled": false,
+	"python.formatting.autopep8Path": ""
 }
