@@ -19,6 +19,7 @@
 		80, 100, 120
 	],
 	"cSpell.userWords": [
+		"IPKCE",
 		"Lovro",
 		"OPENID",
 		"Unmarshal",
@@ -40,12 +41,15 @@
 		"mixins",
 		"ngneat",
 		"packr",
+		"permaban",
 		"permabanned",
+		"pkce",
 		"queryparams",
 		"spotify",
 		"sqlite",
 		"streadway",
 		"transloco",
+		"unban",
 		"upsert",
 		"webridge"
 	],
