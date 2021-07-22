@@ -1,5 +1,5 @@
 " Setup Pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+source ~/.dotfiles/vim/pathogen/autoload/pathogen.vim
 
 " Keyboard mods
 let g:ctrlp_map = '<c-p>'
@@ -27,7 +27,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 set noswapfile
 
 " Start Pathogen
-execute pathogen#infect()
+execute pathogen#infect('bundle/{}', '~/.dotfiles/vim/{}')
 call pathogen#helptags()
 
 " Colorscheme

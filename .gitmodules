@@ -7,15 +7,18 @@
 [submodule "tmux-resurrect"]
 	path = tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
-[submodule "vim/bundle/vim-pathogen"]
-	path = vim/bundle/vim-pathogen
+[submodule "vim/vim-dracula"]
+	path = vim/vim-dracula
+	url = https://github.com/dracula/vim.git
+[submodule "vim/pathogen"]
+	path = vim/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
+[submodule "vim/ctrlp"]
+	path = vim/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
+[submodule "vim/nerdtree"]
+	path = vim/nerdtree
 	url = https://github.com/preservim/nerdtree.git
-[submodule "vim/bundle/vim-dracula"]
-	path = vim/bundle/vim-dracula
+[submodule "vim/dracula"]
+	path = vim/dracula
 	url = https://github.com/dracula/vim.git
