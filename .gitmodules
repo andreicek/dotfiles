@@ -19,6 +19,6 @@
 [submodule "vim/nerdtree"]
 	path = vim/nerdtree
 	url = https://github.com/preservim/nerdtree.git
-[submodule "vim/dracula"]
-	path = vim/dracula
-	url = https://github.com/dracula/vim.git
+[submodule "vim/gitgutter"]
+	path = vim/gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git

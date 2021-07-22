@@ -39,7 +39,6 @@ execute pathogen#infect('bundle/{}', '~/.dotfiles/vim/{}')
 call pathogen#helptags()
 
 " Colorscheme
-colorscheme dracula
 set noruler
 set noshowmode
 set hidden
