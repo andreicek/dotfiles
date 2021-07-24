@@ -1,4 +1,4 @@
 #/bin/sh
 
 tint2 &
-xwallpaper --zoom ~/Pictures/wallpaper_think.jpg &
+xwallpaper --zoom ~/Pictures/wallpaper.png &
