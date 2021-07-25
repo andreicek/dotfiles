@@ -1,3 +1,4 @@
 #!/bin/sh
 
-exec start-lumina-desktop
+xrdb -merge ~/.Xresources &
+exec openbox-session
