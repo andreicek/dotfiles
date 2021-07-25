@@ -19,3 +19,6 @@
 [submodule "vim/gitgutter"]
 	path = vim/gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "tmux/resurrect"]
+	path = tmux/resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect.git
