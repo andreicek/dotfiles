@@ -16,5 +16,7 @@ function cdtemp() {
 }
 
 function backup() {
-	borgmatic --config ~/.dotfiles/borgmatic.yaml -v 1
+  tarsnap -c -v -f "$(uname -n)-$(date +%Y-%m-%d_%H-%M-%S)" \
+    ~/Documents ~/.ssh ~/.thunderbird ~/.dotfiles \
+    ~/Workspace ~/Pictures ~/todo*
 }
