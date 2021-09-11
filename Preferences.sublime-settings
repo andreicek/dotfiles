@@ -1,0 +1,14 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+	"font_face": "Go Mono",
+	"font_size": 15,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"translate_tabs_to_spaces": true,
+	"ensure_newline_at_eof_on_save": true,
+	"folder_exclude_patterns": ["node_modules"],
+	"theme": "Gravity.sublime-theme",
+}
