@@ -32,3 +32,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[gpg]
+	program = /opt/homebrew/bin/gpg

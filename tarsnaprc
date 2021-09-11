@@ -1,6 +1,0 @@
-cachedir /home/andreicek/.cache/tarsnap-cache
-keyfile /home/andreicek/.tarsnap.key
-nodump
-print-stats
-checkpoint-bytes 1G
-humanize-numbers
