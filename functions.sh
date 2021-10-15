@@ -14,9 +14,3 @@ function cdtemp() {
 	echo "pushd $temp"
 	pushd $temp
 }
-
-function backup() {
-  tarsnap -c -v -f "$(uname -n)-$(date +%Y-%m-%d_%H-%M-%S)" \
-    ~/Documents ~/.ssh ~/.thunderbird ~/.dotfiles \
-    ~/Workspace ~/Pictures ~/todo*
-}
