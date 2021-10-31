@@ -1,53 +1,27 @@
-# My ZSH config
-if test -e "/opt/homebrew/bin/brew"; then
-	eval "$(/opt/homebrew/bin/brew shellenv)"
-	FPATH=$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-source ~/.dotfiles/zinit/zinit.zsh
-bindkey -e
+export ZSH="/Users/andreicek/.oh-my-zsh"
 
-zstyle :compinstall filename "$HOME/.zshrc"
+ZSH_THEME="sammy"
 
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-unsetopt BEEP
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
 
-autoload -Uz compinit
-compinit
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-# History
-setopt append_history
-setopt inc_append_history
-setopt extended_history 
-setopt hist_no_store
-setopt no_bang_hist
-setopt hist_ignore_dups
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
-HISTFILE=~/.histfile
-HISTSIZE=11000
-SAVEHIST=10000
-HISTORY_IGNORE='(clear|cd ..|cd -)'
+plugins=(brew git z python virtualenvwrapper zsh-syntax-highlighting)
 
-autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+source $ZSH/oh-my-zsh.sh
 
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
+# User configuration
+export DOTFILES="/Users/andreicek/.dotfiles"
+source $DOTFILES/secret.sh
 
-bindkey '^[[A'  up-line-or-beginning-search
-bindkey '^[OA'  up-line-or-beginning-search
-bindkey '^[[B'  down-line-or-beginning-search
-bindkey '^[OB'  down-line-or-beginning-search
+export EDITOR='vim'
+export GPG_TTY=$(tty)
 
-if type "colorls" > /dev/null; then
-	alias ls="colorls -lhG"
-else
-	alias ls="ls -lhG"
-fi
-
-alias map="xargs -n1"
-alias ..="cd .."  
 alias gco="git checkout"
 alias gst="git status -sb"
 alias gc="git commit"
@@ -58,42 +32,4 @@ alias gap="git add --patch"
 alias gpl="git pull"
 alias gps="git push"
 alias pubkey="cat ~/.ssh/*.pub"
-
-alias oktest="yarn test"
-alias oktestw="yarn test --watch"
-alias okdeploy="yarn hydra:ingest --env ACrnkovic --debug && yarn hydra:deploy --env ACrnkovic"
-
-# Prompt and editor
-if [ -n "$SSH_TTY" ]; then
-	export PROMPT="[$HOST] %~%% "
-else
-	export PROMPT="%~%% "
-fi
-export EDITOR="vim"
-export GPG_TTY=$(tty)
-
-# Calculator
-autoload -U zcalc
-alias zc >/dev/null && unalias zc
-zc() { [[ -n "$@" ]] && zcalc -e $@ || zcalc }
-alias zc='noglob zc'
-
-# Plugins
-zinit light zsh-users/zsh-completions
-zinit light trystan2k/zsh-tab-title
-zinit light zsh-users/zsh-syntax-highlighting
-
-zinit ice as"completion"
-zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
-
-if test -e $HOME/.dotfiles/secret.sh; then
-	source $HOME/.dotfiles/secret.sh
-fi
-
-if test -e $HOME/.dotfiles/functions.sh; then
-	source $HOME/.dotfiles/functions.sh
-fi
-
-if test -e $HOME/.dotfiles/z/z.sh; then
-	source $HOME/.dotfiles/z/z.sh
-fi
+eval $(/opt/homebrew/bin/brew shellenv)
