@@ -1,13 +1,21 @@
 {
- 	"font_face": "Go Mono",
- 	"font_size": 15,
- 	"ignored_packages":
- 	[
- 		"Vintage",
-        ],
- 	"translate_tabs_to_spaces": true,
- 	"ensure_newline_at_eof_on_save": true,
- 	"folder_exclude_patterns": ["node_modules"],
- 	"theme": "Gravity.sublime-theme",
-        "color_scheme": "Packages/User/Dracula (Flake8Lint).tmTheme",
+  "font_face": "Go Mono",
+  "font_size": 15,
+  "ignored_packages": [
+    "Vintage",
+  ],
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "ensure_newline_at_eof_on_save": true,
+  "draw_white_space": [
+    "selection",
+    "trailing",
+    "isolated"
+  ],
+  "trim_trailing_white_space_on_save": "all",
+  "folder_exclude_patterns": [
+    "node_modules"
+  ],
+  "theme": "Gravity.sublime-theme",
+  "color_scheme": "Packages/User/Dracula (Flake8Lint).tmTheme",
 }

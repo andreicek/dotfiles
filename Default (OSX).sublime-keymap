@@ -1,0 +1,16 @@
+[
+  // swap the keybindings for paste and paste_and_indent
+  { "keys": ["super+v"], "command": "paste_and_indent" },
+  { "keys": ["super+shift+v"], "command": "paste" },
+  { "keys": ["super+."], "command": "goto_definition" },
+  {
+    "button": "button1",
+    "count": 1,
+    "modifiers": ["ctrl"],
+    "press_command": "drag_select",
+    "command": "goto_definition"
+  },
+  { "keys": ["ctrl+g"], "command": "find_all_under" },
+  { "keys": ["super+v"], "command": "paste_and_indent" }
+]
+
