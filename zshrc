@@ -14,7 +14,8 @@ plugins=(brew z asdf zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-test -f .dotfiles/secret.sh && source .dotfiles/secret.sh
+test -f .dotfiles/secret.sh && source $DOTFILES/secret.sh
+source $DOTFILES/functions.sh
 
 export EDITOR='vim'
 export GPG_TTY=$(tty)
