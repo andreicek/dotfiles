@@ -1,7 +1,5 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 export ZSH="$HOME/.oh-my-zsh"
+export DOTFILES="$HOME/.dotfiles"
 
 ZSH_THEME="sammy"
 
@@ -11,13 +9,12 @@ ZSH_THEME="sammy"
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
-plugins=(brew z python virtualenvwrapper zsh-syntax-highlighting)
+plugins=(brew z asdf zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export DOTFILES="$HOME/.dotfiles"
-source $DOTFILES/secret.sh
+test -f .dotfiles/secret.sh && source .dotfiles/secret.sh
 
 export EDITOR='vim'
 export GPG_TTY=$(tty)
