@@ -14,3 +14,8 @@ function cdtemp() {
 	echo "pushd $temp"
 	pushd $temp
 }
+
+function sync() {
+    git push --mirror syn
+}
+
