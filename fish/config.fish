@@ -1,3 +1,4 @@
+set -U fish_user_paths /opt/homebrew/bin/ $fish_user_paths
 set -gx GPG_TTY (tty)
 
 if status is-interactive
