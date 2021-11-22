@@ -1,0 +1,19 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Dracula Color Scheme",
+		"ElixirDocs",
+		"ElixirFormatter",
+		"ElixirSyntax",
+		"fish",
+		"LSP",
+		"LSP-elixir",
+		"LSP-json",
+		"Package Control",
+		"Theme - Gravity",
+	],
+}
