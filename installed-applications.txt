@@ -23,7 +23,6 @@ kitty
 paw
 signal
 slack
-spectacle
 spotify
 sublime-text
 sublime-merge
@@ -31,3 +30,4 @@ tableplus
 whatsapp
 yubico-yubikey-manager
 zoom
+rectangle
