@@ -31,3 +31,4 @@ whatsapp
 yubico-yubikey-manager
 zoom
 rectangle
+vim
