@@ -3,8 +3,6 @@ set -U fish_user_paths ~/.emacs.d/bin $fish_user_paths
 set -gx GPG_TTY (tty)
 set -gx EDITOR "vim"
 
-source ~/.asdf/asdf.fish
-
 if status is-interactive
     starship init fish | source
 
@@ -21,16 +19,4 @@ if status is-interactive
     alias cat="bat"
 end
 
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
+source (brew --prefix asdf)/libexec/asdf.fish
