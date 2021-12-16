@@ -1,0 +1,17 @@
+{
+  "editor.fontFamily": "IBM Plex Mono",
+  "editor.fontSize": 15,
+  "workbench.colorTheme": "Dracula",
+  "workbench.activityBar.visible": false,
+  "editor.minimap.enabled": false,
+  "prettier.enable": true,
+  "editor.formatOnSave": true,
+  "breadcrumbs.enabled": false,
+  "workbench.iconTheme": null,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
