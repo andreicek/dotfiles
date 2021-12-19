@@ -16,7 +16,8 @@ if status is-interactive
     alias gpl="git pull"
     alias gps="git push"
 
-    alias cat="bat"
+    alias cat="batcat"
 end
 
-source (brew --prefix asdf)/libexec/asdf.fish
+# source (brew --prefix asdf)/libexec/asdf.fish
+source ~/.asdf/asdf.fish
