@@ -17,14 +17,12 @@ starship
 tmux
 bitwarden
 caffeine
-intellij-idea
 keybase
 kitty
 paw
 signal
 slack
 spotify
-sublime-text
 sublime-merge
 tableplus
 whatsapp
@@ -32,3 +30,5 @@ yubico-yubikey-manager
 zoom
 rectangle
 vim
+lunar
+vscodium
