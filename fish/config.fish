@@ -2,6 +2,7 @@ set -U fish_user_paths /opt/homebrew/bin/ $fish_user_paths
 set -U fish_user_paths ~/.emacs.d/bin $fish_user_paths
 set -gx GPG_TTY (tty)
 set -gx EDITOR "vim"
+set -gx  ERL_AFLAGS "-kernel shell_history enabled"
 
 alias intel_brew="arch -x86_64 /usr/local/homebrew/bin/brew"
 
