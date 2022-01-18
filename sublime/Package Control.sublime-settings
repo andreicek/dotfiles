@@ -1,0 +1,22 @@
+{
+	"bootstrapped": true,
+	"installed_packages":
+	[
+		"Colored Comments",
+		"Dracula Color Scheme",
+		"ElixirSyntax",
+		"LSP",
+		"LSP-elixir",
+		"LSP-gopls",
+		"LSP-json",
+		"Package Control",
+		"Pretty JSON",
+		"Tailwind CSS",
+		"Tailwind CSS Docs",
+		"TailwindCSSAutocomplete",
+		"Theme - One Dark",
+	],
+	"in_process_packages":
+	[
+	],
+}

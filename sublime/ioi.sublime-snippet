@@ -1,0 +1,8 @@
+<snippet>
+	<content>|> IO.inspect(label: "## ${1:label}", pretty: true, limit: :infinity)</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ioi</tabTrigger>
+	<description>|> IO.inspect(pretty)</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

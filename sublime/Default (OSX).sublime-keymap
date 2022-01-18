@@ -1,0 +1,17 @@
+[
+	{
+		"keys": [
+			"super+\\"
+		],
+		"command": "toggle_side_bar"
+	},
+	{
+		"keys": [
+			"super+shift+\\"
+		],
+		"command": "reveal_in_side_bar"
+	},
+	{ "keys": ["super+b"], "command": "goto_definition" },
+	{ "keys": ["super+v"], "command": "paste_and_indent" },
+	{ "keys": ["super+shift+v"], "command": "paste" }
+]
