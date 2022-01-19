@@ -16,4 +16,5 @@ if status is-interactive
   alias gl="git log --color --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'"
   alias gps="git push"
   alias cat="bat"
+  alias print="lpr -o sides=two-sided-long-edge"
 end
