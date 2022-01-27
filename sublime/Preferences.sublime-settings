@@ -1,6 +1,6 @@
 {
-	"ignored_packages": ["Vintage",
-	],
+	"ignored_packages": [],
+	"vintage_start_in_command_mode": true,
 	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
 	"theme": "One Dark.sublime-theme",
 	"font_size": 14,
@@ -17,4 +17,10 @@
 	"rulers": [
 		80
 	],
+	"folder_exclude_patterns": [
+		".git",
+		"_build",
+		"deps",
+		".elixir_ls"
+	]
 }
