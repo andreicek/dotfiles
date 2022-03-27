@@ -1,7 +1,6 @@
 [user]
 	email = andreicek@0x7f.dev
 	name = Andrei Zvonimir Crnkovic
-	signingkey = 95842DDB8603EBD879CB90C5D0EA677FD93A75BC
 [core]
 	editor = vim
 	ignorecase = false
@@ -15,8 +14,6 @@
 	track = branch master --set-upstream-to origin/master
 	pls = push --force-with-lease
 	wc = "!f() { git diff \"$1^\" \"$1\"; }; f"
-[commit]
-	gpgsign = true
 [interactive]
 	diffFilter = diff-so-fancy --patch
 [color "diff-highlight"]

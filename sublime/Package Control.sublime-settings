@@ -6,9 +6,12 @@
 		"Dracula Color Scheme",
 		"ElixirSyntax",
 		"fish",
+		"JsFormat",
+		"JsPrettier",
 		"LSP",
 		"LSP-elixir",
 		"LSP-gopls",
+		"LSP-html",
 		"LSP-json",
 		"Package Control",
 		"Path Tools",
@@ -16,7 +19,9 @@
 		"Tailwind CSS",
 		"Tailwind CSS Docs",
 		"TailwindCSSAutocomplete",
+		"Terraform",
 		"Theme - One Dark",
+		"TypeScript",
 	],
 	"in_process_packages":
 	[

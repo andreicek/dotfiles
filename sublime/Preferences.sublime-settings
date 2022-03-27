@@ -1,10 +1,11 @@
 {
-	"ignored_packages": [],
+	"ignored_packages": [
+	],
 	"vintage_start_in_command_mode": true,
 	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
 	"theme": "One Dark.sublime-theme",
-	"font_size": 14,
-	"font_face": "Fira Code",
+	"font_size": 13,
+	"font_face": "Hack Regular",
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
 	"draw_white_space": [
@@ -22,5 +23,7 @@
 		"_build",
 		"deps",
 		".elixir_ls"
-	]
+	],
+	"scroll_past_end": true,
+	"ensure_newline_at_eof_on_save": true,
 }
