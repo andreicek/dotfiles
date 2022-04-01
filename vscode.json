@@ -22,5 +22,6 @@
   },
   "customizeUI.moveStatusbar": true,
   "telemetry.telemetryLevel": "off",
-  "workbench.editor.untitled.hint": "hidden"
+  "workbench.editor.untitled.hint": "hidden",
+  "window.menuBarVisibility": "toggle"
 }
