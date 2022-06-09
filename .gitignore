@@ -3,3 +3,6 @@ fish/completions
 fish/conf.d
 fish/functions
 fish/fish_variables
+vs-codium/History
+vs-codium/globalStorage
+vs-codium/workspaceStorage

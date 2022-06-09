@@ -1,6 +1,7 @@
 set backspace=indent,eol,start
 set omnifunc=syntaxcomplete#Complete
 syntax on
+
 set smartindent
 set shiftwidth=2
 set tabstop=2
@@ -16,4 +17,3 @@ set noswapfile
 set noruler
 set noshowmode
 set hidden
-

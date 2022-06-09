@@ -4,8 +4,10 @@ set -gx ERL_AFLAGS "-kernel shell_history enabled"
 
 if test -d /opt/homebrew/bin
   set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
-  source (brew --prefix asdf)/libexec/asdf.fish
+  source /opt/homebrew/opt/asdf/libexec/asdf.fish
 end
+
+fish_add_path -g -a $HOME/.elixir-ls
 
 if status is-interactive
   alias vim="nvim"

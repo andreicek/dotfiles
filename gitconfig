@@ -1,34 +1,31 @@
 [user]
-	email = andreicek@0x7f.dev
-	name = Andrei Zvonimir Crnkovic
+  email = andreicek@0x7f.dev
+  name = Andrei Zvonimir Crnkovic
   signingkey = 95842DDB8603EBD879CB90C5D0EA677FD93A75BC
 [core]
-	editor = vim
-	ignorecase = false
-	excludesfile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  editor = vim
+  ignorecase = false
+  excludesfile = ~/.gitignore
+  pager = delta
 [push]
-	default = current
+  default = current
 [color]
-	ui = true
+  ui = true
 [alias]
-	track = branch master --set-upstream-to origin/master
-	pls = push --force-with-lease
-	wc = "!f() { git diff \"$1^\" \"$1\"; }; f"
+  track = branch master --set-upstream-to origin/master
+  pls = push --force-with-lease
+  wc = "!f() { git diff \"$1^\" \"$1\"; }; f"
 [commit]
   gpgsign = true  
 [interactive]
-	diffFilter = diff-so-fancy --patch
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-[color "diff"]
-	meta = 11
-	frag = magenta bold
-	func = 146 bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+[merge]
+  conflictstyle = diff3
+[diff]
+  colorMoved = default
+[delta]
+  line-numbers = true
+  features = unobtrusive-line-numbers decorations
+  light = true

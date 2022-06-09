@@ -1,4 +1,5 @@
-erlang 24.3.3
-elixir 1.13.3-otp-24
+erlang 24.3.4
+elixir 1.13.4-otp-24
 nodejs 14.19.1
 python 3.9.10
+neovim 0.7.0
