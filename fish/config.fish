@@ -32,4 +32,5 @@ if status is-interactive
   end
 
   alias print="lpr -o sides=two-sided-long-edge"
+  alias icat="kitty +kitten icat"
 end
