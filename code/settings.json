@@ -1,0 +1,41 @@
+{
+  "workbench.activityBar.visible": false,
+  "workbench.statusBar.visible": false,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "editor.renderWhitespace": "none",
+  "workbench.layoutControl.enabled": false,
+  "workbench.colorTheme": "Solarized Light",
+  "editor.fontFamily": "MonoLisaCustom-Regular",
+  "editor.fontSize": 13,
+  "editor.fontLigatures": true,
+  "workbench.iconTheme": null,
+  "elixirLS.suggestSpecs": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.guides.indentation": false,
+  "telemetry.telemetryLevel": "off",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[elixir]": {
+    "editor.defaultFormatter": "animus-coop.vscode-elixir-mix-formatter"
+  },
+  "files.associations": {
+    "*.heex": "html-eex"
+  },
+  "[html-eex]": {
+    "editor.defaultFormatter": "animus-coop.vscode-elixir-mix-formatter"
+  }
+}
