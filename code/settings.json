@@ -6,7 +6,7 @@
   "editor.renderWhitespace": "none",
   "workbench.layoutControl.enabled": false,
   "workbench.colorTheme": "Solarized Light",
-  "editor.fontFamily": "MonoLisaCustom-Regular",
+  "editor.fontFamily": "MonoLisa Custom",
   "editor.fontSize": 13,
   "editor.fontLigatures": true,
   "workbench.iconTheme": null,
