@@ -37,5 +37,11 @@
   },
   "[html-eex]": {
     "editor.defaultFormatter": "animus-coop.vscode-elixir-mix-formatter"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
