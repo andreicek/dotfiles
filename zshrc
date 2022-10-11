@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="lambda"
+ZSH_THEME="andrei-lambda-zsh-theme/andrei-lambda"
 
 plugins=(brew z asdf zsh-fzf-history-search zsh-syntax-highlighting zsh-autosuggestions)
 
@@ -21,5 +21,7 @@ alias gps="git push"
 alias vim="nvim"
 alias cat="bat"
 alias printer="lpr -o sides=two-sided-long-edge"
+
+alias rm="trash"
 
 source $ZSH/oh-my-zsh.sh
