@@ -61,5 +61,7 @@
     "upsert"
   ],
   "editor.stickyScroll.enabled": true,
-  "workbench.statusBar.visible": false
+  "workbench.statusBar.visible": false,
+  "workbench.startupEditor": "none",
+  "problems.decorations.enabled": false
 }
