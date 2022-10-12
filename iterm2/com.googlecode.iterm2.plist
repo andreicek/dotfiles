@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>ApplePressAndHoldEnabled</key>
@@ -16,6 +18,8 @@
 	<integer>10</integer>
 	<key>BadgeTopMargin</key>
 	<integer>10</integer>
+	<key>CopyLastNewline</key>
+	<true/>
 	<key>Default Bookmark Guid</key>
 	<string>F511431D-AE9C-4452-86A5-948E585EF60B</string>
 	<key>HapticFeedbackForEsc</key>
@@ -852,6 +856,10 @@
 			<string>/Users/andreicek</string>
 		</dict>
 	</array>
+	<key>OpenArrangementAtStartup</key>
+	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<false/>
 	<key>PreferSpeedToFullLigatureSupport</key>
 	<true/>
 	<key>SoundForEsc</key>
