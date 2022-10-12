@@ -17,11 +17,12 @@ alias gaa="git add -A"
 alias gap="git add --patch"
 alias gpl="git pull"
 alias gps="git push"
+alias gl="git log --oneline"
+alias gll="git log --oneline | fzf --preview \"awk '{ print $1 }' <<< {} | xargs git wc\" | awk '{print $1 }'"
 
 alias vim="nvim"
 alias cat="bat"
 alias printer="lpr -o sides=two-sided-long-edge"
-
 alias rm="trash"
 
 source $ZSH/oh-my-zsh.sh

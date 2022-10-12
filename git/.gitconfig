@@ -15,6 +15,9 @@
   track = branch master --set-upstream-to origin/master
   pls = push --force-with-lease
   wc = "!f() { git diff \"$1^\" \"$1\"; }; f"
+  fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+[rebase]
+  autosquash = true
 [commit]
   gpgsign = true  
 [interactive]
