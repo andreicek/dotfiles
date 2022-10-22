@@ -1,5 +1,4 @@
 {
-  "workbench.activityBar.visible": false,
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
   "editor.renderWhitespace": "none",
@@ -28,9 +27,6 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[elixir]": {
-    "editor.defaultFormatter": "animus-coop.vscode-elixir-mix-formatter"
-  },
   "files.associations": {
     "*.heex": "html-eex"
   },
@@ -43,7 +39,6 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "redhat.telemetry.enabled": false,
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -52,8 +47,10 @@
     "Contractbook",
     "defenum",
     "hubspot",
+    "ilike",
     "nonnulls",
     "Nordigen",
+    "pkey",
     "prosemirror",
     "subquery",
     "tast",
@@ -63,5 +60,13 @@
   "editor.stickyScroll.enabled": true,
   "workbench.statusBar.visible": false,
   "workbench.startupEditor": "none",
-  "problems.decorations.enabled": false
+  "problems.decorations.enabled": false,
+  "[elixir]": {
+    "editor.defaultFormatter": "animus-coop.vscode-elixir-mix-formatter"
+  },
+  "redhat.telemetry.enabled": false,
+  "xml.server.binary.trustedHashes": [
+    "b6349b030e9a0ad2f61c06c30c5186c5b8eddae5ea18d3ee7b45d2e665365e37"
+  ],
+  "workbench.activityBar.visible": false
 }

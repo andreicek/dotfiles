@@ -10,5 +10,9 @@
   "dbg": {
     "prefix": "dbg",
     "body": ["|> dbg()"]
+  },
+  "skip test": {
+    "prefix": "skip",
+    "body": ["@tag :skip"]
   }
 }
