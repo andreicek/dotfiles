@@ -44,8 +44,11 @@
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "cSpell.userWords": [
+    "Appsignal",
     "Contractbook",
+    "Cyclomatic",
     "defenum",
+    "Floki",
     "hubspot",
     "ilike",
     "nonnulls",
@@ -64,9 +67,13 @@
   "[elixir]": {
     "editor.defaultFormatter": "animus-coop.vscode-elixir-mix-formatter"
   },
-  "redhat.telemetry.enabled": false,
-  "xml.server.binary.trustedHashes": [
-    "b6349b030e9a0ad2f61c06c30c5186c5b8eddae5ea18d3ee7b45d2e665365e37"
-  ],
-  "workbench.activityBar.visible": false
+  "workbench.activityBar.visible": false,
+  "customizeUI.activityBarHideSettings": true,
+  "customizeUI.titleBar": "inline",
+  "window.titleBarStyle": "native",
+  "customizeUI.stylesheet": {
+    ".sidebar .title-label": "display: none !important",
+    ".sidebar .title-actions": "display: none !important",
+    ".editor-actions li": "display: none !important"
+  }
 }

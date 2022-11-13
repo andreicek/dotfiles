@@ -4,7 +4,7 @@ ZSH_THEME="andrei-lambda-zsh-theme/andrei-lambda"
 
 plugins=(z asdf zsh-fzf-history-search zsh-syntax-highlighting zsh-autosuggestions)
 
-export EDITOR="nvim"
+export EDITOR="micro"
 export GPG_TTY=$(tty)
 export ERL_AFLAGS="-kernel shell_history enabled"
 
