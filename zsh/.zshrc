@@ -24,6 +24,7 @@ alias vim="nvim"
 alias cat="bat"
 alias printer="lpr -o sides=two-sided-long-edge"
 alias rm="trash"
+alias e="$EDITOR"
 
 source $ZSH/oh-my-zsh.sh
 
