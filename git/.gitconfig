@@ -8,13 +8,14 @@
   pager = delta
 [push]
   default = current
-	autoSetupRemote = true
+  autoSetupRemote = true
 [color]
   ui = true
 [alias]
   track = branch master --set-upstream-to origin/master
   pls = push --force-with-lease
   wc = "!f() { git diff \"$1^\" \"$1\"; }; f"
+  wcf = diff-tree --no-commit-id --name-only -r
   fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
 [rebase]
   autosquash = true

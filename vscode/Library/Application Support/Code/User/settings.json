@@ -3,7 +3,8 @@
   "breadcrumbs.enabled": false,
   "editor.renderWhitespace": "none",
   "workbench.layoutControl.enabled": false,
-  "workbench.colorTheme": "Solarized Light",
+  "workbench.preferredLightColorTheme": "Solarized Light",
+  "workbench.preferredDarkColorTheme": "Solarized Dark",
   "editor.fontFamily": "MonoLisa Custom",
   "editor.fontSize": 13,
   "editor.fontLigatures": true,
@@ -45,6 +46,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "cSpell.userWords": [
     "Appsignal",
+    "automations",
     "Contractbook",
     "Cyclomatic",
     "defenum",
@@ -57,6 +59,7 @@
     "prosemirror",
     "subquery",
     "tast",
+    "Tentacat",
     "trunc",
     "upsert"
   ],
@@ -75,5 +78,7 @@
     ".sidebar .title-label": "display: none !important",
     ".sidebar .title-actions": "display: none !important",
     ".editor-actions li": "display: none !important"
-  }
+  },
+  "window.autoDetectColorScheme": true,
+  "workbench.colorTheme": "Solarized Dark"
 }
