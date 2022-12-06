@@ -32,7 +32,7 @@
 [delta]
   line-numbers = true
   features = unobtrusive-line-numbers decorations
-  light = true
+  light = false
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true

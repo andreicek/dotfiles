@@ -2,3 +2,4 @@ elixir 1.14.1-otp-25
 erlang 25.1.1
 nodejs 14.20.1
 python 3.11.0
+neovim 0.8.1

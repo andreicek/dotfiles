@@ -2,17 +2,5 @@
   "IO.inspect": {
     "prefix": "ioi",
     "body": ["|> IO.inspect(label: \"## $1\", pretty: true, limit: :infinity)"]
-  },
-  "pry": {
-    "prefix": "pry",
-    "body": ["require IEx; IEx.pry"]
-  },
-  "dbg": {
-    "prefix": "dbg",
-    "body": ["|> dbg()"]
-  },
-  "skip test": {
-    "prefix": "skip",
-    "body": ["@tag :skip"]
   }
 }
