@@ -3,10 +3,8 @@ fish/completions
 fish/conf.d
 fish/functions
 fish/fish_variables
-vs-codium/History
-vs-codium/globalStorage
-vs-codium/workspaceStorageglobalStorage/
 History/
 globalStorage/
 workspaceStorage/
 vim/.config/nvim/plugin/
+Package Control.user-ca-bundle

@@ -82,6 +82,9 @@
   "window.autoDetectColorScheme": true,
   "workbench.colorTheme": "Solarized Dark",
   "[elixir]": {
-    "editor.defaultFormatter": "animus-coop.vscode-elixir-mix-formatter"
-  }
+    "editor.defaultFormatter": "maxmellen.elixir-language-support"
+  },
+  "update.mode": "none",
+  "vtools.autoHideDelay": 100,
+  "vtools.autoHideSideBar": true
 }
