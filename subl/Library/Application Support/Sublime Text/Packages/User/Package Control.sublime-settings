@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"ElixirDocs",
 		"ElixirFormatter",
 		"ElixirSyntax",
 		"Gitignore",
