@@ -1,6 +1,6 @@
 {
    "ignored_packages":[
-      "Vintage"
+      "Vintage",
    ],
    "theme":"Adaptive.sublime-theme",
    "color_scheme":"Solarized (dark).sublime-color-scheme",
@@ -29,7 +29,8 @@
       "tast",
       "Tentacat",
       "trunc",
-      "upsert"
+      "upsert",
+      "params",
    ],
    "enable_tab_scrolling":false,
    "tab_size":2,
@@ -55,5 +56,5 @@
       "*.jar",
       "*.zip",
       "*.beam"
-   ]
+   ],
 }

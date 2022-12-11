@@ -17,3 +17,5 @@ set noswapfile
 set noruler
 set noshowmode
 set hidden
+
+set guicursor=

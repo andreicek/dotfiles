@@ -7,6 +7,7 @@
 	[
 		"ElixirFormatter",
 		"ElixirSyntax",
+		"Gitignore",
 		"LSP",
 		"Package Control",
 		"Path Tools",
