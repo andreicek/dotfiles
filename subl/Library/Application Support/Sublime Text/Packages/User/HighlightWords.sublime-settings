@@ -1,0 +1,6 @@
+{
+  "permanent_highlight_keyword_color_mappings": [
+    {"keyword": "TODO", "color": "support.function"},
+    //{"keyword": "FIXIT .*", "color": "support.function", "flag": 2},
+  ]
+}

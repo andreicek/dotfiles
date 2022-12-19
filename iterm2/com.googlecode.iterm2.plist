@@ -1168,14 +1168,16 @@
 			</dict>
 			<key>Ansi 8 Color (Dark)</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.21176470588235294</real>
+				<real>0.38694089651107788</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.16862745098039217</real>
+				<real>0.33055165410041809</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.2141169011592865</real>
 			</dict>
 			<key>Ansi 8 Color (Light)</key>
 			<dict>
@@ -2211,6 +2213,8 @@
 	<integer>2</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PerPaneBackgroundImage</key>
 	<true/>
 	<key>PointerActions</key>

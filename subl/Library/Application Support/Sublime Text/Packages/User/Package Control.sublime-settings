@@ -5,13 +5,19 @@
 	],
 	"installed_packages":
 	[
+		"DashDoc",
 		"ElixirDocs",
 		"ElixirFormatter",
 		"ElixirSyntax",
+		"ESLint",
 		"Gitignore",
+		"HighlightWords",
+		"JsPrettier",
 		"LSP",
+		"LSP-typescript",
 		"Package Control",
 		"Path Tools",
 		"Solarized Color Scheme",
+		"SyncedSideBar",
 	],
 }
