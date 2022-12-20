@@ -10,6 +10,7 @@
 		"ElixirFormatter",
 		"ElixirSyntax",
 		"ESLint",
+		"fish",
 		"Gitignore",
 		"HighlightWords",
 		"JsPrettier",
