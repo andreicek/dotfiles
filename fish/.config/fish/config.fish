@@ -1,6 +1,10 @@
 fish_add_path /opt/homebrew/bin
 source (brew --prefix asdf)/libexec/asdf.fish
-fish_add_path ~/.dotfiles/bin
+fish_add_path ~/.bin
+
+if test -e $HOME/.iterm2_shell_integration.fish
+  source $HOME/.iterm2_shell_integration.fish
+end
 
 if status is-interactive
   set -Ux EDITOR "nvim"
@@ -18,6 +22,7 @@ if status is-interactive
   alias gps "git push"
   alias gl "git log --oneline"
   alias gll "git log --oneline | fzf --preview \"awk '{ print $1 }' <<< {} | xargs git wc\" | awk '{print $1 }'"
+  alias rw "tmux rename-window"
 
   alias vim "nvim"
   alias cat "bat"
