@@ -80,7 +80,7 @@
       "int" : 0
     },
     "landscapeSnapAreas" : {
-
+      "string" : "[8,{\"action\":14},2,{\"action\":30},1,{\"action\":15},3,{\"action\":16},6,{\"action\":13},4,{\"compound\":-2},5,{\"compound\":-3},7,{\"compound\":-4}]"
     },
     "launchOnLogin" : {
       "bool" : true
@@ -205,6 +205,46 @@
       "keyCode" : 125,
       "modifierFlags" : 1572864
     },
+    "bottomHalf" : {
+      "keyCode" : 125,
+      "modifierFlags" : 786432
+    },
+    "bottomLeft" : {
+      "keyCode" : 38,
+      "modifierFlags" : 786432
+    },
+    "bottomRight" : {
+      "keyCode" : 40,
+      "modifierFlags" : 786432
+    },
+    "center" : {
+      "keyCode" : 8,
+      "modifierFlags" : 786432
+    },
+    "centerThird" : {
+      "keyCode" : 3,
+      "modifierFlags" : 786432
+    },
+    "firstThird" : {
+      "keyCode" : 2,
+      "modifierFlags" : 786432
+    },
+    "firstTwoThirds" : {
+      "keyCode" : 14,
+      "modifierFlags" : 786432
+    },
+    "larger" : {
+      "keyCode" : 24,
+      "modifierFlags" : 786432
+    },
+    "lastThird" : {
+      "keyCode" : 5,
+      "modifierFlags" : 786432
+    },
+    "lastTwoThirds" : {
+      "keyCode" : 17,
+      "modifierFlags" : 786432
+    },
     "leftHalf" : {
       "keyCode" : 123,
       "modifierFlags" : 1572864
@@ -213,9 +253,41 @@
       "keyCode" : 126,
       "modifierFlags" : 1572864
     },
+    "maximizeHeight" : {
+      "keyCode" : 126,
+      "modifierFlags" : 917504
+    },
+    "nextDisplay" : {
+      "keyCode" : 124,
+      "modifierFlags" : 1835008
+    },
+    "previousDisplay" : {
+      "keyCode" : 123,
+      "modifierFlags" : 1835008
+    },
+    "restore" : {
+      "keyCode" : 51,
+      "modifierFlags" : 786432
+    },
     "rightHalf" : {
       "keyCode" : 124,
       "modifierFlags" : 1572864
+    },
+    "smaller" : {
+      "keyCode" : 27,
+      "modifierFlags" : 786432
+    },
+    "topHalf" : {
+      "keyCode" : 126,
+      "modifierFlags" : 786432
+    },
+    "topLeft" : {
+      "keyCode" : 32,
+      "modifierFlags" : 786432
+    },
+    "topRight" : {
+      "keyCode" : 34,
+      "modifierFlags" : 786432
     }
   },
   "version" : "70"

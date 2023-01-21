@@ -1,5 +1,5 @@
 elixir 1.14.2-otp-25
-erlang 25.2
+erlang 25.1.2
 nodejs 14.21.2
 python 3.11.0
 neovim 0.8.1

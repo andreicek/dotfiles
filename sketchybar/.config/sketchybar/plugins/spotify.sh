@@ -20,8 +20,7 @@ update() {
     fi
     args+=(--set spotify.play)
   else
-    args+=(--set spotify.name drawing=off \
-           --set spotify.name popup.drawing=off)
+    args+=(--set spotify.name drawing=off)
   fi
   sketchybar -m "${args[@]}"
 }

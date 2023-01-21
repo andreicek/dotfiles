@@ -27,15 +27,20 @@ sketchybar --add item  clock center   \
 
 sketchybar --add       event           spotify_change $SPOTIFY_EVENT   \
            --add       item            spotify.name left               \
-           --add       item            spotify.play                    \
+           --add       item            spotify.play left               \
            --set       spotify.play    updates=on                      \
                                        label.drawing=off               \
                                        script="$PLUGIN_DIR/spotify.sh" \
            --subscribe spotify.play    spotify_change
 
-sketchybar --add       item           github.bell right              \
-           --set       github.bell    update_freq=180                \
-                                      script="$PLUGIN_DIR/github.sh" \
-           --subscribe github.bell    mouse.clicked
+sketchybar --add       item           mail.count right              \
+           --set       mail.count     update_freq=5                 \
+                                      script="$PLUGIN_DIR/mail.sh"  \
+           --subscribe mail.count     mouse.clicked
+
+sketchybar --add       item        cal.name right                   \
+           --set       cal.name    update_freq=5                    \
+                                   script="$PLUGIN_DIR/calendar.sh" \
+           --subscribe cal.name    mouse.clicked
 
 sketchybar --update
