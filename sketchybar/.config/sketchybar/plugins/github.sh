@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 update() {
-  NOTIFICATIONS="$(ggh api notifications | jq 'length')"
+  NOTIFICATIONS="$(gh api notifications | jq 'length')"
 
   args=()
-  if [ "$NOTIFICATIONS" = "[]" ]; then
+  if [ ! "$NOTIFICATIONS" = "0" ]; then
     args+=(--set $NAME icon= label="$NOTIFICATIONS" width=dynamic)
   else
     args+=(--set $NAME icon="" label="" width=0)

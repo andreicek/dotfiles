@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 update() {
-  EVENT=$(icalBuddy -eed -n -nc -nrd -ea -iep datetime,title -b '' -ps '| |' eventsNow | head -n 1)
+  EVENT=$(icalBuddy -ea -ic 'Personal,Work' -eed -n -nc -nrd -ea -iep datetime,title -b '' -ps '| |' eventsNow | head -n 1)
   args=()
   if [ ! "$EVENT" = "" ]; then
     args+=(--set $NAME icon= label="$EVENT" width=dynamic)
