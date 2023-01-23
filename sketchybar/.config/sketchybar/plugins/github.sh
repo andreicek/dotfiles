@@ -14,7 +14,7 @@ update() {
 }
 
 mouse_clicked() {
-  open -a firefox -g https://github.com/notifications
+  open -a firefox https://github.com/notifications
   update
 }
 

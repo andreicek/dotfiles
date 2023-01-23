@@ -3,7 +3,7 @@
     "result" : {
       "textSpacing" : 5,
       "subtext" : {
-        "size" : 9,
+        "size" : 12,
         "colorSelected" : "#839495E5",
         "font" : "System",
         "color" : "#586D74FF"
@@ -16,7 +16,7 @@
       },
       "backgroundSelected" : "#073641FF",
       "text" : {
-        "size" : 13,
+        "size" : 18,
         "colorSelected" : "#93A0A1FF",
         "font" : "System",
         "color" : "#839495FC"
@@ -24,14 +24,14 @@
       "iconPaddingHorizontal" : 4,
       "roundness" : 0,
       "paddingVertical" : 3,
-      "iconSize" : 35
+      "iconSize" : 40
     },
     "search" : {
       "backgroundSelected" : "#073641FF",
       "paddingHorizontal" : 8,
       "spacing" : 4,
       "text" : {
-        "size" : 30,
+        "size" : 34,
         "colorSelected" : "#93A0A1E5",
         "font" : "System Light",
         "color" : "#839495FF"
@@ -47,7 +47,7 @@
       "borderPadding" : 2,
       "borderColor" : "#012B35FF",
       "blur" : 15,
-      "roundness" : 13,
+      "roundness" : 15,
       "paddingVertical" : 0
     },
     "credit" : "Justin Morrow",
