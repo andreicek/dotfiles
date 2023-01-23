@@ -33,6 +33,11 @@ sketchybar --add       event           spotify_change $SPOTIFY_EVENT   \
                                        script="$PLUGIN_DIR/spotify.sh" \
            --subscribe spotify.play    spotify_change
 
+sketchybar --add       item           github.count right              \
+           --set       github.count   update_freq=60                  \
+                                      script="$PLUGIN_DIR/github.sh"  \
+           --subscribe github.count   mouse.clicked
+
 sketchybar --add       item           mail.count right              \
            --set       mail.count     update_freq=5                 \
                                       script="$PLUGIN_DIR/mail.sh"  \
