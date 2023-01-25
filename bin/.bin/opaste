@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+files=''
+verbose=''
+output_location=/dev/null
+
+function read_stdin() {
+  FILENAME=$(openssl rand -hex 12)
+  cat < /dev/stdin > "/tmp/$FILENAME.txt"
+  scp "/tmp/$FILENAME.txt" hosting.0x7f.hr:/usr/local/www/temp/ >$output_location
+  rm "/tmp/$FILENAME.txt"
+  echo "https://dl.0x7f.dev/$FILENAME.txt"
+}
+
+function upload_file() {
+  scp "$@" hosting.0x7f.hr:/usr/local/www/temp/ >$output_location
+
+  echo "https://dl.0x7f.dev/$@"
+}
+
+while getopts 'f:v' flag; do
+  case "${flag}" in
+    f) files="${OPTARG}" ;;
+    v) verbose='true' ;;
+    *) exit 1 ;;
+  esac
+done
+
+if [ "$verbose" = "true" ]; then
+  set -x
+  output_location=/dev/stdin
+fi
+
+if [ "$files" = "" ]; then
+  read_stdin
+else
+  upload_file $files
+fi
