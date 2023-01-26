@@ -1,4 +1,4 @@
-secret.sh
+secret.env
 fish/completions
 fish/conf.d
 fish/functions

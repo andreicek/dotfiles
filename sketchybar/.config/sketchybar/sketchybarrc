@@ -25,6 +25,11 @@ sketchybar --add item  clock center   \
            --set clock update_freq=10 \
                        script="$PLUGIN_DIR/clock.sh"
 
+sketchybar --add item    weather center                  \
+           --set weather update_freq=10                  \
+                         script="$PLUGIN_DIR/weather.sh" \
+          --subscribe    weather   mouse.clicked
+
 sketchybar --add       event           spotify_change $SPOTIFY_EVENT   \
            --add       item            spotify.name left               \
            --add       item            spotify.play left               \
