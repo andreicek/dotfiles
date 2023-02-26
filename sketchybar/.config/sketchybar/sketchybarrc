@@ -13,7 +13,6 @@ sketchybar --default updates=when_shown                       \
                      drawing=on                               \
                      icon.font="Hack Nerd Font:Bold:14.0"     \
                      icon.color=0xffffffff                    \
-                     icon.y_offset=-1                         \
                      label.font="MonoLisa Custom:Normal:12.0" \
                      label.color=0xffffffff                   \
                      label.padding_left=4                     \

@@ -54,6 +54,9 @@ get_forecast() {
     "exceptional")
       echo ""
       ;;
+    *)
+      echo $STATE
+      ;;
   esac
 }
 
