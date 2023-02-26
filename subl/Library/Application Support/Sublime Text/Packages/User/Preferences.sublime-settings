@@ -41,6 +41,9 @@
       "textarea",
       "redux",
       "ok",
+      "url",
+      "css",
+      "eslint",
    ],
    "enable_tab_scrolling":false,
    "scroll_past_end": true,
@@ -67,5 +70,9 @@
       "*.jar",
       "*.zip",
       "*.beam"
+   ],
+   "ignored_words":
+   [
+		"neutral700"
    ],
 }

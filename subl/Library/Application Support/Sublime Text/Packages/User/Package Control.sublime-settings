@@ -13,6 +13,7 @@
 		"fish",
 		"Gitignore",
 		"HighlightWords",
+		"JsonTree",
 		"JsPrettier",
 		"LSP",
 		"LSP-typescript",
@@ -20,5 +21,6 @@
 		"Path Tools",
 		"Solarized Color Scheme",
 		"SyncedSideBar",
+		"Terminus",
 	],
 }
