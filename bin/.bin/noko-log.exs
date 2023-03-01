@@ -11,15 +11,16 @@ Mix.install([
 ])
 
 defmodule Log do
+  require Logger
+
   @config_path "~/.config/noko.txt"
   @base_url "https://api.nokotime.com/v2/entries"
 
   def new(args) do
-    with {:ok, config} <- get_config(@config_path) do
-      config
-      |> map_entry(args)
-      |> save(config)
-      |> IO.inspect(pretty: true, limit: :infinity)
+    with {:ok, config} <- get_config(@config_path),
+         entry <- map_entry(config, args),
+         %{"id" => id} <- save(entry, config) do
+      Logger.info("Created entry #{id}")
     end
   end
 
