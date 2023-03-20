@@ -44,6 +44,7 @@
       "url",
       "css",
       "eslint",
+      "multiselect",
    ],
    "enable_tab_scrolling":false,
    "scroll_past_end": true,
