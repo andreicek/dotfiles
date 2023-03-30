@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.github.fedecalendino.alfred-randomer</string>
+	<key>connections</key>
+	<dict>
+		<key>FE37874C-BB78-4D05-8F02-EA114E8BA312</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>88A52F5F-CC59-4060-9DCC-796BEDC66EEE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Fede Calendino</string>
+	<key>description</key>
+	<string>Generate random values for different data types 🎲️</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Randomer</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>88A52F5F-CC59-4060-9DCC-796BEDC66EEE</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Generating values...</string>
+				<key>script</key>
+				<string>/usr/bin/python3 ./dist/main.py $@</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>! [type: email/imei/unit/uuid]</string>
+				<key>title</key>
+				<string>Generate random values for different data types</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FE37874C-BB78-4D05-8F02-EA114E8BA312</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Generate random values for different data types 🎲️</string>
+	<key>uidata</key>
+	<dict>
+		<key>88A52F5F-CC59-4060-9DCC-796BEDC66EEE</key>
+		<dict>
+			<key>xpos</key>
+			<real>280</real>
+			<key>ypos</key>
+			<real>15</real>
+		</dict>
+		<key>FE37874C-BB78-4D05-8F02-EA114E8BA312</key>
+		<dict>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>15</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>!</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keyword to generate random values for different data types.</string>
+			<key>label</key>
+			<string>Randomer Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>keyword</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>1.5.1</string>
+	<key>webaddress</key>
+	<string>https://github.com/fedecalendino/alfred-randomer</string>
+</dict>
+</plist>
