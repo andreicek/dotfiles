@@ -1,0 +1,19 @@
+<snippet>
+  <content><![CDATA[
+build(:data_field,
+  id: ${1:id},
+  creator: ${2:creator},
+  value: "${3:100}",
+  meta: false,
+  definition: build(:data_field_definition,
+    name: "${4:amount}",
+    type: :${5:number},
+    profile: ${2:profile}
+  )
+)
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>df</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope>source.python</scope> -->
+</snippet>
