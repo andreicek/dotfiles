@@ -13,39 +13,48 @@ defmodule Report do
   @config_path "~/.config/noko.txt"
   @base_url "https://api.nokotime.com/v2/entries"
 
-  def hours_worked do
+  def report do
     with {:ok, config} <- get_config(@config_path) do
-      calculate_billing_period()
+      get_date(false)
+      |> calculate_billing_period()
+      |> IO.inspect(label: "For period")
       |> get_report(config)
+      |> Enum.map(& &1["minutes"])
+      |> Enum.map(&(&1 / 60))
+      |> Enum.sum()
+      |> IO.inspect(label: "Worked")
     end
   end
 
-  def calculate_billing_period(date \\ Date.utc_today())
+  ###
 
-  def calculate_billing_period(%{day: day, month: month, year: year} = _date)
-      when day < 16 do
+  defp get_date(true = _previous?) do
+  end
+
+  defp get_date(_previous?), do: Date.utc_today()
+
+  defp calculate_billing_period(%{day: day, month: month, year: year} = _date)
+       when day < 16 do
     from = create_iso8601(year, month - 1, 16)
     to = create_iso8601(year, month, 15)
 
     {from, to}
   end
 
-  def calculate_billing_period(%{day: day, month: month, year: year} = _date)
-      when day >= 16 and month != 12 do
+  defp calculate_billing_period(%{day: day, month: month, year: year} = _date)
+       when day >= 16 and month != 12 do
     from = create_iso8601(year, month, 16)
     to = create_iso8601(year, month + 1, 15)
 
     {from, to}
   end
 
-  def calculate_billing_period(%{month: month, year: year} = _date) do
+  defp calculate_billing_period(%{month: month, year: year} = _date) do
     from = create_iso8601(year, month, 16)
     to = create_iso8601(year + 1, 1, 15)
 
     {from, to}
   end
-
-  ###
 
   defp get_report({from, to}, %{"user_id" => user_id, "api_key" => api_key} = _config) do
     headers = %{
@@ -95,11 +104,4 @@ defmodule Report do
   end
 end
 
-Report.calculate_billing_period()
-|> IO.inspect(label: "For", pretty: true, limit: :infinity)
-
-Report.hours_worked()
-|> Enum.map(& &1["minutes"])
-|> Enum.map(&(&1 / 60))
-|> Enum.sum()
-|> IO.inspect(label: "Worked", pretty: true, limit: :infinity)
+Report.report()
