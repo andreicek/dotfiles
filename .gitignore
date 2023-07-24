@@ -8,3 +8,4 @@ globalStorage/
 workspaceStorage/
 vim/.config/nvim/plugin/
 Package Control.user-ca-bundle
+zed/.config/zed/conversations/

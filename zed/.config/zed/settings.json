@@ -1,0 +1,30 @@
+{
+  "base_keymap": "VSCode",
+  "features": {
+    "copilot": false
+  },
+  "theme": "Solarized Light",
+  "buffer_font_size": 13,
+  "buffer_font_family": "IBM Plex Mono",
+  "tab_size": 2,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "language_overrides": {
+    "Elixir": {
+      "enable_language_server": true,
+      "format_on_save": {
+        "external": {
+          "command": "mix",
+          "arguments": [
+            "format",
+            "--stdin-filename",
+            "{buffer_path}",
+            "-"
+          ]
+        }
+      }
+    }
+  }
+}

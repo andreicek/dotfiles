@@ -1,0 +1,8 @@
+[
+    {
+        "bindings": {
+            "alt-up": "editor::MoveLineUp",
+            "alt-down": "editor::MoveLineDown",
+        }
+    },
+]
