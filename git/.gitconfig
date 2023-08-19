@@ -1,10 +1,10 @@
 [user]
-  email = andreicek@0x7f.dev
-  name = Andrei Zvonimir Crnkovic
-  signingkey = 95842DDB8603EBD879CB90C5D0EA677FD93A75BC
+	email = andreicek@0x7f.dev
+	name = Andrei Zvonimir Crnkovic
+	signingKey = 95842DDB8603EBD879CB90C5D0EA677FD93A75BC
 [core]
   ignorecase = false
-  excludesfile = ~/.dotfiles/git/gitignore
+  excludesfile = /Users/andreicek/.dotfiles/git/gitignore
   pager = delta
 [push]
   default = current
@@ -13,7 +13,7 @@
   ui = true
 [alias]
   track = branch master --set-upstream-to origin/master
-  pls = push --force-with-lease
+ 	pls = push --force-with-lease
   wc = "!f() { git diff \"$1^\" \"$1\"; }; f"
   wcf = diff-tree --no-commit-id --name-only -r
   fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
