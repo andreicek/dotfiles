@@ -1,12 +1,8 @@
 fish_add_path /opt/homebrew/bin
-source (brew --prefix asdf)/libexec/asdf.fish
+source ~/.asdf/asdf.fish
 fish_add_path ~/.bin
 
 if status is-interactive
-  if test -e $HOME/.iterm2_shell_integration.fish
-    source $HOME/.iterm2_shell_integration.fish
-  end
-
   set -Ux EDITOR "micro"
   set -Ux GPG_TTY (tty)
   set -Ux ERL_AFLAGS "-kernel shell_history enabled"
@@ -24,6 +20,27 @@ if status is-interactive
   alias gll "git log --oneline | fzf --preview \"awk '{ print $1 }' <<< {} | xargs git wc\" | awk '{print $1 }'"
 
   alias cat "bat"
-  alias printer "lpr -o sides=two-sided-long-edge"
   alias rm "trash"
+end
+
+function _git_branch_name
+  echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
+end
+
+function _is_git_dirty
+  echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
+end
+
+function fish_prompt
+  if [ (_git_branch_name) ]
+    set git_info (_git_branch_name)
+    set git_info ":$git_info"
+
+    if [ (_is_git_dirty) ]
+      set -l dirty "*"
+      set git_info "$git_info$dirty"
+    end
+  end
+
+  echo -n -s (basename (prompt_pwd)) $git_info "> "
 end
