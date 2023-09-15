@@ -6,3 +6,4 @@ priv/public_api/static/contractbook.json
 priv/contractbook_scim/static/openapi-v3.json
 priv/public_api/static/openapi-v3.json
 priv/public_api/static/contractbook.json
+.github/PULL_REQUEST_TEMPLATE/andrei.md

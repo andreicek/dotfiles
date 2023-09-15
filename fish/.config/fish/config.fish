@@ -17,7 +17,6 @@ if status is-interactive
   alias gpl "git pull"
   alias gps "git push"
   alias gl "git log --oneline"
-  alias gll "git log --oneline | fzf --preview \"awk '{ print $1 }' <<< {} | xargs git wc\" | awk '{print $1 }'"
 
   alias cat "bat"
   alias rm "trash"
@@ -43,4 +42,8 @@ function fish_prompt
   end
 
   echo -n -s (basename (prompt_pwd)) $git_info "> "
+end
+
+function fish_greeting
+  lolcat ~/.dotfiles/fish/.config/fish/motd.txt
 end
