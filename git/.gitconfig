@@ -20,7 +20,7 @@
 [rebase]
   autosquash = true
 [commit]
-  gpgsign = true  
+  gpgsign = true
 [interactive]
   diffFilter = delta --color-only
 [delta]

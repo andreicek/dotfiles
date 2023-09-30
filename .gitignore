@@ -1,13 +1,14 @@
 secret.env
-fish/completions
-fish/conf.d
-fish/functions
-fish/fish_variables
+fish/.config/fish/completions/
+fish/.config/fish/fish_variables
+fish/.config/fish/functions/
+fish/.config/fish/conf.d/
 History/
 globalStorage/
 workspaceStorage/
 vim/.config/nvim/plugin/
 Package Control.user-ca-bundle
 zed/.config/zed/conversations/
+zed/.config/zed/embeddings/
 micro/.config/micro/buffers/
 elvish/.config/elvish/lib/

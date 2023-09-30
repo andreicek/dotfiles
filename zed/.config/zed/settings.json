@@ -11,19 +11,13 @@
     "diagnostics": false,
     "metrics": false
   },
-  "language_overrides": {
-    "Elixir": {
-      "enable_language_server": true,
-      "format_on_save": {
-        "external": {
-          "command": "mix",
-          "arguments": [
-            "format",
-            "--stdin-filename",
-            "{buffer_path}",
-            "-"
-          ]
-        }
+  "elixir": {
+    "lsp": {
+      "local": {
+        "path": "/Users/andreicek/src/lexical-lsp/lexical/_build/dev/rel/lexical/start_lexical.sh",
+        "arguments": [
+          ""
+        ]
       }
     }
   }

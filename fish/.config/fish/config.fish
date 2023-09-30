@@ -47,3 +47,5 @@ end
 function fish_greeting
   lolcat ~/.dotfiles/fish/.config/fish/motd.txt
 end
+
+export PATH="$PATH:$HOME/.local/bin"
