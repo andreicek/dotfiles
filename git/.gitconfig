@@ -1,10 +1,10 @@
 [user]
 	email = andreicek@0x7f.dev
 	name = Andrei Zvonimir Crnkovic
-	signingKey = 95842DDB8603EBD879CB90C5D0EA677FD93A75BC
+	signingkey = 95842DDB8603EBD879CB90C5D0EA677FD93A75BC
 [core]
   ignorecase = false
-  excludesfile = /Users/andreicek/.dotfiles/git/gitignore
+	excludesfile = /Users/andreicek/.dotfiles/git/gitignore
   pager = delta
 [push]
   default = current
@@ -20,7 +20,7 @@
 [rebase]
   autosquash = true
 [commit]
-  gpgsign = true
+	gpgsign = true
 [interactive]
   diffFilter = delta --color-only
 [delta]
@@ -32,9 +32,12 @@
 [delta]
   line-numbers = true
   features = unobtrusive-line-numbers decorations
-  light = true
+  light = false
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[gpg]
+	program = /opt/homebrew/bin/gpg
+	format = openpgp

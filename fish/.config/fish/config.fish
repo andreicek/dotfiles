@@ -20,6 +20,8 @@ if status is-interactive
 
   alias cat "bat"
   alias rm "trash"
+
+  alias tailscale "/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 end
 
 function _git_branch_name

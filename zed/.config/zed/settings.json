@@ -3,7 +3,7 @@
   "features": {
     "copilot": false
   },
-  "theme": "Solarized Light",
+  "theme": "One Dark",
   "buffer_font_size": 13,
   "buffer_font_family": "IBM Plex Mono",
   "tab_size": 2,
@@ -14,10 +14,8 @@
   "elixir": {
     "lsp": {
       "local": {
-        "path": "/Users/andreicek/src/lexical-lsp/lexical/_build/dev/rel/lexical/start_lexical.sh",
-        "arguments": [
-          ""
-        ]
+        "path": "/Users/andreicek/src/lexical-lsp/lexical/_build/dev/package/lexical/bin/start_lexical.sh",
+        "arguments": [""]
       }
     }
   }
