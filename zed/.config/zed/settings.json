@@ -3,7 +3,7 @@
   "features": {
     "copilot": false
   },
-  "theme": "One Dark",
+  "theme": "src/vscode/dracula/dracula",
   "buffer_font_size": 13,
   "buffer_font_family": "IBM Plex Mono",
   "tab_size": 2,
