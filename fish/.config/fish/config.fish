@@ -3,7 +3,8 @@ source ~/.asdf/asdf.fish
 fish_add_path ~/.bin
 
 if status is-interactive
-  set -Ux EDITOR "micro"
+  set -Ux EDITOR "vim"
+  set -Ux TERM "xterm"
   set -Ux GPG_TTY (tty)
   set -Ux ERL_AFLAGS "-kernel shell_history enabled"
 
