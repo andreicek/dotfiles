@@ -3,7 +3,7 @@
   "features": {
     "copilot": false
   },
-  "theme": "src/vscode/dracula/dracula",
+  "theme": "Gruvbox Dark Hard",
   "buffer_font_size": 13,
   "buffer_font_family": "IBM Plex Mono",
   "tab_size": 2,
@@ -12,11 +12,6 @@
     "metrics": false
   },
   "elixir": {
-    "lsp": {
-      "local": {
-        "path": "/Users/andreicek/src/lexical-lsp/lexical/_build/dev/package/lexical/bin/start_lexical.sh",
-        "arguments": [""]
-      }
-    }
+    "lsp": "next_ls"
   }
 }
