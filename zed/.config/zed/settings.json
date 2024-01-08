@@ -13,5 +13,15 @@
   },
   "elixir": {
     "lsp": "next_ls"
+  },
+  "language_overrides": {
+    "Elixir": {
+      "format_on_save": {
+        "external": {
+          "command": "mix",
+          "arguments": ["format", "--stdin-filename", "{buffer_path}", "-"]
+        }
+      }
+    }
   }
 }
