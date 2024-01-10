@@ -1,19 +1,10 @@
 {
-  "base_keymap": "VSCode",
-  "features": {
-    "copilot": false
-  },
   "theme": "Gruvbox Dark Hard",
-  "buffer_font_size": 13,
+  "ui_font_family": "IBM Plex Mono",
   "buffer_font_family": "IBM Plex Mono",
+  "buffer_font_size": 13,
   "tab_size": 2,
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
-  "elixir": {
-    "lsp": "next_ls"
-  },
+  "base_keymap": "VSCode",
   "language_overrides": {
     "Elixir": {
       "format_on_save": {
