@@ -2,3 +2,4 @@ elixir 1.15.6-otp-26
 erlang 26.1.1
 python 3.11.5
 nodejs 18.12.1
+ruby 3.3.0
