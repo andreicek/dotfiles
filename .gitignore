@@ -12,3 +12,4 @@ zed/.config/zed/conversations/
 zed/.config/zed/embeddings/
 micro/.config/micro/buffers/
 elvish/.config/elvish/lib/
+.tmp*
