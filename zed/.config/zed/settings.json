@@ -11,6 +11,14 @@
   "buffer_font_size": 13,
   "tab_size": 2,
   "base_keymap": "VSCode",
+  "elixir": {
+    "lsp": {
+      "local": {
+        "path": "/Users/andreicek/src/lexical-lsp/lexical/_build/dev/package/lexical/bin/start_lexical.sh",
+        "arguments": [""]
+      }
+    }
+  },
   "language_overrides": {
     "Elixir": {
       "format_on_save": {
