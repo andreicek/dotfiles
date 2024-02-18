@@ -1,6 +1,7 @@
 [
   {
     "bindings": {
+      "cmd-shift-k": "editor::DeleteLine",
       "alt-up": "editor::MoveLineUp",
       "alt-down": "editor::MoveLineDown",
       "ctrl-1": ["workspace::ActivatePane", 0],

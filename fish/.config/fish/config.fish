@@ -1,6 +1,8 @@
 fish_add_path /opt/homebrew/bin
-source ~/.asdf/asdf.fish
 fish_add_path ~/.bin
+
+source ~/.asdf/asdf.fish
+zoxide init fish | source
 
 if status is-interactive
     set -Ux EDITOR vim
@@ -51,5 +53,3 @@ end
 function fish_greeting
     lolcat ~/.dotfiles/fish/.config/fish/motd.txt
 end
-
-export PATH="$PATH:$HOME/.local/bin"
