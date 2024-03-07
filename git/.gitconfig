@@ -12,10 +12,7 @@
 [color]
   ui = true
 [alias]
-  track = branch master --set-upstream-to origin/master
  	pls = push --force-with-lease
-  wc = "!f() { git diff \"$1^\" \"$1\"; }; f"
-  wcf = diff-tree --no-commit-id --name-only -r
   fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
 [rebase]
   autosquash = true
@@ -23,21 +20,12 @@
 	gpgsign = true
 [interactive]
   diffFilter = delta --color-only
-[delta]
-  navigate = true
 [merge]
   conflictstyle = diff3
 [diff]
   colorMoved = default
 [delta]
+  navigate = true
   line-numbers = true
   features = unobtrusive-line-numbers decorations
-  light = false
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-[gpg]
-	program = /opt/homebrew/bin/gpg
-	format = openpgp
+  light = true
