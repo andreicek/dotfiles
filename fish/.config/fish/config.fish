@@ -49,7 +49,3 @@ function fish_prompt
 
     echo -n -s (basename (prompt_pwd)) $git_info "> "
 end
-
-function fish_greeting
-    lolcat ~/.dotfiles/fish/.config/fish/motd.txt
-end
