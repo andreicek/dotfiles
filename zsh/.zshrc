@@ -1,3 +1,4 @@
+autoload -Uz compinit
 typeset -aU path
 path+=("/opt/homebrew/bin")
 
@@ -42,3 +43,4 @@ custom_prompt() {
 }
 
 add-zsh-hook precmd custom_prompt
+compinit
