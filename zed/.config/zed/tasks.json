@@ -1,0 +1,22 @@
+[
+  {
+    "label": "test suite",
+    "command": "mix",
+    "args": ["test"]
+  },
+  {
+    "label": "test file",
+    "command": "mix",
+    "args": ["test", "$ZED_FILE"]
+  },
+  {
+    "label": "test one",
+    "command": "mix",
+    "args": ["test", "$ZED_FILE:$ZED_ROW"]
+  },
+  {
+    "label": "break one",
+    "command": "iex",
+    "args": ["-S", "mix", "test", "-b", "$ZED_FILE:$ZED_ROW"]
+  }
+]
