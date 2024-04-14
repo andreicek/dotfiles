@@ -42,5 +42,5 @@ custom_prompt() {
   PS1="%{$fg[red]%}%1~$git_info>%{$reset_color%} "
 }
 
-add-zsh-hook precmd custom_prompt
-compinit
+typeset -a precmd_functions
+precmd_functions+=(custom_prompt)
