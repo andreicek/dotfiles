@@ -1,0 +1,19 @@
+simplified_ui true
+copy_command "pbcopy"
+
+themes {
+  default {
+    fg 7
+    bg 23
+    black 0
+    red 1
+    green 2
+    yellow 3
+    blue 4
+    magenta 5
+    cyan 6
+    white 7
+    orange 208
+    gray 247
+  }
+}

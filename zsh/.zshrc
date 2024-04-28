@@ -1,8 +1,8 @@
 autoload -Uz compinit
 typeset -aU path
 path+=("/opt/homebrew/bin")
+path+=("$HOME/.local/share/mise/shims")
 
-source "$HOME/.asdf/asdf.sh"
 source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 eval "$(zoxide init zsh)"
 
@@ -44,3 +44,4 @@ custom_prompt() {
 
 typeset -a precmd_functions
 precmd_functions+=(custom_prompt)
+compinit
