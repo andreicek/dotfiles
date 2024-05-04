@@ -31,7 +31,10 @@ alias gps="git push"
 alias gl="git log --oneline"
 alias cat="bat"
 alias rm="trash"
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
+if test -d "/Applications/Tailscale.app"
+	alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+end
 
 ###
 # Prompt
