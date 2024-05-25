@@ -1,0 +1,53 @@
+[colors.bright]
+black = "0x57606a"
+blue = "0x218bff"
+cyan = "0x1b7c83"
+green = "0x1a7f37"
+magenta = "0x8250df"
+red = "0xa40e26"
+white = "0x6e7781"
+yellow = "0x633c01"
+
+[colors.cursor]
+cursor = "0x1f2328"
+text = "0xffffff"
+
+[colors.normal]
+black = "0x24292f"
+blue = "0x0969da"
+cyan = "0x1b7c83"
+green = "0x116329"
+magenta = "0x8250df"
+red = "0xcf222e"
+white = "0x6e7781"
+yellow = "0x4d2d00"
+
+[colors.primary]
+background = "0xffffff"
+foreground = "0x1F2328"
+
+[font]
+size = 13.5
+
+[font.bold]
+family = "IBM Plex Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "IBM Plex Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "IBM Plex Mono"
+style = "Italic"
+
+[font.normal]
+family = "IBM Plex Mono"
+style = "Regular"
+
+[terminal]
+osc52 = "CopyPaste"
+
+[window.padding]
+x = 10
+y = 10
