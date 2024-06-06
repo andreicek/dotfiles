@@ -1,9 +1,9 @@
 return {
-  { "projekt0n/github-nvim-theme" },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "github_light_default",
-    },
-  },
+	{ "catppuccin/nvim" },
+	{
+		"LazyVim/LazyVim",
+		opts = {
+			colorscheme = "catppuccin-latte",
+		},
+	},
 }

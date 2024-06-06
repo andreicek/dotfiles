@@ -1,33 +1,5 @@
-[colors.bright]
-black = "0x57606a"
-blue = "0x218bff"
-cyan = "0x1b7c83"
-green = "0x1a7f37"
-magenta = "0x8250df"
-red = "0xa40e26"
-white = "0x6e7781"
-yellow = "0x633c01"
-
-[colors.cursor]
-cursor = "0x1f2328"
-text = "0xffffff"
-
-[colors.normal]
-black = "0x24292f"
-blue = "0x0969da"
-cyan = "0x1b7c83"
-green = "0x116329"
-magenta = "0x8250df"
-red = "0xcf222e"
-white = "0x6e7781"
-yellow = "0x4d2d00"
-
-[colors.primary]
-background = "0xffffff"
-foreground = "0x1F2328"
-
 [font]
-size = 13.5
+size = 12
 
 [font.bold]
 family = "IBM Plex Mono"
@@ -51,3 +23,79 @@ osc52 = "CopyPaste"
 [window.padding]
 x = 10
 y = 10
+
+[colors.primary]
+background = "#eff1f5"
+foreground = "#4c4f69"
+dim_foreground = "#8c8fa1"
+bright_foreground = "#4c4f69"
+
+[colors.cursor]
+text = "#eff1f5"
+cursor = "#dc8a78"
+
+[colors.vi_mode_cursor]
+text = "#eff1f5"
+cursor = "#7287fd"
+
+[colors.search.matches]
+foreground = "#eff1f5"
+background = "#6c6f85"
+
+[colors.search.focused_match]
+foreground = "#eff1f5"
+background = "#40a02b"
+
+[colors.footer_bar]
+foreground = "#eff1f5"
+background = "#6c6f85"
+
+[colors.hints.start]
+foreground = "#eff1f5"
+background = "#df8e1d"
+
+[colors.hints.end]
+foreground = "#eff1f5"
+background = "#6c6f85"
+
+[colors.selection]
+text = "#eff1f5"
+background = "#dc8a78"
+
+[colors.normal]
+black = "#bcc0cc"
+red = "#d20f39"
+green = "#40a02b"
+yellow = "#df8e1d"
+blue = "#1e66f5"
+magenta = "#ea76cb"
+cyan = "#179299"
+white = "#5c5f77"
+
+[colors.bright]
+black = "#acb0be"
+red = "#d20f39"
+green = "#40a02b"
+yellow = "#df8e1d"
+blue = "#1e66f5"
+magenta = "#ea76cb"
+cyan = "#179299"
+white = "#6c6f85"
+
+[colors.dim]
+black = "#bcc0cc"
+red = "#d20f39"
+green = "#40a02b"
+yellow = "#df8e1d"
+blue = "#1e66f5"
+magenta = "#ea76cb"
+cyan = "#179299"
+white = "#5c5f77"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#fe640b"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#dc8a78"
