@@ -1,5 +1,5 @@
 simplified_ui true
-copy_command "pbcopy"
+copy_command "xclip -selection clipboard"
 
 themes {
   default {

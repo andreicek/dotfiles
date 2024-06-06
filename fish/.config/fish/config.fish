@@ -2,15 +2,13 @@
 # Path
 ###
 
-fish_add_path /opt/homebrew/bin
 fish_add_path ~/.local/bin/
 
 ###
 # Variables
 ###
 
-set -Ux EDITOR "vim"
-set -Ux LOLCOMMITS_DELAY "2"
+set -Ux EDITOR nvim
 set -Ux GPG_TTY "$(tty)"
 set -Ux ERL_AFLAGS "-kernel shell_history enabled"
 
@@ -31,35 +29,32 @@ alias gps="git push"
 alias gl="git log --oneline"
 alias cat="bat"
 alias rm="trash"
-
-if test -d "/Applications/Tailscale.app"
-	alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-end
+alias vim="nvim"
 
 ###
 # Prompt
 ###
 
 function _git_branch_name
-  echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
+    echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
 end
 
 function _is_git_dirty
-  echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
+    echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
 end
 
 function fish_prompt
-  if [ (_git_branch_name) ]
-    set git_info (_git_branch_name)
-    set git_info ":$git_info"
+    if [ (_git_branch_name) ]
+        set git_info (_git_branch_name)
+        set git_info ":$git_info"
 
-    if [ (_is_git_dirty) ]
-      set -l dirty "*"
-      set git_info "$git_info$dirty"
+        if [ (_is_git_dirty) ]
+            set -l dirty "*"
+            set git_info "$git_info$dirty"
+        end
     end
-  end
 
-  echo -n -s (basename (prompt_pwd)) $git_info "> "
+    echo -n -s (basename (prompt_pwd)) $git_info "> "
 end
 
 ###
