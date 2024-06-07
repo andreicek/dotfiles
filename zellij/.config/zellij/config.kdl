@@ -2,3 +2,9 @@ simplified_ui true
 theme "catppuccin-latte"
 copy_command "xclip -selection clipboard"
 
+ui {
+  pane_frames {
+    hide_session_name true
+  }
+}
+
