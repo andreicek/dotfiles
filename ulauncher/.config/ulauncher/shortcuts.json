@@ -1,0 +1,32 @@
+{
+    "79d9aadf-946f-47eb-908b-ac393566cf75": {
+        "id": "79d9aadf-946f-47eb-908b-ac393566cf75",
+        "name": "Kagi",
+        "keyword": "k",
+        "cmd": "https://kagi.com/search?q=%s",
+        "icon": "~/Pictures/Icons/kagi.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1717743783.211428
+    },
+    "b512f2f1-05d8-4fab-a793-9d81fb9534c1": {
+        "id": "b512f2f1-05d8-4fab-a793-9d81fb9534c1",
+        "name": "Github Pull requests",
+        "keyword": "pulls",
+        "cmd": "https://github.com/pulls",
+        "icon": "~/Pictures/Icons/github-logo.png",
+        "is_default_search": false,
+        "run_without_argument": true,
+        "added": 1717911203.3770337
+    },
+    "d957ba40-8301-472d-90e1-62df1e5608b4": {
+        "id": "d957ba40-8301-472d-90e1-62df1e5608b4",
+        "name": "Google Meet",
+        "keyword": "meet",
+        "cmd": "https://meet.google.com/landing?authuser=3",
+        "icon": "~/Pictures/Icons/gmeet.png",
+        "is_default_search": false,
+        "run_without_argument": true,
+        "added": 1717911294.8989456
+    }
+}

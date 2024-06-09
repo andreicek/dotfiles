@@ -3,3 +3,4 @@ zed/.config/zed/embeddings/
 .tmp*
 fish/.config/fish/*
 !fish/.config/fish/config.fish
+*.db
