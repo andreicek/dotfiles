@@ -1,9 +1,9 @@
 {
-  "theme": "Catppuccin Latte",
+  "theme": "Catppuccin Frappé",
   "ui_font_family": "IBM Plex Mono",
   "buffer_font_family": "IBM Plex Mono",
-  "buffer_font_size": 13,
-  "ui_font_size": 15,
+  "buffer_font_size": 15,
+  "ui_font_size": 16,
   "tab_size": 2,
   "base_keymap": "VSCode",
   "languages": {

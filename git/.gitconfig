@@ -28,4 +28,4 @@
   navigate = true
   line-numbers = true
   features = unobtrusive-line-numbers decorations
-  light = true
+  light = false

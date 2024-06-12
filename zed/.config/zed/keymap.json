@@ -2,7 +2,6 @@
   {
     "bindings": {
       "ctrl-shift-r": ["task::Spawn", { "task_name": "test one" }],
-      "ctrl-shift-f": ["task::Spawn", { "task_name": "test file" }],
       "ctrl-shift-k": "editor::DeleteLine",
       "alt-up": "editor::MoveLineUp",
       "alt-down": "editor::MoveLineDown",

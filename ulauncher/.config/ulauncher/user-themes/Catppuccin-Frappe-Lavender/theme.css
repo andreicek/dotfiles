@@ -1,8 +1,8 @@
 /*Catpuccin colors*/
-@define-color backgroundColor #eff1f5;
-@define-color accentColor #1e66f5;
-@define-color textColor #4c4f69;
-@define-color subTextColor #5c5f77;
+@define-color backgroundColor #303446;
+@define-color accentColor #babbf1;
+@define-color textColor #c6d0f5;
+@define-color subTextColor #b5bfe2;
 .app {
     background-color: @backgroundColor;
     border-color: @accentColor;
@@ -25,7 +25,7 @@
     font-size: 1.2rem;
 }
 .selected.item-box {
-    background-color: alpha (@accentColor, 0.1);
+    background-color: alpha (@accentColor, 0.3);
     border-radius: 14px;
 }
 .selected.item-box .item-text {
@@ -49,5 +49,5 @@
     opacity: 1;
 }
 .prefs-btn:hover {
-    background-color: alpha (@accentColor, 0.2);
+    background-color: alpha (@accentColor, 1.0);
 }
