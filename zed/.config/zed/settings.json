@@ -1,5 +1,5 @@
 {
-  "theme": "Catppuccin Frappé",
+  "theme": "Solarized Light",
   "ui_font_family": "IBM Plex Mono",
   "buffer_font_family": "IBM Plex Mono",
   "buffer_font_size": 15,
@@ -24,10 +24,14 @@
     "next-ls": {
       "initialization_options": {
         "extensions": {
-          "credo": { "enable": false }
+          "credo": {
+            "enable": false
+          }
         },
         "experimental": {
-          "completions": { "enable": true }
+          "completions": {
+            "enable": true
+          }
         }
       }
     }
