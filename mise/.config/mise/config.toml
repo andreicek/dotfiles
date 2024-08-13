@@ -1,5 +1,4 @@
 [tools]
-nvim = "0.10.0"
 rust = "1.78.0"
 erlang = "26.2.1"
 python = "3.11.5"

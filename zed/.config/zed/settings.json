@@ -2,8 +2,8 @@
   "theme": "Solarized Light",
   "ui_font_family": "IBM Plex Mono",
   "buffer_font_family": "IBM Plex Mono",
-  "buffer_font_size": 15,
-  "ui_font_size": 16,
+  "buffer_font_size": 14,
+  "ui_font_size": 14,
   "tab_size": 2,
   "base_keymap": "VSCode",
   "languages": {
