@@ -10,13 +10,13 @@ local function move_pane(key, direction)
 end
 
 config.color_scheme = 'Solarized Light (Gogh)'
-config.font = wezterm.font({ family = 'IBM Plex Mono' })
+config.font = wezterm.font({ family = 'Berkeley Mono' })
 config.font_size = 14
 
 config.window_decorations = 'RESIZE'
 
 config.window_frame = {
-  font = wezterm.font({ family = 'IBM Plex Mono', weight = 'Bold' }),
+  font = wezterm.font({ family = 'Berkeley Mono', weight = 'Bold' }),
   font_size = 12,
 }
 
