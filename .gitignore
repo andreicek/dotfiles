@@ -1,5 +1,6 @@
 zed/.config/zed/conversations/
 zed/.config/zed/embeddings/
+zed/.config/zed/prompts/
 .tmp*
 fish/.config/fish/*
 !fish/.config/fish/config.fish
