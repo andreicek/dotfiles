@@ -1,0 +1,10 @@
+theme = Builtin Solarized Light
+window-decoration = true
+macos-titlebar-style = tabs
+
+shell-integration = fish
+clipboard-read = "allow"
+clipboard-paste-protection = false
+
+font-family = "Berkeley Mono"
+font-size = 15
