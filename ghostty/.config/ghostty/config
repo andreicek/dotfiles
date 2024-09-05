@@ -1,4 +1,4 @@
-theme = Builtin Solarized Light
+theme = catppuccin-latte
 window-decoration = true
 macos-titlebar-style = tabs
 

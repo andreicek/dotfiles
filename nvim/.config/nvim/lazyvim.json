@@ -1,9 +1,0 @@
-{
-  "extras": [
-    "lazyvim.plugins.extras.lang.typescript"
-  ],
-  "news": {
-    "NEWS.md": "5950"
-  },
-  "version": 6
-}
