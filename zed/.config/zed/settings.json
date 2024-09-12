@@ -1,12 +1,12 @@
 {
   "assistant": {
     "default_model": {
-      "provider": "zed.dev",
+      "provider": "anthropic",
       "model": "claude-3-5-sonnet-20240620"
     },
     "version": "2"
   },
-  "theme": "Catppuccin Latte",
+  "theme": "Catppuccin Frappé",
   "ui_font_family": "Berkeley Mono",
   "buffer_font_family": "Berkeley Mono",
   "buffer_font_size": 14,
