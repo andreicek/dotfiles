@@ -8,3 +8,6 @@ clipboard-paste-protection = false
 
 font-family = "Berkeley Mono"
 font-size = 15
+
+window-padding-x = 10
+window-padding-y = 10

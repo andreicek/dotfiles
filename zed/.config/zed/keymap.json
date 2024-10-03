@@ -24,5 +24,21 @@
       "cmd-8": ["pane::ActivateItem", 7],
       "cmd-9": ["pane::ActivateItem", 8]
     }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "H": "pane::ActivatePrevItem",
+      "L": "pane::ActivateNextItem",
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown"
+    }
   }
 ]

@@ -30,3 +30,5 @@
   line-numbers = true
   features = unobtrusive-line-numbers decorations
   light = false
+[gpg]
+	program = /opt/homebrew/bin/gpg
