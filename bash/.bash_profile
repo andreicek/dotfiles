@@ -47,3 +47,4 @@ PROMPT_COMMAND=custom_prompt
 eval "$(zoxide init bash)"
 eval "$(mise activate bash)"
 eval "$(fzf --bash)"
+
