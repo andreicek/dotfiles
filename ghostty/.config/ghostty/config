@@ -2,10 +2,11 @@ theme = catppuccin-frappe
 window-decoration = true
 macos-titlebar-style = tabs
 
-shell-integration = fish
+shell-integration = bash
 clipboard-read = "allow"
 clipboard-paste-protection = false
 
+window-title-font-family = "Berkeley Mono"
 font-family = "Berkeley Mono"
 font-size = 15
 
