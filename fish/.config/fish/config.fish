@@ -12,6 +12,7 @@ fish_add_path ~/.local/bin/
 set -Ux EDITOR nvim
 set -Ux GPG_TTY "$(tty)"
 set -Ux ERL_AFLAGS "-kernel shell_history enabled"
+set fish_greeting
 
 ###
 # Aliases
@@ -28,7 +29,7 @@ alias gap="git add --patch"
 alias gpl="git pull -r"
 alias gps="git push"
 alias gl="git log --oneline"
-alias cat="bat"
+alias cat="bat --theme=ansi"
 alias rm="trash"
 alias vim="nvim"
 

@@ -1,8 +1,11 @@
 theme = catppuccin-frappe
 window-decoration = true
 macos-titlebar-style = tabs
+background-opacity = 0.85
+background-blur-radius = 70
+unfocused-split-opacity = 1
 
-shell-integration = bash
+shell-integration = fish
 clipboard-read = "allow"
 clipboard-paste-protection = false
 

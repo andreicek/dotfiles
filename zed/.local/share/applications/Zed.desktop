@@ -1,7 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Exec=~/.local/bin/Zed %U
-Name=Zed
-StartupNotify=true
