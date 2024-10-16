@@ -95,7 +95,7 @@ return {
         --ts_ls = {},
         lexical = {
           filetypes = { 'elixir', 'eelixir', 'heex' },
-          cmd = { '/Users/andreicek/devel/lexical/_build/dev/package/lexical/bin/start_lexical.sh' },
+          cmd = { '/Users/andreicek/Developer/lexical/_build/dev/package/lexical/bin/start_lexical.sh' },
         },
 
         lua_ls = {
@@ -116,7 +116,7 @@ return {
 
       local lexical_config = {
         filetypes = { 'elixir', 'eelixir', 'heex' },
-        cmd = { '/Users/andreicek/devel/lexical/_build/dev/package/lexical/bin/start_lexical.sh' },
+        cmd = { '/Users/andreicek/Developer/lexical/_build/dev/package/lexical/bin/start_lexical.sh' },
         settings = {},
       }
 
@@ -276,18 +276,14 @@ return {
   },
 
   {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    priority = 1000,
+    'rebelot/kanagawa.nvim',
+    name = 'kanagawa',
     config = function()
-      require('catppuccin').setup {
-        flavour = 'frappe',
-        transparent_background = true,
-        integrations = {
-          neotree = true,
-        },
+      require('kanagawa').setup {
+        transparent = true,
       }
-      vim.cmd.colorscheme 'catppuccin'
+
+      vim.cmd.colorscheme 'kanagawa'
     end,
   },
 
