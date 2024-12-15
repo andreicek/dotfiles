@@ -89,6 +89,9 @@ vim.keymap.set('n', 'j', 'gj', { desc = 'Move down (wrap)' })
 vim.keymap.set('n', 'k', 'gk', { desc = 'Move up (wrap)' })
 vim.keymap.set('n', '*', '*``', { desc = 'Search word under cursor' })
 
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = 'Move line up' })
+vim.keymap.set('n', '<A-j>', ':m .+2<CR>==', { desc = 'Move line down' })
+
 -- User command
 vim.api.nvim_create_user_command('CopyPath', function()
   local path = vim.fn.expand '%:p'
