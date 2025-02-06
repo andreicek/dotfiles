@@ -93,10 +93,16 @@ vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = 'Move line up' })
 vim.keymap.set('n', '<A-j>', ':m .+2<CR>==', { desc = 'Move line down' })
 
 -- User command
-vim.api.nvim_create_user_command('CopyPath', function()
-  local path = vim.fn.expand '%:p'
+vim.api.nvim_create_user_command('CopyPathAbs', function()
+  local path = vim.fn.expand '%:p' -- absolute path
   vim.fn.setreg('+', path)
-  print('File path copied to clipboard: ' .. path)
+  print('Absolute path copied to clipboard: ' .. path)
+end, {})
+
+vim.api.nvim_create_user_command('CopyPath', function()
+  local path = vim.fn.expand '%' -- relative path
+  vim.fn.setreg('+', path)
+  print('Relative path copied to clipboard: ' .. path)
 end, {})
 
 -- Clear highlights on search when pressing <Esc> in normal mode

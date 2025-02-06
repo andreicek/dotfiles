@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 
-gh pr create --fill-first --assignee harrisonl --base main --reviewer harrisonl
-
-/Applications/eldenalert.app/Contents/MacOS/eldenalert -text 'PR CREATED'
+gh pr create --base staging
 gh pr view --web

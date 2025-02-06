@@ -7,3 +7,4 @@ fish/.config/fish/completions
 fish/.config/fish/fish_variables
 *.db
 neovim/.config/nvim/lazy-lock.json
+bin/.local

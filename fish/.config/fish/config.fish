@@ -30,7 +30,6 @@ alias gpl="git pull -r"
 alias gps="git push"
 alias gl="git log --oneline"
 alias cat="bat --theme=ansi"
-alias rm="trash"
 alias vim="nvim"
 
 ###
