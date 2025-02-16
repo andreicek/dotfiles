@@ -1,4 +1,4 @@
-theme = kanagawabones
+theme = kanagawabones-elixir
 window-decoration = true
 
 shell-integration = fish
