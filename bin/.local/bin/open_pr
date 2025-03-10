@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
 
-gh pr create --base staging
-gh pr view --web
+REPO=$(git remote get-url origin | sed -E 's/.*github.com[:/]([^/]+\/[^/]+)(\.git)?$/\1/')
+REPO=$(echo "$REPO" | sed 's/\.git$//')
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+PR_URL="https://github.com/$REPO/pull/new/$BRANCH"
+
+echo "Opening PR page for $BRANCH in $REPO..."
+echo "URL: $PR_URL"
+
+open "$PR_URL"
