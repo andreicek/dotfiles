@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Get current branch name
+CURRENT_BRANCH=$(git branch --show-current)
+STAGING_BRANCH="staging"
+
+echo "Current branch: $CURRENT_BRANCH"
+echo "Preserving branches: $CURRENT_BRANCH and $STAGING_BRANCH"
+echo ""
+echo "The following branches will be deleted:"
+
+# List branches that will be deleted
+git branch | grep -v "$CURRENT_BRANCH" | grep -v "$STAGING_BRANCH" | sed 's/^[ *]*//'
+
+echo ""
+read -p "Do you want to proceed? (y/n): " CONFIRM
+
+if [[ "$CONFIRM" == "y" || "$CONFIRM" == "Y" ]]; then
+    # Delete all branches except current and staging
+    git branch | grep -v "$CURRENT_BRANCH" | grep -v "$STAGING_BRANCH" | sed 's/^[ *]*//' | xargs -r git branch -D
+    echo "Branches deleted successfully!"
+else
+    echo "Operation cancelled."
+fi
