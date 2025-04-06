@@ -6,7 +6,7 @@ clipboard-read = "allow"
 clipboard-paste-protection = false
 
 window-title-font-family = "Berkeley Mono"
-font-family = "Berkeley Mono"
+font-family = "TX-02"
 font-size = 15
 
 macos-option-as-alt = true
