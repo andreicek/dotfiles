@@ -1,6 +1,7 @@
 [user]
   email = andreicek@0x7f.dev
   name = Andrei Zvonimir Crnković
+	signingkey = 3EACAE18584593113010CBBF61AC92456AF8C127
 [core]
   ignorecase = false
   excludesfile = /Users/andreicek/.dotfiles/git/gitignore
@@ -29,3 +30,7 @@
   light = false
 [gpg]
   program = /opt/homebrew/bin/gpg
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
