@@ -56,10 +56,29 @@ start_home_session() {
 if is_tmux_running; then
     tmux attach-session -d
 else
-    start_contractbook
-    start_smartaccount
-    start_home_session
-
-    tmux attach-session -t contractbook:1
+    case $1 in
+        contractbook)
+            start_contractbook
+            tmux attach-session -t contractbook:1
+            ;;
+        smartaccount)
+            start_smartaccount
+            tmux attach-session -t smartaccount:1
+            ;;
+        home)
+            start_home_session
+            tmux attach-session -t home:1
+            ;;
+        all)
+            start_contractbook
+            start_smartaccount
+            start_home_session
+            tmux attach-session -t contractbook:1
+            ;;
+        *)
+            echo "Usage: $0 {contractbook|smartaccount|home|all}"
+            exit 1
+            ;;
+    esac
 fi
 
