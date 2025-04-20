@@ -1,0 +1,20 @@
+{
+  "theme": "Kanagawa",
+  "vim_mode": true,
+  "ui_font_family": "TX-02",
+  "buffer_font_family": "TX-02",
+  "ui_font_size": 15,
+  "buffer_font_size": 15,
+  "show_edit_predictions": false,
+  "languages": {
+    "Elixir": {
+      "language_servers": ["next-ls", "!lexical", "!elixir-ls"],
+      "format_on_save": {
+        "external": {
+          "command": "mix",
+          "arguments": ["format", "--stdin-filename", "{buffer_path}", "-"]
+        }
+      }
+    }
+  }
+}

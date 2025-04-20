@@ -16,21 +16,6 @@ start_contractbook() {
     tmux send-keys -t contractbook:1.1 'yarn start:dev' C-m
     tmux send-keys -t contractbook:1.2 'cd /Users/andreicek/Developer/contractbook/partner-tools' C-m
     tmux send-keys -t contractbook:1.2 'yarn start' C-m
-
-    tmux new-window -t contractbook:2 -n 'api'
-    tmux send-keys -t contractbook:2 'cd /Users/andreicek/Developer/contractbook/api' C-m
-    tmux send-keys -t contractbook:2 'nvim .' C-m
-    tmux send-keys -t contractbook:2 '\' C-m
-
-    tmux new-window -t contractbook:3 -n 'web'
-    tmux send-keys -t contractbook:3 'cd /Users/andreicek/Developer/contractbook/web' C-m
-    tmux send-keys -t contractbook:3 'nvim .' C-m
-    tmux send-keys -t contractbook:3 '\' C-m
-
-    tmux new-window -t contractbook:4 -n 'partner-tools'
-    tmux send-keys -t contractbook:4 'cd /Users/andreicek/Developer/contractbook/partner-tools' C-m
-    tmux send-keys -t contractbook:4 'nvim .' C-m
-    tmux send-keys -t contractbook:4 '\' C-m
 }
 
 start_smartaccount() {
@@ -40,13 +25,8 @@ start_smartaccount() {
     tmux send-keys -t smartaccount:1 'cd /Users/andreicek/Developer/smartaccount' C-m
     tmux send-keys -t smartaccount:1 'iex -S mix phx.server' C-m
 
-    tmux new-window -t smartaccount:2 -n 'nvim'
+    tmux new-window -t smartaccount:2
     tmux send-keys -t smartaccount:2 'cd /Users/andreicek/Developer/smartaccount' C-m
-    tmux send-keys -t smartaccount:2 'nvim .' C-m
-    tmux send-keys -t smartaccount:2 '\' C-m
-
-    tmux new-window -t smartaccount:3 -n 'prod'
-    tmux send-keys -t smartaccount:3 'cd /Users/andreicek/Developer/smartaccount' C-m
 }
 
 start_home_session() {
@@ -81,4 +61,3 @@ else
             ;;
     esac
 fi
-

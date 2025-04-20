@@ -5,7 +5,7 @@ shell-integration = fish
 clipboard-read = "allow"
 clipboard-paste-protection = false
 
-window-title-font-family = "Berkeley Mono"
+window-title-font-family = "TX-02"
 font-family = "TX-02"
 font-size = 15
 
