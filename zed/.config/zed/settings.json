@@ -1,5 +1,17 @@
 {
-  "theme": "Kanagawa",
+  "edit_predictions": {
+    "mode": "eager",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_assistant": false
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Solarized Light",
+    "dark": "Solarized Dark"
+  },
   "vim_mode": true,
   "ui_font_family": "TX-02",
   "buffer_font_family": "TX-02",

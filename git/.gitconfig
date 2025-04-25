@@ -1,36 +1,36 @@
 [user]
-  email = andreicek@0x7f.dev
-  name = Andrei Zvonimir Crnković
-	signingkey = 3EACAE18584593113010CBBF61AC92456AF8C127
+    email = andreicek@0x7f.dev
+    name = Andrei Zvonimir Crnković
+    signingkey = 3EACAE18584593113010CBBF61AC92456AF8C127
 [core]
-  ignorecase = false
-  excludesfile = /Users/andreicek/.dotfiles/git/gitignore
-  pager = delta
+    ignorecase = false
+    excludesfile = /Users/andreicek/.dotfiles/git/gitignore
+    pager = delta
 [push]
-  default = current
-  autoSetupRemote = true
+    default = current
+    autoSetupRemote = true
 [color]
-  ui = true
+    ui = true
 [alias]
-  pls = push --force-with-lease
-  fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
-  fix = commit --fixup HEAD
+    pls = push --force-with-lease
+    fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+    fix = commit --fixup HEAD
 [rebase]
-  autosquash = true
+    autosquash = true
 [interactive]
-  diffFilter = delta --color-only
+    diffFilter = delta --color-only
 [merge]
-  conflictstyle = diff3
+    conflictstyle = diff3
 [diff]
-  colorMoved = default
+    colorMoved = default
 [delta]
-  navigate = true
-  line-numbers = true
-  features = unobtrusive-line-numbers decorations
-  light = false
+    navigate = true
+    line-numbers = true
+    features = unobtrusive-line-numbers decorations
+    light = false
 [gpg]
-  program = /opt/homebrew/bin/gpg
+    program = /opt/homebrew/bin/gpg
 [commit]
-	gpgsign = true
+    gpgsign = true
 [tag]
-	gpgsign = true
+    gpgsign = true

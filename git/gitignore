@@ -1,6 +1,4 @@
 .DS_Store
-*.iml
-.idea/
 .lexical/
 andrei_notes/
 mise.toml
