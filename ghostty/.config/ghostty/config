@@ -14,7 +14,7 @@ window-padding-y = 10
 
 window-save-state = always
 keybind = ctrl+a>n=new_tab
-keybind = ctrl+a>shift+\=new_split:left
+keybind = ctrl+a>shift+\=new_split:right
 keybind = ctrl+a>shift+-=new_split:down
 keybind = ctrl+a>z=toggle_split_zoom
 keybind = ctrl+a>left=goto_split:left
@@ -23,4 +23,4 @@ keybind = ctrl+a>up=goto_split:up
 keybind = ctrl+a>down=goto_split:down
 
 keybind = super+r=reload_config
-macos-icon = xray
+macos-icon = retro

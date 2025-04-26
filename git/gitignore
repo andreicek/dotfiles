@@ -1,1 +1,5 @@
 dslr.toml
+.DS_Store
+.lexical/
+andrei_notes/
+mise.toml
