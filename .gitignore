@@ -1,9 +1,3 @@
-zed/.config/zed/conversations/
-zed/.config/zed/embeddings/
-zed/.config/zed/prompts/
 .tmp*
 *.db
 neovim/.config/nvim/lazy-lock.json
-bin/.local/share
-bin/.local/state
-bin/.local/bin/mise
