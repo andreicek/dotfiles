@@ -23,4 +23,3 @@ keybind = ctrl+a>up=goto_split:up
 keybind = ctrl+a>down=goto_split:down
 
 keybind = super+r=reload_config
-macos-icon = retro
