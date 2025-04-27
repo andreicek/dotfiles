@@ -39,6 +39,7 @@ alias e="zed"
 
 zoxide init fish | source
 mise activate fish | source
+mise completion fish | source
 fzf --fish | source
 
 ###
