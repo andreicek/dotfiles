@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -e
+
+if [ -z "$OPENAI_API_KEY" ]; then
+    echo "Error: OPENAI_API_KEY environment variable is not set." >&2
+    echo "Export it with: set -x OPENAI_API_KEY 'your-api-key-here'" >&2
+    exit 1
+fi
+
+DIFF_CONTENT=$(cat)
+
+if [ -z "$DIFF_CONTENT" ]; then
+    echo "Error: No input received. Use with pipe: git show | write_description" >&2
+    exit 1
+fi
+
+PROMPT="write me a PR description according to this diff. never include '## PR Description'"
+
+payload=$(jq -n \
+  --arg model "gpt-4o" \
+  --arg system_content "You are a helpful assistant that creates clear and concise PR descriptions." \
+  --arg user_content "$PROMPT"$'\n\n```diff\n'"$DIFF_CONTENT"$'\n```' \
+  '{
+    model: $model,
+    messages: [
+      {role: "system", content: $system_content},
+      {role: "user", content: $user_content}
+    ],
+    temperature: 0.7
+  }')
+
+response=$(curl -s -X POST "https://api.openai.com/v1/chat/completions" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $OPENAI_API_KEY" \
+    --data "$payload")
+
+if echo "$response" | jq -e 'has("error")' > /dev/null; then
+    error_message=$(echo "$response" | jq -r '.error.message')
+    echo "Error from API: $error_message" >&2
+    exit 1
+fi
+
+echo "$response" | jq -r '.choices[0].message.content'

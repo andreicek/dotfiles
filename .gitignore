@@ -1,3 +1,4 @@
 .tmp*
 *.db
 neovim/.config/nvim/lazy-lock.json
+**/secret.fish
