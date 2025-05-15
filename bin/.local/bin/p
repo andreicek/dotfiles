@@ -1,0 +1,81 @@
+#!/bin/bash
+
+CONFIG_FILE=~/.config/p.json
+
+add_entry() {
+    local name="$1"
+    read -p "Enter db_connection_string: " db_connection_string
+
+    new_entry="{\"name\": \"$name\", \"db_connection_string\": \"$db_connection_string\"}"
+
+    if [ ! -f "$CONFIG_FILE" ]; then
+        echo "[$new_entry]" > "$CONFIG_FILE"
+        echo "Created new config file with entry '$name'"
+    else
+        if [ ! -s "$CONFIG_FILE" ] || ! jq empty "$CONFIG_FILE" 2>/dev/null; then
+            echo "[$new_entry]" > "$CONFIG_FILE"
+            echo "Created new config file with entry '$name'"
+        else
+            if jq 'if type == "array" then true else false end' "$CONFIG_FILE" | grep -q "true"; then
+                temp_file=$(mktemp)
+                jq ". += [$new_entry]" "$CONFIG_FILE" > "$temp_file" && mv "$temp_file" "$CONFIG_FILE"
+                echo "Added entry '$name' to config file"
+            else
+                temp_file=$(mktemp)
+                jq -s '.[0] = [.[0]] | .[0] + ['"$new_entry"']' "$CONFIG_FILE" > "$temp_file" && mv "$temp_file" "$CONFIG_FILE"
+                echo "Converted config file to array format and added entry '$name'"
+            fi
+        fi
+    fi
+}
+
+connect_to_db() {
+    local connection_name="$1"
+
+    if [ ! -f "$CONFIG_FILE" ]; then
+        echo "Config file not found: $CONFIG_FILE"
+        echo "Use '$0 --new <name>' to create a new entry"
+        exit 1
+    fi
+
+    db_connection_string=$(jq -r '.[] | select(.name == "'"$connection_name"'") | .db_connection_string' "$CONFIG_FILE")
+
+    if [ -z "$db_connection_string" ] || [ "$db_connection_string" = "null" ]; then
+        echo "Connection '$connection_name' not found"
+        exit 1
+    fi
+
+    pgcli "$db_connection_string"
+}
+
+select_entry() {
+    if [ ! -f "$CONFIG_FILE" ]; then
+        echo "Config file not found: $CONFIG_FILE"
+        echo "Use '$0 --new <name>' to create a new entry"
+        exit 1
+    fi
+
+    selected_name=$(jq -r '.[].name' "$CONFIG_FILE" | fzf --height=40% --prompt="Select connection: ")
+
+    if [ -z "$selected_name" ]; then
+        exit 0
+    fi
+
+    db_connection_string=$(jq -r '.[] | select(.name == "'"$selected_name"'") | .db_connection_string' "$CONFIG_FILE")
+
+    pgcli "$db_connection_string"
+}
+
+if [ "$1" = "--new" ]; then
+    if [ -z "$2" ]; then
+        echo "Error: You must provide a name for the new connection"
+        echo "Usage: $0 --new <name>"
+        exit 1
+    fi
+    add_entry "$2"
+elif [ -n "$1" ]; then
+    connect_to_db "$1"
+else
+    select_entry
+fi
+
