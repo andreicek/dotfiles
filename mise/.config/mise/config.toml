@@ -1,6 +1,6 @@
 [tools]
-erlang = "27.0.1"
-elixir = "1.17.2-otp-27"
+erlang = "27.3.4"
+elixir = "1.18.4-otp-27"
 python = "3.12.5"
 node = "20.17.0"
 usage = "latest"
