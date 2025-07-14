@@ -27,7 +27,7 @@
     navigate = true
     line-numbers = true
     features = unobtrusive-line-numbers decorations
-    light = false
+    light = true
 [gpg]
     format = ssh
 [gpg "ssh"]
