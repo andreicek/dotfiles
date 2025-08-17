@@ -26,7 +26,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.bo.softtabstop = 2
 
-vim.keymap.set('v', ',y', '"*y', { desc = 'Copy to clipboard' })
+vim.keymap.set('v', ',y', '"+y', { desc = 'Copy to clipboard' })
 vim.keymap.set('v', ',;', '"*p', { desc = 'Paste from clipboard' })
 vim.keymap.set('n', ',;', '"*p', { desc = 'Paste from clipboard' })
 vim.keymap.set('v', '<C-j>', '}', { desc = 'Move down paragraph' })

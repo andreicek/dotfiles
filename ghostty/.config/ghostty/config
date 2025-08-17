@@ -1,16 +1,25 @@
 theme = dark:"Builtin Solarized Dark",light:"Builtin Solarized Light"
+window-theme = ghostty
 
 shell-integration = fish
 clipboard-read = "allow"
 clipboard-paste-protection = false
 
 font-family = "TX-02"
-font-size = 15
-
-macos-option-as-alt = true
-macos-titlebar-proxy-icon = hidden
+font-size = 12
 
 window-padding-x = 10
 window-padding-y = 10
 
 keybind = super+r=reload_config
+
+keybind = super+left=goto_split:left
+keybind = super+right=goto_split:right
+keybind = super+up=goto_split:up
+keybind = super+z=toggle_split_zoom
+keybind = super+d=new_split:right
+keybind = super+shift+d=new_split:down
+keybind = super+down=goto_split:down
+
+keybind = super+t=new_tab
+keybind = super+w=close_tab

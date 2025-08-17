@@ -1,24 +1,14 @@
-###
-# Path
-###
+fish_add_path -g -m /usr/local/bin /usr/bin /bin
 
-fish_add_path /opt/homebrew/bin
-fish_add_path ~/.local/bin/
+set -gx EDITOR nvim
+set -gx GPG_TTY (tty)
+set -gx ERL_AFLAGS "-kernel shell_history enabled"
+set -g fish_greeting
 
-###
-# Variables
-###
+if status is-interactive
+  mise activate fish --shims | source
+  mise completion fish | source
+  zoxide init fish | source
+  fzf --fish | source
+end
 
-set -Ux EDITOR nvim
-set -Ux GPG_TTY "$(tty)"
-set -Ux ERL_AFLAGS "-kernel shell_history enabled"
-set fish_greeting
-
-###
-# Plugins
-###
-
-zoxide init fish | source
-mise activate fish | source
-mise completion fish | source
-fzf --fish | source
