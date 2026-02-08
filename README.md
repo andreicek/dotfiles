@@ -8,12 +8,13 @@ My dotfiles, managed with [GNU Stow](https://www.gnu.org/software/stow/).
 - **zsh** — minimal prompt with git info, aliases, fzf/zoxide/mise integration, autosuggestions + syntax highlighting
 - **kitty** — Gruvbox Dark, IBM Plex Mono, splits and tabs with super key bindings
 - **zed** — Gruvbox Dark, Elixir/HEEX setup with mix format
+- **bin** — `open_pr` script to push and open a GitHub PR page
 
 ## Usage
 
 ```
 cd ~/.dotfiles
-stow git zsh kitty zed
+stow git zsh kitty zed bin
 ```
 
 This symlinks everything into the right place under `$HOME`.
