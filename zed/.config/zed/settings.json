@@ -1,0 +1,37 @@
+{
+  "agent_servers": {
+    "claude": {
+      "default_mode": "bypassPermissions",
+    },
+  },
+  "buffer_font_family": "IBM Plex Mono",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Gruvbox Dark",
+  },
+  "languages": {
+    "Elixir": {
+      "language_servers": ["expert", "!elixir-ls", "!next-ls", "!lexical"],
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "mix",
+          "arguments": ["format", "--stdin-filename", "{buffer_path}", "-"],
+        },
+      },
+    },
+    "HEEX": {
+      "language_servers": ["expert", "!elixir-ls", "!next-ls", "!lexical"],
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "mix",
+          "arguments": ["format", "--stdin-filename", "{buffer_path}", "-"],
+        },
+      },
+    },
+  },
+}
