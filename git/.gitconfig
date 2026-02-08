@@ -1,0 +1,37 @@
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /opt/1Password/op-ssh-sign
+[commit]
+	gpgsign = true
+[color]
+    ui = true
+[alias]
+    pls = push --force-with-lease
+    fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+    fix = commit --fixup HEAD
+    lg = log --oneline --graph --decorate
+    wip = !git add -A && git commit -m 'wip'
+    undo = reset --soft HEAD~1
+    clean-branches = !git branch --merged | grep -v '\\*\\|main\\|master' | xargs -r git branch -d
+[rebase]
+    autosquash = true
+    autoStash = true
+[core]
+    ignorecase = false
+[user]
+    email = andreicek@0x7f.dev
+    name = Andrei Zvonimir Crnković
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDlI6x0qonOEHomePC5PRG3ASAvgvywbfNfiUq3mfChc
+[pull]
+    rebase = true
+[fetch]
+    prune = true
+[merge]
+    conflictstyle = zdiff3
+[diff]
+    algorithm = histogram
+[rerere]
+    enabled = true
+[push]
+	autoSetupRemote = true

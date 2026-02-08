@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+REPO=$(git remote get-url origin | sed -E 's/.*github.com[:/]([^/]+\/[^/]+)(\.git)?$/\1/')
+REPO=$(echo "$REPO" | sed 's/\.git$//')
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+echo "Pushing $BRANCH..."
+git push || exit 1
+
+PR_URL="https://github.com/$REPO/pull/new/$BRANCH"
+
+echo "Opening PR page for $BRANCH in $REPO..."
+echo "URL: $PR_URL"
+
+open "$PR_URL"
