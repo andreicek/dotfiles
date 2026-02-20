@@ -10,6 +10,7 @@ setopt HIST_REDUCE_BLANKS
 
 export EDITOR=vim
 export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 if command -v batcat > /dev/null; then
@@ -18,6 +19,11 @@ fi
 
 if command -v eza > /dev/null; then
   alias ls='eza --icons'
+fi
+
+
+if command -v xclip > /dev/null; then
+  alias pbcopy='xclip -selection clipboard'
 fi
 
 alias gco="git checkout"
