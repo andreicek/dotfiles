@@ -1,0 +1,10 @@
+[tools]
+erlang = "latest"
+elixir = "latest"
+node = "latest"
+python = "latest"
+neovim = "latest"
+tree-sitter = "latest"
+bun = "latest"
+"ubi:elixir-lang/expert" = "nightly"
+"npm:@anthropic-ai/claude-code" = "latest"

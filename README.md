@@ -2,28 +2,28 @@
 
 My dotfiles, managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
-## What's in here
+## Quick start
 
-- **git** — commit signing via 1Password, rebase-heavy workflow with fixup helpers, rerere, histogram diffs
-- **zsh** — minimal prompt with git info, aliases, fzf/zoxide/mise integration, autosuggestions + syntax highlighting
-- **kitty** — Gruvbox Dark, IBM Plex Mono, splits and tabs with super key bindings
-- **zed** — Gruvbox Dark, Elixir/HEEX setup with mix format
-- **bin** — `open_pr` script to push and open a GitHub PR page
+```
+curl -fsSL https://raw.githubusercontent.com/andreicek/dotfiles/master/install.sh | bash
+```
 
-## Usage
+Or manually:
+
+```
+git clone https://github.com/andreicek/dotfiles.git ~/.dotfiles
+~/.dotfiles/install.sh
+```
+
+The installer handles everything — APT packages, Docker, zoxide, mise, runtimes, Expert LSP, Claude Code, stow, and setting zsh as the default shell. It uses [gum](https://github.com/charmbracelet/gum) for progress output (installed automatically).
+
+Re-running is safe — already-installed items are skipped.
+
+## Manual stow
+
+To re-stow individual packages:
 
 ```
 cd ~/.dotfiles
-stow git zsh kitty zed bin
+stow git zsh bin nvim kitty mise
 ```
-
-This symlinks everything into the right place under `$HOME`.
-
-## Dependencies
-
-Things I expect to have installed:
-
-- [eza](https://github.com/eza-community/eza), [bat](https://github.com/sharkdp/bat), [fzf](https://github.com/junegunn/fzf), [zoxide](https://github.com/ajeetdsouza/zoxide)
-- [mise](https://mise.jdx.dev/) for runtime/tool management
-- [1Password](https://1password.com/) for SSH + commit signing
-- zsh-autosuggestions, zsh-syntax-highlighting (system packages)
