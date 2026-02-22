@@ -1,22 +1,29 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "WebSearch",
+      "WebFetch(domain:*)"
+    ]
+  },
   "spinnerVerbs": {
     "mode": "replace",
     "verbs": [
-      "Engaging warp drive",
-      "Scanning anomalies",
-      "Raising shields",
-      "Running diagnostics",
-      "Recalibrating sensors",
-      "Charting course",
-      "Hailing frequencies",
-      "Transporting data",
-      "Modulating frequencies",
-      "Accessing databanks",
-      "Analyzing patterns",
-      "Computing solutions",
-      "Routing power",
-      "Energizing",
-      "Initializing deflector array"
+      "Gazing into the palantír",
+      "Delving deep beneath Moria",
+      "Kindling flame upon the mountain",
+      "Poring over scrolls of old",
+      "Rousing the Ents from slumber",
+      "Riding forth unto Edoras",
+      "The beacons are lit",
+      "Speak friend and enter",
+      "Fording the Brandywine",
+      "Taking counsel in Imladris",
+      "Deciphering the Tengwar",
+      "Wandering paths long forgotten",
+      "Gathering the host of Rohan",
+      "Treading the Dead Marshes",
+      "Bidding the Black Gate open"
     ]
   }
 }
