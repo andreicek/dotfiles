@@ -31,10 +31,15 @@ alias gl="git log --oneline"
 autoload -Uz compinit && compinit
 
 setopt PROMPT_SUBST
+autoload -Uz add-zsh-hook
+autoload -U colors && colors
 
-function _git_prompt_info() {
+typeset -g _git_async_pid=0
+typeset -g _git_async_result=""
+
+_git_prompt_compute() {
   local branch
-  branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null) || { echo ""; return; }
   local dirty=""
   if [ -n "$(git status --porcelain --ignore-submodules=dirty 2>/dev/null)" ]; then
     dirty=" %{$fg[yellow]%}✗%{$reset_color%}"
@@ -42,8 +47,27 @@ function _git_prompt_info() {
   echo " %{$fg[blue]%}git:(%{$fg[red]%}${branch}%{$fg[blue]%})%{$reset_color%}${dirty}"
 }
 
-autoload -U colors && colors
-PROMPT='%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}$(_git_prompt_info) '
+_git_async_worker() {
+  _git_prompt_compute > "/tmp/zsh_git_prompt_$$"
+  kill -s USR1 $$ 2>/dev/null
+}
+
+TRAPUSR1() {
+  _git_async_result="$(cat /tmp/zsh_git_prompt_$$)"
+  _git_async_pid=0
+  zle && zle reset-prompt
+}
+
+_git_precmd() {
+  _git_async_result=""
+  (( _git_async_pid )) && kill -s HUP $_git_async_pid 2>/dev/null
+  _git_async_worker &!
+  _git_async_pid=$!
+}
+
+add-zsh-hook precmd _git_precmd
+
+PROMPT='%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}${_git_async_result} '
 
 eval "$(mise activate zsh)"
 eval "$(mise exec -- gh completion -s zsh)"
