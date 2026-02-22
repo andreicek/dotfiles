@@ -3,6 +3,7 @@ set -euo pipefail
 
 DOTFILES_DIR="$HOME/.dotfiles"
 DOTFILES_REPO="https://github.com/andreicek/dotfiles.git"
+GPG_KEY="B4EFF865EA9E39A2"
 
 # Prompt for sudo upfront and keep it alive
 sudo -v
@@ -175,7 +176,6 @@ success "mise runtimes up to date"
 # --- [8/9] GPG / YubiKey ---
 
 step "GPG / YubiKey"
-GPG_KEY="B4EFF865EA9E39A2"
 if gpg --list-keys "$GPG_KEY" &>/dev/null; then
   success "GPG key already imported"
 else
