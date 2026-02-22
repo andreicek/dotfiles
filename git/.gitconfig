@@ -1,5 +1,7 @@
 [commit]
     gpgsign = true
+[gpg]
+    format = ssh
 [color]
     ui = true
 [alias]
@@ -18,7 +20,7 @@
 [user]
     email = andreicek@0x7f.dev
     name = Andrei Zvonimir Crnković
-    signingkey = B4EFF865EA9E39A2
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII0idhGcgNOuAWIXo8yTcfP2kucS0fn+JPI37xp75i//
 [pull]
     rebase = true
 [fetch]
