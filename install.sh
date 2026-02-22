@@ -31,7 +31,7 @@ info()    { gum log --level info "$*"; }
 success() { gum log --level info --prefix "✓" "$*"; }
 warn()    { gum log --level warn "$*"; }
 
-TOTAL_STEPS=8
+TOTAL_STEPS=9
 CURRENT_STEP=0
 step() {
   CURRENT_STEP=$((CURRENT_STEP + 1))
@@ -84,12 +84,12 @@ ensure_command() {
   fi
 }
 
-# --- [1/8] gum ---
+# --- [1/9] gum ---
 
 step "gum"
 success "gum already available"
 
-# --- [2/8] APT packages ---
+# --- [2/9] APT packages ---
 
 step "APT packages"
 
@@ -117,7 +117,7 @@ for pkg in "${apt_packages[@]}"; do
   ensure_apt_pkg "$pkg"
 done
 
-# --- [3/8] Docker ---
+# --- [3/9] Docker ---
 
 step "Docker"
 if dpkg -s docker-ce &>/dev/null; then
@@ -141,7 +141,7 @@ else
   success "Docker installed (log out and back in for group membership)"
 fi
 
-# --- [4/8] mise ---
+# --- [4/9] mise ---
 
 step "mise"
 install_mise() {
@@ -150,14 +150,21 @@ install_mise() {
 }
 ensure_command "$HOME/.local/bin/mise" install_mise
 
-# --- [5/8] Stow dotfiles ---
+# --- [5/9] GnuPG permissions ---
+
+step "GnuPG permissions"
+mkdir -p "$HOME/.gnupg"
+chmod 700 "$HOME/.gnupg"
+success "~/.gnupg directory ready"
+
+# --- [6/9] Stow dotfiles ---
 
 step "Stow dotfiles"
 cd "$DOTFILES_DIR"
 stow --restow git zsh bin nvim kitty mise gnupg
 success "All packages stowed"
 
-# --- [6/8] mise runtimes ---
+# --- [7/9] mise runtimes ---
 
 step "mise runtimes"
 export PATH="$HOME/.local/bin:$PATH"
@@ -165,7 +172,7 @@ gum spin --title "Installing runtimes from mise config (this may take a while)..
   mise install -y
 success "mise runtimes up to date"
 
-# --- [7/8] GPG / YubiKey ---
+# --- [8/9] GPG / YubiKey ---
 
 step "GPG / YubiKey"
 GPG_KEY="B4EFF865EA9E39A2"
@@ -177,7 +184,7 @@ else
   success "GPG key imported"
 fi
 
-# --- [8/8] Default shell ---
+# --- [9/9] Default shell ---
 
 step "Default shell"
 zsh_path="$(which zsh)"
