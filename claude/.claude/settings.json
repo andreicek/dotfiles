@@ -12,6 +12,7 @@
     "defaultMode": "acceptEdits"
   },
   "enableAllProjectMcpServers": true,
+  "spinnerTipsEnabled": false,
   "outputStyle": "Concise",
   "spinnerVerbs": {
     "mode": "replace",
