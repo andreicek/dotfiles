@@ -1,3 +1,6 @@
+[settings.github]
+github_attestations = false
+
 [tools]
 erlang = "latest"
 elixir = "latest"
