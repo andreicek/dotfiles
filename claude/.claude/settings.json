@@ -6,6 +6,12 @@
       "WebFetch(domain:*)"
     ]
   },
+  "outputStyle": "Concise",
+  "enableAllProjectMcpServers": true,
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "spinnerVerbs": {
     "mode": "replace",
     "verbs": [
@@ -24,6 +30,26 @@
       "Gathering the host of Rohan",
       "Treading the Dead Marshes",
       "Bidding the Black Gate open"
+    ]
+  },
+  "spinnerTipsOverride": {
+    "excludeDefault": true,
+    "tips": [
+      "Not all those who wander are lost",
+      "Even the smallest person can change the course of the future",
+      "All we have to decide is what to do with the time that is given us",
+      "There is some good in this world, and it's worth fighting for",
+      "A wizard is never late, nor is he early",
+      "The road goes ever on and on",
+      "One does not simply walk into Mordor",
+      "I would rather share one lifetime with you than face all the ages of this world alone",
+      "Deeds will not be less valiant because they are unpraised",
+      "It is useless to meet revenge with revenge; it will heal nothing",
+      "Faithless is he that says farewell when the road darkens",
+      "Little by little, one travels far",
+      "The wise speak only of what they know",
+      "Courage is found in unlikely places",
+      "May it be a light to you in dark places, when all other lights go out"
     ]
   }
 }
