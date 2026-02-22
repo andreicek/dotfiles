@@ -13,18 +13,9 @@ export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-if command -v batcat > /dev/null; then
-  alias cat='batcat --theme=ansi'
-fi
-
-if command -v eza > /dev/null; then
-  alias ls='eza --icons'
-fi
-
-
-if command -v xclip > /dev/null; then
-  alias pbcopy='xclip -selection clipboard'
-fi
+alias cat='batcat --theme=ansi'
+alias ls='eza --icons'
+alias pbcopy='wl-copy'
 
 alias gco="git checkout"
 alias gst="git status -sb"
@@ -54,19 +45,12 @@ function _git_prompt_info() {
 autoload -U colors && colors
 PROMPT='%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}$(_git_prompt_info) '
 
-if command -v mise > /dev/null; then
-  eval "$(mise activate zsh)"
-  eval "$(mise exec -- gh completion -s zsh)"
-  eval "$(mise exec -- jira completion zsh)"
-fi
+eval "$(mise activate zsh)"
+eval "$(mise exec -- gh completion -s zsh)"
+eval "$(mise exec -- jira completion zsh)"
 
-if command -v zoxide > /dev/null; then
-  eval "$(zoxide init zsh)"
-fi
+eval "$(zoxide init zsh)"
+source <(fzf --zsh)
 
-if command -v fzf > /dev/null; then
-  source <(fzf --zsh)
-fi
-
-[ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
