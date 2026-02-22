@@ -1,3 +1,7 @@
+if command -v tmux &>/dev/null && [[ -z "$TMUX" ]]; then
+  exec tmux new-session -A -s main
+fi
+
 export PATH="/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin:$PATH"
 
 HISTSIZE=10000

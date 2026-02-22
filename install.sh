@@ -102,7 +102,7 @@ apt_packages=(
   zsh-autosuggestions zsh-syntax-highlighting
 
   # CLI tools
-  bat eza fzf kitty wl-clipboard zoxide
+  bat eza fzf kitty tmux wl-clipboard zoxide
 
   # Build deps (erlang via mise)
   build-essential libssl-dev libncurses-dev
@@ -162,7 +162,7 @@ success "~/.gnupg directory ready"
 
 step "Stow dotfiles"
 cd "$DOTFILES_DIR"
-stow --restow git zsh bin nvim kitty mise gnupg claude
+stow --restow git zsh bin nvim kitty tmux mise gnupg claude
 success "All packages stowed"
 
 # --- [7/9] mise runtimes ---
