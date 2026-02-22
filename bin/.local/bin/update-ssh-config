@@ -4,5 +4,5 @@ set -euo pipefail
 DOTFILES_DIR="$HOME/.dotfiles"
 GPG_KEY="B4EFF865EA9E39A2"
 
-gpg --yes --recipient "$GPG_KEY" --encrypt --output "$DOTFILES_DIR/ssh-config.gpg" ~/.ssh/config
-echo "SSH config encrypted and saved to $DOTFILES_DIR/ssh-config.gpg"
+gpg --yes --recipient "$GPG_KEY" --encrypt --output "$DOTFILES_DIR/ssh/config.gpg" ~/.ssh/config
+echo "SSH config encrypted and saved to $DOTFILES_DIR/ssh/config.gpg"

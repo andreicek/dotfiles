@@ -190,8 +190,8 @@ fi
 step "SSH config"
 mkdir -p "$HOME/.ssh"
 chmod 700 "$HOME/.ssh"
-if [ -f "$DOTFILES_DIR/ssh-config.gpg" ]; then
-  gpg --yes --quiet --decrypt "$DOTFILES_DIR/ssh-config.gpg" > "$HOME/.ssh/config"
+if [ -f "$DOTFILES_DIR/ssh/config.gpg" ]; then
+  gpg --yes --quiet --decrypt "$DOTFILES_DIR/ssh/config.gpg" > "$HOME/.ssh/config"
   chmod 600 "$HOME/.ssh/config"
   success "SSH config decrypted"
 else
