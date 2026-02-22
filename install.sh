@@ -161,7 +161,7 @@ success "~/.gnupg directory ready"
 
 step "Stow dotfiles"
 cd "$DOTFILES_DIR"
-stow --restow git zsh bin nvim kitty mise gnupg
+stow --restow git zsh bin nvim kitty mise gnupg claude
 success "All packages stowed"
 
 # --- [7/9] mise runtimes ---

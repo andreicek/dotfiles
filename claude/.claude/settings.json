@@ -1,0 +1,22 @@
+{
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "Engaging warp drive",
+      "Scanning anomalies",
+      "Raising shields",
+      "Running diagnostics",
+      "Recalibrating sensors",
+      "Charting course",
+      "Hailing frequencies",
+      "Transporting data",
+      "Modulating frequencies",
+      "Accessing databanks",
+      "Analyzing patterns",
+      "Computing solutions",
+      "Routing power",
+      "Energizing",
+      "Initializing deflector array"
+    ]
+  }
+}
