@@ -56,6 +56,8 @@ PROMPT='%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$rese
 
 if command -v mise > /dev/null; then
   eval "$(mise activate zsh)"
+  eval "$(mise exec -- gh completion -s zsh)"
+  eval "$(mise exec -- jira completion zsh)"
 fi
 
 if command -v zoxide > /dev/null; then
