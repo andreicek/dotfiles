@@ -14,13 +14,9 @@ Run these commands in parallel:
 - `git branch --show-current` — current branch name
 - `git remote show origin` — to find the default branch and confirm the remote
 
-## 2. Determine the base branch
+## 2. Ask for the base branch
 
-Figure out the correct base branch for this PR:
-
-- Check if `gh-merge-base` is configured for the current branch: `git config branch.$(git branch --show-current).gh-merge-base`
-- If not configured, use the repository's default branch (from step 1's `git remote show origin` output).
-- Do NOT ask the user — just use the right default.
+Ask the user which branch this PR should target. Show the repo's default branch as a suggestion.
 
 ## 3. Push the branch
 
