@@ -39,7 +39,7 @@ If a template exists, read it and use it as the structure for the PR body — fi
 
 ## 5. Write the PR title and body
 
-- **Title**: Short (under 70 characters), descriptive summary of the changes. Do not just repeat the branch name.
+- **Title**: Short (under 70 characters), descriptive summary of the changes. Do not just repeat the branch name. If the branch name starts with a Jira issue key (e.g., `CB-13-fix-auth-flow`), prefix the title with the key in uppercase brackets: `[CB-13] Fix auth flow`.
 - **Body**: If using a template, fill in each section of the template thoughtfully. If no template, write a concise description covering what changed and why.
 
 ## 6. Create the PR
