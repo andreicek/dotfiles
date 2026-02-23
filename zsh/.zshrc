@@ -12,6 +12,8 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 
+[[ -f ~/.secrets ]] && source ~/.secrets
+
 export EDITOR=vim
 export GPG_TTY=$(tty)
 _fix_ssh_auth_sock() {
