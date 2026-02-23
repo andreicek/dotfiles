@@ -14,7 +14,7 @@ setopt HIST_REDUCE_BLANKS
 
 export EDITOR=vim
 export GPG_TTY=$(tty)
-if [ -z "$SSH_CONNECTION" ] || [ -z "$SSH_AUTH_SOCK" ]; then
+if [ -z "$SSH_CONNECTION" ] || [ ! -S "$SSH_AUTH_SOCK" ]; then
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 fi
 export ERL_AFLAGS="-kernel shell_history enabled"

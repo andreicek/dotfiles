@@ -39,6 +39,29 @@ autocmd("FileType", {
   end,
 })
 
+-- Fix first file open from dashboard showing empty pane
+autocmd("BufReadPost", {
+  group = augroup("dashboard-autoclose-fix", { clear = true }),
+  once = true,
+  callback = function(event)
+    vim.schedule(function()
+      for _, win in ipairs(vim.api.nvim_list_wins()) do
+        if vim.api.nvim_win_get_config(win).relative == "" then
+          local buf = vim.api.nvim_win_get_buf(win)
+          local ft = vim.bo[buf].filetype
+          if ft == "snacks_dashboard" or (vim.api.nvim_buf_get_name(buf) == "" and vim.bo[buf].buftype == "") then
+            vim.api.nvim_win_set_buf(win, event.buf)
+            if ft == "snacks_dashboard" then
+              vim.api.nvim_buf_delete(buf, { force = true })
+            end
+            return
+          end
+        end
+      end
+    end)
+  end,
+})
+
 -- Auto-create parent directories when saving a file
 autocmd("BufWritePre", {
   group = augroup("auto-create-dir", { clear = true }),

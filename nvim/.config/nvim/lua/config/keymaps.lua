@@ -27,6 +27,13 @@ map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up", silent = true })
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
+-- Disable arrow keys
+local msg = "Use hjkl"
+map({ "n", "i", "v" }, "<Up>", function() vim.notify(msg, vim.log.levels.WARN) end, { desc = msg })
+map({ "n", "i", "v" }, "<Down>", function() vim.notify(msg, vim.log.levels.WARN) end, { desc = msg })
+map({ "n", "i", "v" }, "<Left>", function() vim.notify(msg, vim.log.levels.WARN) end, { desc = msg })
+map({ "n", "i", "v" }, "<Right>", function() vim.notify(msg, vim.log.levels.WARN) end, { desc = msg })
+
 -- Diagnostic navigation
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
