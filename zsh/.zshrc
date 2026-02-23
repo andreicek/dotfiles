@@ -37,6 +37,12 @@ alias gpl="git pull -r"
 alias gps="git push"
 alias gl="git log --oneline"
 
+if [[ -n "$TMUX_POPUP" ]]; then
+  _exit_popup() { exit }
+  zle -N _exit_popup
+  bindkey '^D' _exit_popup
+fi
+
 autoload -Uz compinit && compinit
 
 setopt PROMPT_SUBST
