@@ -14,9 +14,12 @@ setopt HIST_REDUCE_BLANKS
 
 export EDITOR=vim
 export GPG_TTY=$(tty)
-if [ -z "$SSH_CONNECTION" ] || [ ! -S "$SSH_AUTH_SOCK" ]; then
+_fix_ssh_auth_sock() {
+  if [ -z "$SSH_CONNECTION" ] || [ ! -S "$SSH_AUTH_SOCK" ]; then
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-fi
+  fi
+}
+_fix_ssh_auth_sock
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 alias cat='batcat --theme=ansi'
@@ -72,6 +75,7 @@ _git_precmd() {
 }
 
 add-zsh-hook precmd _git_precmd
+add-zsh-hook precmd _fix_ssh_auth_sock
 
 PROMPT='%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}${_git_async_result} '
 
