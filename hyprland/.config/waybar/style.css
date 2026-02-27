@@ -77,6 +77,26 @@ window#waybar {
     color: #6c7086;
 }
 
+#custom-github {
+    font-size: 18px;
+}
+
+window#waybar #custom-github.passing {
+    color: #a6e3a1;
+}
+
+window#waybar #custom-github.failing {
+    color: #f38ba8;
+}
+
+window#waybar #custom-github.pending {
+    color: #fab387;
+}
+
+window#waybar #custom-github.none {
+    color: #6c7086;
+}
+
 #idle_inhibitor {
     color: #6c7086;
 }

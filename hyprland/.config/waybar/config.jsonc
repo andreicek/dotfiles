@@ -10,6 +10,7 @@
     ],
     "modules-right": [
         "idle_inhibitor",
+        "custom/github",
         "pulseaudio",
         "tray"
     ],
@@ -23,6 +24,12 @@
     "hyprland/submap": {
         "format": "{}",
         "tooltip": false
+    },
+    "custom/github": {
+        "exec": "gh-pr-status",
+        "return-type": "json",
+        "interval": 60,
+        "on-click": "xdg-open https://github.com/pulls"
     },
     "idle_inhibitor": {
         "format": "{icon}",
