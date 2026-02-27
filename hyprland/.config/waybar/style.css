@@ -1,0 +1,104 @@
+* {
+    font-family: "Ubuntu Sans", "Font Awesome 6 Free Solid", "Font Awesome 6 Brands", sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 40, 0.85);
+    color: #cdd6f4;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: #6c7086;
+    background-color: transparent;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active {
+    color: #cdd6f4;
+    border-bottom: 2px solid #cdd6f4;
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#tray,
+#idle_inhibitor {
+    padding: 0 10px;
+}
+
+#clock {
+    color: #cdd6f4;
+}
+
+#cpu {
+    color: #a6e3a1;
+}
+
+#memory {
+    color: #cba6f7;
+}
+
+#temperature {
+    color: #fab387;
+}
+
+#temperature.critical {
+    color: #f38ba8;
+}
+
+#network {
+    color: #89b4fa;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+}
+
+#pulseaudio {
+    color: #f9e2af;
+}
+
+#pulseaudio.muted {
+    color: #6c7086;
+}
+
+#idle_inhibitor {
+    color: #6c7086;
+}
+
+#idle_inhibitor.activated {
+    color: #f9e2af;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+tooltip {
+    background: rgba(30, 30, 40, 0.95);
+    border: 1px solid rgba(205, 214, 244, 0.2);
+    border-radius: 4px;
+}
+
+tooltip label {
+    color: #cdd6f4;
+}

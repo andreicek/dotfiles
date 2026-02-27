@@ -107,8 +107,12 @@ apt_packages=(
   # Build deps (erlang via mise)
   build-essential libssl-dev libncurses-dev
 
+  # Hyprland ecosystem
+  hyprland hyprpaper waybar mako-notifier wofi swaylock
+  blueman wireplumber grim slurp swappy pavucontrol
+
   # Fonts
-  fonts-ibm-plex ttf-mscorefonts-installer
+  fonts-ibm-plex ttf-mscorefonts-installer fonts-font-awesome
 
   # YubiKey / GPG smartcard
   scdaemon pcscd
@@ -162,7 +166,7 @@ success "~/.gnupg directory ready"
 
 step "Stow dotfiles"
 cd "$DOTFILES_DIR"
-stow --restow git zsh bin nvim kitty tmux mise gnupg claude
+stow --restow git zsh bin nvim kitty tmux mise gnupg claude hyprland
 success "All packages stowed"
 
 # --- [7/10] mise runtimes ---
