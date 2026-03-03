@@ -15,7 +15,7 @@ setopt HIST_REDUCE_BLANKS
 [[ -f ~/.secrets ]] && source ~/.secrets
 
 export EDITOR=vim
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/openssh_agent"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 alias cat='batcat --theme=ansi'
