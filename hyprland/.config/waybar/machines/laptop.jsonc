@@ -36,10 +36,11 @@
         "on-click": "xdg-open https://github.com/pulls"
     },
     "network": {
-        "format-wifi": "\uf1eb {signalStrength}%",
+        "format-wifi": "\uf1eb",
         "format-ethernet": "\uf796",
         "format-disconnected": "\uf127",
-        "tooltip-format": "{ifname}: {ipaddr}"
+        "tooltip-format": "{ifname}: {ipaddr}",
+        "on-click": "kitty --class floating -e nmtui-connect"
     },
     "battery": {
         "states": {

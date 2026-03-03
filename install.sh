@@ -31,7 +31,7 @@ info()    { gum log --level info "$*"; }
 success() { gum log --level info --prefix "✓" "$*"; }
 warn()    { gum log --level warn "$*"; }
 
-TOTAL_STEPS=9
+TOTAL_STEPS=10
 CURRENT_STEP=0
 step() {
   CURRENT_STEP=$((CURRENT_STEP + 1))
@@ -84,12 +84,12 @@ ensure_command() {
   fi
 }
 
-# --- [1/9] gum ---
+# --- [1/10] gum ---
 
 step "gum"
 success "gum already available"
 
-# --- [2/9] APT packages ---
+# --- [2/10] APT packages ---
 
 step "APT packages"
 
@@ -119,7 +119,7 @@ for pkg in "${apt_packages[@]}"; do
   ensure_apt_pkg "$pkg"
 done
 
-# --- [3/9] Docker ---
+# --- [3/10] Docker ---
 
 step "Docker"
 if dpkg -s docker-ce &>/dev/null; then
@@ -143,7 +143,30 @@ else
   success "Docker installed (log out and back in for group membership)"
 fi
 
-# --- [4/9] mise ---
+# --- [4/10] Google Chrome ---
+
+step "Google Chrome"
+if dpkg -s google-chrome-stable &>/dev/null; then
+  success "Google Chrome already installed"
+else
+  info "Adding Google Chrome repository..."
+  sudo install -m 0755 -d /etc/apt/keyrings
+  if [ ! -f /etc/apt/keyrings/google-chrome.asc ]; then
+    gum spin --title "Downloading Google Chrome GPG key..." -- \
+      curl -fsSL https://dl.google.com/linux/linux_signing_key.pub -o /tmp/google-chrome.asc
+    sudo install -m 0644 /tmp/google-chrome.asc /etc/apt/keyrings/google-chrome.asc
+  fi
+  if [ ! -f /etc/apt/sources.list.d/google-chrome.list ] && [ ! -f /etc/apt/sources.list.d/google-chrome.sources ]; then
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/google-chrome.asc] https://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list >/dev/null
+  fi
+  apt_updated=false
+  ensure_apt_updated
+  gum spin --title "Installing Google Chrome..." -- \
+    sudo apt-get install -y -qq google-chrome-stable
+  success "Google Chrome installed"
+fi
+
+# --- [5/10] mise ---
 
 step "mise"
 install_mise() {
@@ -152,14 +175,14 @@ install_mise() {
 }
 ensure_command "$HOME/.local/bin/mise" install_mise
 
-# --- [5/9] Stow dotfiles ---
+# --- [6/10] Stow dotfiles ---
 
 step "Stow dotfiles"
 cd "$DOTFILES_DIR"
 stow --restow git zsh bin nvim kitty tmux mise claude hyprland systemd
 success "All packages stowed"
 
-# --- [6/9] Machine profile ---
+# --- [7/10] Machine profile ---
 
 step "Machine profile"
 MACHINE=$(gum choose --header "Select machine profile:" "workstation" "laptop")
@@ -174,14 +197,14 @@ if [ "$MACHINE" = "laptop" ]; then
   ensure_apt_pkg network-manager-gnome
 fi
 
-# --- [7/9] SSH directory ---
+# --- [8/10] SSH directory ---
 
 step "SSH directory"
 mkdir -p "$HOME/.ssh"
 chmod 700 "$HOME/.ssh"
 success "~/.ssh directory ready"
 
-# --- [8/9] mise runtimes ---
+# --- [9/10] mise runtimes ---
 
 step "mise runtimes"
 export PATH="$HOME/.local/bin:$PATH"
@@ -189,7 +212,7 @@ gum spin --title "Installing runtimes from mise config (this may take a while)..
   mise install -y
 success "mise runtimes up to date"
 
-# --- [9/9] Default shell ---
+# --- [10/10] Default shell ---
 
 step "Default shell"
 zsh_path="$(which zsh)"
