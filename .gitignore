@@ -1,4 +1,6 @@
 zsh/.secrets
 bin/.local/bin/tmux-start
 hyprland/.config/hypr/machine.conf
+hyprland/.config/hypr/hyprpaper.conf
 hyprland/.config/waybar/config.jsonc
+hyprland/.config/swaylock/config
