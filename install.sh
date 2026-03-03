@@ -188,7 +188,9 @@ step "Machine profile"
 MACHINE=$(gum choose --header "Select machine profile:" "workstation" "laptop")
 
 ln -sf "machines/${MACHINE}.conf" "$DOTFILES_DIR/hyprland/.config/hypr/machine.conf"
+ln -sf "machines/${MACHINE}.hyprpaper.conf" "$DOTFILES_DIR/hyprland/.config/hypr/hyprpaper.conf"
 ln -sf "machines/${MACHINE}.jsonc" "$DOTFILES_DIR/hyprland/.config/waybar/config.jsonc"
+ln -sf "machines/${MACHINE}" "$DOTFILES_DIR/hyprland/.config/swaylock/config"
 success "Machine profile set to $MACHINE"
 
 if [ "$MACHINE" = "laptop" ]; then
