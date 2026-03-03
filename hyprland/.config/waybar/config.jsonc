@@ -1,21 +1,20 @@
 {
     "layer": "top",
+    "position": "bottom",
     "height": 34,
     "spacing": 4,
-    "margin-top": 2,
+    "margin-bottom": 2,
     "margin-left": 8,
     "margin-right": 8,
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/submap"
     ],
-    "modules-center": [
-        "clock"
-    ],
     "modules-right": [
         "custom/github",
         "pulseaudio",
-        "tray"
+        "tray",
+        "clock"
     ],
     "hyprland/workspaces": {
         "format": "{name}",
