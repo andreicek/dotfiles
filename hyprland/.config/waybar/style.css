@@ -122,6 +122,18 @@ window#waybar #custom-github.none {
     color: #6c7086;
 }
 
+#battery {
+    color: #a6e3a1;
+}
+
+#battery.warning {
+    color: #fab387;
+}
+
+#battery.critical {
+    color: #f38ba8;
+}
+
 #tray > .passive {
     -gtk-icon-effect: dim;
 }

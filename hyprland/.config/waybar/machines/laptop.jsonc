@@ -1,0 +1,82 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 34,
+    "spacing": 4,
+    "margin-bottom": 2,
+    "margin-left": 8,
+    "margin-right": 8,
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/submap"
+    ],
+    "modules-right": [
+        "custom/github",
+        "network",
+        "pulseaudio",
+        "battery",
+        "tray",
+        "clock"
+    ],
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "*": 2
+        }
+    },
+    "hyprland/submap": {
+        "format": "{}",
+        "tooltip": false
+    },
+    "custom/github": {
+        "exec": "gh-pr-status",
+        "return-type": "json",
+        "interval": 60,
+        "on-click": "xdg-open https://github.com/pulls"
+    },
+    "network": {
+        "format-wifi": "\uf1eb {signalStrength}%",
+        "format-ethernet": "\uf796",
+        "format-disconnected": "\uf127",
+        "tooltip-format": "{ifname}: {ipaddr}"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "\uf0e7 {capacity}%",
+        "format-plugged": "\uf1e6 {capacity}%",
+        "format-icons": [
+            "\uf244",
+            "\uf243",
+            "\uf242",
+            "\uf241",
+            "\uf240"
+        ]
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M:%S}",
+        "interval": 1,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+
+        "format-muted": "\uf6a9 muted",
+        "format-icons": {
+            "headphone": "\uf025",
+            "default": [
+                "\uf026",
+                "\uf027",
+                "\uf028"
+            ]
+        },
+        "on-click": "pavucontrol"
+    }
+}

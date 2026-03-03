@@ -1,2 +1,4 @@
 zsh/.secrets
 bin/.local/bin/tmux-start
+hyprland/.config/hypr/machine.conf
+hyprland/.config/waybar/config.jsonc
