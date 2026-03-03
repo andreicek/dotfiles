@@ -1,6 +1,10 @@
 {
-    "height": 30,
+    "layer": "top",
+    "height": 34,
     "spacing": 4,
+    "margin-top": 2,
+    "margin-left": 8,
+    "margin-right": 8,
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/submap"
@@ -9,7 +13,6 @@
         "clock"
     ],
     "modules-right": [
-        "idle_inhibitor",
         "custom/github",
         "pulseaudio",
         "tray"
@@ -31,13 +34,6 @@
         "interval": 60,
         "on-click": "xdg-open https://github.com/pulls"
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
     "tray": {
         "spacing": 10
     },
@@ -48,14 +44,14 @@
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-bluetooth": " {volume}%",
-        "format-muted": " muted",
+        "format-bluetooth": "\uf294 {volume}%",
+        "format-muted": "\uf6a9 muted",
         "format-icons": {
-            "headphone": "",
+            "headphone": "\uf025",
             "default": [
-                "",
-                "",
-                ""
+                "\uf026",
+                "\uf027",
+                "\uf028"
             ]
         },
         "on-click": "pavucontrol"
