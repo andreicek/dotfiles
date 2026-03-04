@@ -68,7 +68,7 @@
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
-
+        "format-bluetooth": "\uf294 {volume}%",
         "format-muted": "\uf6a9 muted",
         "format-icons": {
             "headphone": "\uf025",
