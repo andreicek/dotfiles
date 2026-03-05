@@ -28,7 +28,7 @@
         "tooltip": false
     },
     "custom/github": {
-        "exec": "gh-pr-status",
+        "exec": "$HOME/.local/bin/gh-pr-status",
         "return-type": "json",
         "interval": 60,
         "on-click": "xdg-open https://github.com/pulls"
