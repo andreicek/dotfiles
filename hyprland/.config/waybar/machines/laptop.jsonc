@@ -15,7 +15,7 @@
         "network",
         "pulseaudio",
         "battery",
-        "tray",
+        "bluetooth",
         "clock"
     ],
     "hyprland/workspaces": {
@@ -58,8 +58,13 @@
             "\uf240"
         ]
     },
-    "tray": {
-        "spacing": 10
+    "bluetooth": {
+        "format": "\uf294",
+        "format-connected": "\uf294",
+        "format-disabled": "",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "blueman-manager"
     },
     "clock": {
         "format": "{:%Y-%m-%d %H:%M:%S}",

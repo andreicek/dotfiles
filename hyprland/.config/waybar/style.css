@@ -60,8 +60,7 @@ window#waybar {
 #memory,
 #temperature,
 #network,
-#pulseaudio,
-#tray {
+#pulseaudio {
     padding: 0 10px;
 }
 
@@ -134,12 +133,13 @@ window#waybar #custom-github.none {
     color: #f38ba8;
 }
 
-#tray > .passive {
-    -gtk-icon-effect: dim;
+#bluetooth {
+    color: #cdd6f4;
+    padding: 0 10px;
 }
 
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
+#bluetooth.connected {
+    color: #89b4fa;
 }
 
 tooltip {
