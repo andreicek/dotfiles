@@ -108,7 +108,7 @@ apt_packages=(
 
   # Hyprland ecosystem
   hyprland hyprpaper waybar mako-notifier wofi swaylock
-  blueman wireplumber grim slurp swappy pavucontrol cliphist
+  blueman wireplumber grim slurp swappy pavucontrol cliphist wtype
 
   # Fonts
   fonts-ibm-plex ttf-mscorefonts-installer fonts-font-awesome
