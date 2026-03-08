@@ -9,13 +9,13 @@ inside-clear-color=00000000
 inside-ver-color=00000000
 inside-wrong-color=00000000
 
-ring-color=ffffff40
-ring-clear-color=cdd6f480
-ring-ver-color=89b4fa80
-ring-wrong-color=f38ba880
+ring-color=3c383640
+ring-clear-color=3c383680
+ring-ver-color=07667880
+ring-wrong-color=9d000680
 
-key-hl-color=cdd6f4ff
-bs-hl-color=f38ba8ff
+key-hl-color=3c3836ff
+bs-hl-color=9d0006ff
 
 line-color=00000000
 line-clear-color=00000000
@@ -24,10 +24,10 @@ line-wrong-color=00000000
 
 separator-color=00000000
 
-text-color=cdd6f4ff
-text-clear-color=cdd6f4ff
-text-ver-color=89b4faff
-text-wrong-color=f38ba8ff
+text-color=3c3836ff
+text-clear-color=3c3836ff
+text-ver-color=076678ff
+text-wrong-color=9d0006ff
 
 font=Ubuntu Sans
 font-size=18
