@@ -121,6 +121,19 @@ window#waybar #custom-github.none {
     color: #6c7086;
 }
 
+#custom-vpn {
+    padding: 0 10px;
+    color: #6c7086;
+}
+
+window#waybar #custom-vpn.connected {
+    color: #a6e3a1;
+}
+
+window#waybar #custom-vpn.disconnected {
+    color: #6c7086;
+}
+
 #battery {
     color: #a6e3a1;
 }

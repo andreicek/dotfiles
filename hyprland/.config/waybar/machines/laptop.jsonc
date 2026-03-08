@@ -12,6 +12,7 @@
     ],
     "modules-right": [
         "custom/github",
+        "custom/vpn",
         "network",
         "pulseaudio",
         "battery",
@@ -34,6 +35,13 @@
         "return-type": "json",
         "interval": 60,
         "on-click": "xdg-open https://github.com/pulls"
+    },
+    "custom/vpn": {
+        "exec": "$HOME/.local/bin/vpn-switcher",
+        "return-type": "json",
+        "format": "\uf132",
+        "interval": 5,
+        "on-click": "$HOME/.local/bin/vpn-switcher --toggle"
     },
     "network": {
         "format-wifi": "\uf1eb",

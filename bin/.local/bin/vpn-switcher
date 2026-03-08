@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+WG_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/wireguard"
+
+# Ensure configs from WG_CONFIG_DIR are imported into NetworkManager
+sync_profiles() {
+  for conf in "$WG_CONFIG_DIR"/*.conf; do
+    [[ -f "$conf" ]] || continue
+    name=$(basename "$conf" .conf)
+    if ! nmcli -t -f NAME connection show 2>/dev/null | grep -qx "$name"; then
+      nmcli connection import type wireguard file "$conf" 2>/dev/null || true
+      nmcli connection modify "$name" connection.autoconnect no 2>/dev/null || true
+    fi
+  done
+}
+
+get_profiles() {
+  find "$WG_CONFIG_DIR" -maxdepth 1 -name '*.conf' -printf '%f\n' 2>/dev/null \
+    | sed 's/\.conf$//' | sort
+}
+
+get_active() {
+  nmcli -t -f NAME,TYPE connection show --active 2>/dev/null \
+    | grep ':wireguard$' | cut -d: -f1 || true
+}
+
+# --- Toggle mode (on-click) ---
+if [[ "${1:-}" == "--toggle" ]]; then
+  sync_profiles
+  active=$(get_active)
+  profiles=$(get_profiles)
+
+  if [[ -z "$profiles" ]]; then
+    notify-send -u normal "VPN" "No profiles in $WG_CONFIG_DIR"
+    exit 0
+  fi
+
+  menu=""
+  while IFS= read -r p; do
+    if echo "$active" | grep -qx "$p"; then
+      menu+="● $p (connected)\n"
+    else
+      menu+="  $p\n"
+    fi
+  done <<< "$profiles"
+
+  if [[ -n "$active" ]]; then
+    menu+="  Disconnect"
+  fi
+
+  choice=$(echo -e "$menu" | wofi --dmenu --prompt "VPN" --width 300 --height 200 2>/dev/null) || exit 0
+  choice=$(echo "$choice" | sed 's/^[● ]*//')
+
+  if [[ "$choice" == "Disconnect" ]]; then
+    while IFS= read -r iface; do
+      [[ -n "$iface" ]] && nmcli connection down "$iface" 2>/dev/null || true
+    done <<< "$active"
+  elif [[ "$choice" =~ ^(.+)\ \(connected\)$ ]]; then
+    nmcli connection down "${BASH_REMATCH[1]}" 2>/dev/null || true
+  else
+    while IFS= read -r iface; do
+      [[ -n "$iface" ]] && nmcli connection down "$iface" 2>/dev/null || true
+    done <<< "$active"
+    nmcli connection up "$choice" 2>/dev/null
+  fi
+  exit 0
+fi
+
+# --- Status mode (waybar JSON) ---
+active=$(get_active)
+
+if [[ -n "$active" ]]; then
+  name=$(echo "$active" | head -1)
+  echo "{\"text\": \"$name\", \"class\": \"connected\", \"tooltip\": \"VPN: $name\"}"
+else
+  echo '{"text": "off", "class": "disconnected", "tooltip": "VPN: disconnected"}'
+fi

@@ -1,0 +1,12 @@
+width=500
+height=300
+prompt=
+show=dmenu
+allow_markup=true
+allow_images=true
+image_size=24
+insensitive=true
+no_actions=true
+columns=1
+hide_scroll=true
+matching=fuzzy

@@ -108,7 +108,7 @@ apt_packages=(
 
   # Hyprland ecosystem
   hyprland hyprpaper waybar mako-notifier wofi swaylock
-  blueman wireplumber grim slurp swappy pavucontrol
+  blueman wireplumber grim slurp swappy pavucontrol cliphist
 
   # Fonts
   fonts-ibm-plex ttf-mscorefonts-installer fonts-font-awesome
@@ -197,6 +197,7 @@ if [ "$MACHINE" = "laptop" ]; then
   info "Installing laptop-specific packages..."
   ensure_apt_pkg brightnessctl
   ensure_apt_pkg network-manager-gnome
+  ensure_apt_pkg wireguard-tools
 fi
 
 # --- [8/10] SSH directory ---
