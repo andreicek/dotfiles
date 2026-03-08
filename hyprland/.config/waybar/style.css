@@ -6,12 +6,12 @@
 
 window#waybar {
     background-color: transparent;
-    color: #3c3836;
+    color: #cdd6f4;
 }
 
 .modules-left,
 .modules-right {
-    background-color: rgba(235, 219, 178, 0.85);
+    background-color: rgba(30, 30, 46, 0.85);
     border-radius: 14px;
     padding: 0 4px;
     margin: 2px 0;
@@ -26,7 +26,7 @@ window#waybar {
 
 #workspaces button {
     padding: 0 8px;
-    color: #928374;
+    color: #6c7086;
     background-color: transparent;
     border: none;
     border-radius: 10px;
@@ -35,23 +35,23 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: #fbf1c7;
-    background-color: #3c3836;
+    color: #1e1e2e;
+    background-color: #cdd6f4;
 }
 
 #workspaces button.urgent {
-    color: #fbf1c7;
-    background-color: #9d0006;
+    color: #1e1e2e;
+    background-color: #f38ba8;
 }
 
 #workspaces button:hover {
-    color: #3c3836;
-    background: rgba(0, 0, 0, 0.1);
+    color: #cdd6f4;
+    background: rgba(255, 255, 255, 0.15);
 }
 
 #submap {
     padding: 0 10px;
-    color: #9d0006;
+    color: #f38ba8;
 }
 
 #clock,
@@ -65,39 +65,39 @@ window#waybar {
 }
 
 #clock {
-    color: #3c3836;
+    color: #cdd6f4;
 }
 
 #cpu {
-    color: #79740e;
+    color: #a6e3a1;
 }
 
 #memory {
-    color: #8f3f71;
+    color: #cba6f7;
 }
 
 #temperature {
-    color: #af3a03;
+    color: #fab387;
 }
 
 #temperature.critical {
-    color: #9d0006;
+    color: #f38ba8;
 }
 
 #network {
-    color: #076678;
+    color: #89b4fa;
 }
 
 #network.disconnected {
-    color: #9d0006;
+    color: #f38ba8;
 }
 
 #pulseaudio {
-    color: #b57614;
+    color: #f9e2af;
 }
 
 #pulseaudio.muted {
-    color: #928374;
+    color: #6c7086;
 }
 
 #custom-github {
@@ -106,48 +106,48 @@ window#waybar {
 }
 
 window#waybar #custom-github.passing {
-    color: #79740e;
+    color: #a6e3a1;
 }
 
 window#waybar #custom-github.failing {
-    color: #9d0006;
+    color: #f38ba8;
 }
 
 window#waybar #custom-github.pending {
-    color: #af3a03;
+    color: #fab387;
 }
 
 window#waybar #custom-github.none {
-    color: #928374;
+    color: #6c7086;
 }
 
 #battery {
-    color: #79740e;
+    color: #a6e3a1;
 }
 
 #battery.warning {
-    color: #af3a03;
+    color: #fab387;
 }
 
 #battery.critical {
-    color: #9d0006;
+    color: #f38ba8;
 }
 
 #bluetooth {
-    color: #3c3836;
+    color: #cdd6f4;
     padding: 0 10px;
 }
 
 #bluetooth.connected {
-    color: #076678;
+    color: #89b4fa;
 }
 
 tooltip {
-    background: rgba(251, 241, 199, 0.95);
-    border: 1px solid rgba(60, 56, 54, 0.2);
+    background: rgba(30, 30, 46, 0.95);
+    border: 1px solid rgba(205, 214, 244, 0.2);
     border-radius: 10px;
 }
 
 tooltip label {
-    color: #3c3836;
+    color: #cdd6f4;
 }
