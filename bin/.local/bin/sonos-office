@@ -7,12 +7,27 @@ import soco
 SPEAKERS = {"10.21.0.23": 14, "10.21.0.34": 14}
 
 STATIONS = {
-    "morning": ("Mellow Morning", "sonos%3a152824"),
-    "afternoon": ("Cocktail Hour", "sonos%3a3022"),
+    "morning": (
+        "Mellow Morning",
+        "x-sonosapi-radio:sonos%3a152824?sid=303&flags=0&sn=1",
+        '<DIDL-Lite xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/" xmlns:r="urn:schemas-rinconnetworks-com:metadata-1-0/" xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/"><item id="000c0000sonos%3a152824" parentID="-1" restricted="true"><dc:title>Mellow Morning</dc:title><upnp:class>object.item.audioItem.audioBroadcast</upnp:class><desc id="cdudn" nameSpace="urn:schemas-rinconnetworks-com:metadata-1-0/">SA_RINCON77575_X_#Svc77575-0-Token</desc></item></DIDL-Lite>',
+    ),
+    "afternoon": (
+        "Cocktail Hour",
+        "x-sonosapi-radio:sonos%3a3022?sid=303&flags=0&sn=1",
+        '<DIDL-Lite xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/" xmlns:r="urn:schemas-rinconnetworks-com:metadata-1-0/" xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/"><item id="000c0000sonos%3a3022" parentID="-1" restricted="true"><dc:title>Cocktail Hour</dc:title><upnp:class>object.item.audioItem.audioBroadcast</upnp:class><desc id="cdudn" nameSpace="urn:schemas-rinconnetworks-com:metadata-1-0/">SA_RINCON77575_X_#Svc77575-0-Token</desc></item></DIDL-Lite>',
+    ),
+    "bravo": (
+        "bravo!",
+        "x-sonosapi-stream:tunein%3a191755?sid=303&flags=8232&sn=1",
+        '<DIDL-Lite xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/" xmlns:r="urn:schemas-rinconnetworks-com:metadata-1-0/" xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/"><item id="-1" parentID="-1" restricted="true"><dc:title>bravo!</dc:title><upnp:class>object.item.audioItem.audioBroadcast</upnp:class><desc id="cdudn" nameSpace="urn:schemas-rinconnetworks-com:metadata-1-0/">SA_RINCON77575_X_#Svc77575-0-Token</desc></item></DIDL-Lite>',
+    ),
+    "soul": (
+        "Candlelight Soul",
+        "x-sonosapi-radio:sonos%3a186440?sid=303&flags=0&sn=1",
+        '<DIDL-Lite xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/" xmlns:r="urn:schemas-rinconnetworks-com:metadata-1-0/" xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/"><item id="000c0000sonos%3a186440" parentID="-1" restricted="true"><dc:title>Candlelight Soul</dc:title><upnp:class>object.item.audioItem.audioBroadcast</upnp:class><desc id="cdudn" nameSpace="urn:schemas-rinconnetworks-com:metadata-1-0/">SA_RINCON77575_X_#Svc77575-0-Token</desc></item></DIDL-Lite>',
+    ),
 }
-
-STATION_URI_TPL = "x-sonosapi-radio:{station_id}?sid=303&flags=0&sn=1"
-STATION_META_TPL = '<DIDL-Lite xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/" xmlns:r="urn:schemas-rinconnetworks-com:metadata-1-0/" xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/"><item id="000c0000{station_id}" parentID="-1" restricted="true"><dc:title>{name}</dc:title><upnp:class>object.item.audioItem.audioBroadcast</upnp:class><desc id="cdudn" nameSpace="urn:schemas-rinconnetworks-com:metadata-1-0/">SA_RINCON77575_X_#Svc77575-0-Token</desc></item></DIDL-Lite>'
 
 
 def get_speakers():
@@ -20,9 +35,7 @@ def get_speakers():
 
 
 def start(station_key):
-    name, station_id = STATIONS[station_key]
-    uri = STATION_URI_TPL.format(station_id=station_id)
-    meta = STATION_META_TPL.format(station_id=station_id, name=name)
+    name, uri, meta = STATIONS[station_key]
 
     speakers = get_speakers()
     coordinator, coord_vol = speakers[0]
