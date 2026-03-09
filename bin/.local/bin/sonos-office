@@ -1,36 +1,43 @@
 #!/usr/bin/env python3
-"""Control both Office Sonos speakers - start/stop Mellow Morning radio."""
+"""Control both Office Sonos speakers."""
 
 import sys
 import soco
 
 SPEAKERS = {"10.21.0.23": 14, "10.21.0.34": 14}
-STATION_URI = "x-sonosapi-radio:sonos%3a152824?sid=303&flags=0&sn=1"
-STATION_META = '<DIDL-Lite xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/" xmlns:r="urn:schemas-rinconnetworks-com:metadata-1-0/" xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/"><item id="000c0000sonos%3a152824" parentID="-1" restricted="true"><dc:title>Mellow Morning</dc:title><upnp:class>object.item.audioItem.audioBroadcast</upnp:class><desc id="cdudn" nameSpace="urn:schemas-rinconnetworks-com:metadata-1-0/">SA_RINCON77575_X_#Svc77575-0-Token</desc></item></DIDL-Lite>'
+
+STATIONS = {
+    "morning": ("Mellow Morning", "sonos%3a152824"),
+    "afternoon": ("Cocktail Hour", "sonos%3a3022"),
+}
+
+STATION_URI_TPL = "x-sonosapi-radio:{station_id}?sid=303&flags=0&sn=1"
+STATION_META_TPL = '<DIDL-Lite xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/" xmlns:r="urn:schemas-rinconnetworks-com:metadata-1-0/" xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/"><item id="000c0000{station_id}" parentID="-1" restricted="true"><dc:title>{name}</dc:title><upnp:class>object.item.audioItem.audioBroadcast</upnp:class><desc id="cdudn" nameSpace="urn:schemas-rinconnetworks-com:metadata-1-0/">SA_RINCON77575_X_#Svc77575-0-Token</desc></item></DIDL-Lite>'
 
 
 def get_speakers():
     return [(soco.SoCo(ip), vol) for ip, vol in SPEAKERS.items()]
 
 
-def start():
+def start(station_key):
+    name, station_id = STATIONS[station_key]
+    uri = STATION_URI_TPL.format(station_id=station_id)
+    meta = STATION_META_TPL.format(station_id=station_id, name=name)
+
     speakers = get_speakers()
     coordinator, coord_vol = speakers[0]
 
-    # Ungroup all first to start clean
     for s, _ in speakers:
         s.unjoin()
 
-    # Start playing on coordinator
     coordinator.volume = coord_vol
-    coordinator.play_uri(STATION_URI, STATION_META)
+    coordinator.play_uri(uri, meta)
 
-    # Join the other speakers to the coordinator
     for s, vol in speakers[1:]:
         s.volume = vol
         s.join(coordinator)
 
-    print(f"Playing Mellow Morning on {len(speakers)} speakers")
+    print(f"Playing {name} on {len(speakers)} speakers")
 
 
 def stop():
@@ -44,8 +51,12 @@ def stop():
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2 or sys.argv[1] not in ("start", "stop"):
-        print(f"Usage: {sys.argv[0]} start|stop")
-        sys.exit(1)
+    station_names = ", ".join(STATIONS)
 
-    {"start": start, "stop": stop}[sys.argv[1]]()
+    if len(sys.argv) == 2 and sys.argv[1] == "stop":
+        stop()
+    elif len(sys.argv) == 3 and sys.argv[1] == "start" and sys.argv[2] in STATIONS:
+        start(sys.argv[2])
+    else:
+        print(f"Usage: {sys.argv[0]} start <{station_names}> | stop")
+        sys.exit(1)
