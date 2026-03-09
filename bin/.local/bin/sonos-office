@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+"""Control both Office Sonos speakers - start/stop Mellow Morning radio."""
+
+import sys
+import soco
+
+SPEAKERS = {"10.21.0.23": 14, "10.21.0.34": 14}
+STATION_URI = "x-sonosapi-radio:sonos%3a152824?sid=303&flags=0&sn=1"
+STATION_META = '<DIDL-Lite xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/" xmlns:r="urn:schemas-rinconnetworks-com:metadata-1-0/" xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/"><item id="000c0000sonos%3a152824" parentID="-1" restricted="true"><dc:title>Mellow Morning</dc:title><upnp:class>object.item.audioItem.audioBroadcast</upnp:class><desc id="cdudn" nameSpace="urn:schemas-rinconnetworks-com:metadata-1-0/">SA_RINCON77575_X_#Svc77575-0-Token</desc></item></DIDL-Lite>'
+
+
+def get_speakers():
+    return [(soco.SoCo(ip), vol) for ip, vol in SPEAKERS.items()]
+
+
+def start():
+    speakers = get_speakers()
+    coordinator, coord_vol = speakers[0]
+
+    # Ungroup all first to start clean
+    for s, _ in speakers:
+        s.unjoin()
+
+    # Start playing on coordinator
+    coordinator.volume = coord_vol
+    coordinator.play_uri(STATION_URI, STATION_META)
+
+    # Join the other speakers to the coordinator
+    for s, vol in speakers[1:]:
+        s.volume = vol
+        s.join(coordinator)
+
+    print(f"Playing Mellow Morning on {len(speakers)} speakers")
+
+
+def stop():
+    speakers = get_speakers()
+
+    for s, _ in speakers:
+        s.unjoin()
+        s.stop()
+
+    print(f"Stopped {len(speakers)} speakers")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2 or sys.argv[1] not in ("start", "stop"):
+        print(f"Usage: {sys.argv[0]} start|stop")
+        sys.exit(1)
+
+    {"start": start, "stop": stop}[sys.argv[1]]()
