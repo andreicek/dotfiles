@@ -4,34 +4,36 @@ set -euo pipefail
 git fetch --prune
 
 current=$(git branch --show-current)
-stale=""
+
+protected=()
+deletable=()
 
 for branch in $(git for-each-ref --format='%(refname:short)' refs/heads/); do
-  [ "$branch" = "$current" ] && continue
-  case "$branch" in master|main|staging) continue ;; esac
-
-  # check if branch tip is reachable from any other branch
-  merged_into=$(git branch -a --contains "$branch" 2>/dev/null | grep -v "^\*" | grep -v "  $branch$" | head -1)
-  if [ -n "$merged_into" ]; then
-    stale="$stale $branch"
-  fi
+  case "$branch" in
+    master|main|staging|"$current")
+      protected+=("$branch")
+      ;;
+    *)
+      deletable+=("$branch")
+      ;;
+  esac
 done
 
-if [ -z "$stale" ]; then
-  echo "No merged branches to clean up."
+if [ ${#deletable[@]} -eq 0 ]; then
+  echo "No branches to clean up."
   exit 0
 fi
 
-echo "Branches merged into another branch:"
-for branch in $stale; do
-  merged_into=$(git branch -a --contains "$branch" 2>/dev/null | grep -v "^\*" | grep -v "  $branch$" | head -3 | sed 's/^  //')
-  echo "  $branch -> $merged_into"
+for branch in "${protected[@]}"; do
+  gum style --foreground 240 "  $branch"
 done
-echo
 
-read -p "Delete all? [y/N] " confirm
-if [[ "$confirm" =~ ^[Yy]$ ]]; then
-  for branch in $stale; do
-    git branch -D "$branch"
-  done
+selected=$(gum choose --no-limit --header "Select branches to delete:" "${deletable[@]}") || exit 0
+
+if [ -z "$selected" ]; then
+  exit 0
 fi
+
+while IFS= read -r branch; do
+  git branch -D "$branch"
+done <<< "$selected"
