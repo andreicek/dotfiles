@@ -31,7 +31,7 @@ info()    { gum log --level info "$*"; }
 success() { gum log --level info --prefix "✓" "$*"; }
 warn()    { gum log --level warn "$*"; }
 
-TOTAL_STEPS=10
+TOTAL_STEPS=11
 CURRENT_STEP=0
 step() {
   CURRENT_STEP=$((CURRENT_STEP + 1))
@@ -84,12 +84,17 @@ ensure_command() {
   fi
 }
 
-# --- [1/10] gum ---
+# --- gum ---
 
 step "gum"
 success "gum already available"
 
-# --- [2/10] APT packages ---
+# --- Machine profile ---
+
+step "Machine profile"
+MACHINE=$(gum choose --header "Select machine profile:" "workstation" "laptop")
+
+# --- APT packages ---
 
 step "APT packages"
 
@@ -101,7 +106,7 @@ apt_packages=(
   zsh-autosuggestions zsh-syntax-highlighting
 
   # CLI tools
-  bat eza fzf kitty tmux wl-clipboard zoxide
+  bat eza fzf tmux wl-clipboard zoxide
 
   # Build deps (erlang via mise)
   build-essential libssl-dev libncurses-dev
@@ -115,11 +120,26 @@ apt_packages=(
 
 )
 
+if [ "$MACHINE" = "laptop" ]; then
+  apt_packages+=(brightnessctl network-manager-gnome wireguard-tools)
+fi
+
 for pkg in "${apt_packages[@]}"; do
   ensure_apt_pkg "$pkg"
 done
 
-# --- [3/10] Docker ---
+# --- Ghostty ---
+
+step "Ghostty"
+if dpkg -s ghostty &>/dev/null; then
+  success "Ghostty already installed"
+else
+  gum spin --title "Installing Ghostty via PPA..." -- \
+    bash -c 'curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh | bash'
+  success "Ghostty installed"
+fi
+
+# --- Docker ---
 
 step "Docker"
 if dpkg -s docker-ce &>/dev/null; then
@@ -143,7 +163,7 @@ else
   success "Docker installed (log out and back in for group membership)"
 fi
 
-# --- [4/10] Google Chrome ---
+# --- Google Chrome ---
 
 step "Google Chrome"
 if dpkg -s google-chrome-stable &>/dev/null; then
@@ -166,7 +186,7 @@ else
   success "Google Chrome installed"
 fi
 
-# --- [5/10] mise ---
+# --- mise ---
 
 step "mise"
 install_mise() {
@@ -175,39 +195,25 @@ install_mise() {
 }
 ensure_command "$HOME/.local/bin/mise" install_mise
 
-# --- [6/10] Stow dotfiles ---
+# --- Stow dotfiles ---
 
 step "Stow dotfiles"
 cd "$DOTFILES_DIR"
-stow --restow git zsh bin nvim kitty tmux mise claude hyprland systemd
-success "All packages stowed"
-
-# --- [7/10] Machine profile ---
-
-step "Machine profile"
-MACHINE=$(gum choose --header "Select machine profile:" "workstation" "laptop")
-
+stow --restow git zsh bin nvim ghostty tmux mise claude hyprland systemd
 ln -sf "machines/${MACHINE}.conf" "$DOTFILES_DIR/hyprland/.config/hypr/machine.conf"
 ln -sf "machines/${MACHINE}.hyprpaper.conf" "$DOTFILES_DIR/hyprland/.config/hypr/hyprpaper.conf"
 ln -sf "machines/${MACHINE}.jsonc" "$DOTFILES_DIR/hyprland/.config/waybar/config.jsonc"
 ln -sf "machines/${MACHINE}" "$DOTFILES_DIR/hyprland/.config/swaylock/config"
-success "Machine profile set to $MACHINE"
+success "All packages stowed ($MACHINE profile)"
 
-if [ "$MACHINE" = "laptop" ]; then
-  info "Installing laptop-specific packages..."
-  ensure_apt_pkg brightnessctl
-  ensure_apt_pkg network-manager-gnome
-  ensure_apt_pkg wireguard-tools
-fi
-
-# --- [8/10] SSH directory ---
+# --- SSH directory ---
 
 step "SSH directory"
 mkdir -p "$HOME/.ssh"
 chmod 700 "$HOME/.ssh"
 success "~/.ssh directory ready"
 
-# --- [9/10] mise runtimes ---
+# --- mise runtimes ---
 
 step "mise runtimes"
 export PATH="$HOME/.local/bin:$PATH"
@@ -215,7 +221,7 @@ gum spin --title "Installing runtimes from mise config (this may take a while)..
   mise install -y
 success "mise runtimes up to date"
 
-# --- [10/10] Default shell ---
+# --- Default shell ---
 
 step "Default shell"
 zsh_path="$(which zsh)"

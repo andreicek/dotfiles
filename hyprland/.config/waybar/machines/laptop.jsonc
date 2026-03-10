@@ -48,7 +48,7 @@
         "format-ethernet": "\uf796",
         "format-disconnected": "\uf127",
         "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click": "kitty --class floating -e nmtui-connect"
+        "on-click": "ghostty --class=floating -e nmtui-connect"
     },
     "battery": {
         "states": {
