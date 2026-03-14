@@ -20,7 +20,7 @@
 [user]
     email = andreicek@0x7f.dev
     name = Andrei Zvonimir Crnković
-    signingkey = ~/.ssh/id_ed25519.pub
+    signingkey = ~/.ssh/id_ecdsa.pub
 [pull]
     rebase = true
 [fetch]

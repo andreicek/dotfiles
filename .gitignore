@@ -4,6 +4,7 @@ hyprland/.config/hypr/machine.conf
 hyprland/.config/hypr/hyprpaper.conf
 hyprland/.config/waybar/config.jsonc
 hyprland/.config/swaylock/config
+systemd/.config/systemd/user/*.wants/
 claude/.claude/*
 !claude/.claude/settings.json
 !claude/.claude/skills/

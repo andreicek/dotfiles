@@ -206,12 +206,15 @@ ln -sf "machines/${MACHINE}.jsonc" "$DOTFILES_DIR/hyprland/.config/waybar/config
 ln -sf "machines/${MACHINE}" "$DOTFILES_DIR/hyprland/.config/swaylock/config"
 success "All packages stowed ($MACHINE profile)"
 
-# --- SSH directory ---
+# --- SSH directory & TPM agent ---
 
-step "SSH directory"
+step "SSH & TPM agent"
 mkdir -p "$HOME/.ssh"
 chmod 700 "$HOME/.ssh"
-success "~/.ssh directory ready"
+sudo usermod -aG tss "$USER"
+ssh-tpm-agent --install-user-units
+systemctl --user enable ssh-tpm-agent.socket
+success "~/.ssh directory ready, ssh-tpm-agent enabled"
 
 # --- mise runtimes ---
 
