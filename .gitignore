@@ -4,11 +4,6 @@ hyprland/.config/hypr/machine.conf
 hyprland/.config/hypr/hyprpaper.conf
 hyprland/.config/waybar/config.jsonc
 hyprland/.config/swaylock/config
-claude/.claude/.credentials.json
-claude/.claude/backups/
-claude/.claude/cache/
-claude/.claude/file-history/
-claude/.claude/history.jsonl
-claude/.claude/plugins/
-claude/.claude/projects/
-claude/.claude/shell-snapshots/
+claude/.claude/*
+!claude/.claude/settings.json
+!claude/.claude/skills/
