@@ -211,7 +211,7 @@ success "All packages stowed ($MACHINE profile)"
 step "SSH & TPM agent"
 mkdir -p "$HOME/.ssh"
 chmod 700 "$HOME/.ssh"
-sudo usermod -aG tss "$USER"
+sudo usermod -aG tss,video "$USER"
 ssh-tpm-agent --install-user-units
 systemctl --user enable ssh-tpm-agent.socket
 success "~/.ssh directory ready, ssh-tpm-agent enabled"
