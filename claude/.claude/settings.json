@@ -12,6 +12,9 @@
     "defaultMode": "acceptEdits"
   },
   "enableAllProjectMcpServers": true,
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true
+  },
   "outputStyle": "Concise",
   "spinnerTipsEnabled": false,
   "spinnerVerbs": {
@@ -35,8 +38,5 @@
     ]
   },
   "effortLevel": "high",
-  "autoUpdatesChannel": "latest",
-  "enabledPlugins": {
-    "superpowers@claude-plugins-official": true
-  }
+  "autoUpdatesChannel": "latest"
 }
