@@ -31,7 +31,7 @@ info()    { gum log --level info "$*"; }
 success() { gum log --level info --prefix "✓" "$*"; }
 warn()    { gum log --level warn "$*"; }
 
-TOTAL_STEPS=11
+TOTAL_STEPS=12
 CURRENT_STEP=0
 step() {
   CURRENT_STEP=$((CURRENT_STEP + 1))
@@ -121,7 +121,7 @@ apt_packages=(
 )
 
 if [ "$MACHINE" = "laptop" ]; then
-  apt_packages+=(brightnessctl network-manager-gnome wireguard-tools)
+  apt_packages+=(brightnessctl network-manager-gnome wireguard-tools python3-pip python3-build)
 fi
 
 for pkg in "${apt_packages[@]}"; do
@@ -215,6 +215,46 @@ sudo usermod -aG tss "$USER"
 ssh-tpm-agent --install-user-units
 systemctl --user enable ssh-tpm-agent.socket
 success "~/.ssh directory ready, ssh-tpm-agent enabled"
+
+# --- fw-fanctrl (laptop only) ---
+
+step "fw-fanctrl"
+if [ "$MACHINE" = "laptop" ]; then
+  if command -v fw-fanctrl &>/dev/null; then
+    success "fw-fanctrl already installed"
+  else
+    info "Installing fw-fanctrl..."
+    FWFAN_TMP=$(mktemp -d)
+    git clone --depth 1 https://github.com/TamtamHero/fw-fanctrl.git "$FWFAN_TMP"
+    gum spin --title "Installing fw-fanctrl..." -- \
+      bash -c "cd '$FWFAN_TMP' && sudo ./install.sh"
+    rm -rf "$FWFAN_TMP"
+    success "fw-fanctrl installed"
+  fi
+  sudo tee /etc/fw-fanctrl/config.json >/dev/null <<'FWCFG'
+{
+  "defaultStrategy": "lazy",
+  "strategyOnDischarging": "lazy",
+  "strategies": {
+    "lazy": {
+      "fanSpeedUpdateFrequency": 5,
+      "movingAverageInterval": 30,
+      "speedCurve": [
+        { "temp": 0, "speed": 0 },
+        { "temp": 50, "speed": 0 },
+        { "temp": 60, "speed": 25 },
+        { "temp": 70, "speed": 50 },
+        { "temp": 80, "speed": 100 }
+      ]
+    }
+  }
+}
+FWCFG
+  sudo systemctl enable --now fw-fanctrl
+  success "fw-fanctrl configured with lazy fan curve"
+else
+  info "Skipping fw-fanctrl (not a laptop)"
+fi
 
 # --- mise runtimes ---
 
