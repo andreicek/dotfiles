@@ -34,6 +34,9 @@
       "Reversing the polarity"
     ]
   },
+  "effortLevel": "high",
   "autoUpdatesChannel": "latest",
-  "effortLevel": "high"
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true
+  }
 }
